@@ -13,16 +13,17 @@ import {
 } from 'recharts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-const data = [
-    { name: 'يناير', total: Math.floor(Math.random() * 5000) + 1000 },
-    { name: 'فبراير', total: Math.floor(Math.random() * 5000) + 1000 },
-    { name: 'مارس', total: Math.floor(Math.random() * 5000) + 1000 },
-    { name: 'أبريل', total: Math.floor(Math.random() * 5000) + 1000 },
-    { name: 'مايو', total: Math.floor(Math.random() * 5000) + 1000 },
-    { name: 'يونيو', total: Math.floor(Math.random() * 5000) + 1000 },
-]
+interface ChartData {
+    name: string
+    total: number
+}
 
-export function DashboardCharts() {
+interface DashboardChartsProps {
+    monthlyRevenue: ChartData[]
+    dailySales: ChartData[]
+}
+
+export function DashboardCharts({ monthlyRevenue, dailySales }: DashboardChartsProps) {
     return (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
             <Card className="col-span-4 transition-all hover:shadow-md">
@@ -35,7 +36,7 @@ export function DashboardCharts() {
                 <CardContent className="pl-2">
                     <div className="h-[300px]">
                         <ResponsiveContainer width="100%" height="100%">
-                            <BarChart data={data}>
+                            <BarChart data={monthlyRevenue}>
                                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eee" />
                                 <XAxis
                                     dataKey="name"
@@ -78,7 +79,7 @@ export function DashboardCharts() {
                 <CardContent>
                     <div className="h-[300px]">
                         <ResponsiveContainer width="100%" height="100%">
-                            <AreaChart data={data}>
+                            <AreaChart data={dailySales}>
                                 <defs>
                                     <linearGradient id="colorTotal" x1="0" y1="0" x2="0" y2="1">
                                         <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.3} />

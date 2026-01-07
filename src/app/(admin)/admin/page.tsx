@@ -31,6 +31,79 @@ export default async function AdminDashboard() {
         .order('created_at', { ascending: false })
         .limit(5)
 
+    // Fetch data for charts - Monthly Revenue (last 6 months)
+    const sixMonthsAgo = new Date()
+    sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6)
+
+    const { data: monthlyOrdersData } = await supabase
+        .from('orders')
+        .select('total_amount, created_at')
+        .eq('status', 'delivered')
+        .gte('created_at', sixMonthsAgo.toISOString())
+
+    // Group by month and calculate totals
+    const monthNames = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر']
+    const monthlyRevenueMap = new Map<string, number>()
+
+    monthlyOrdersData?.forEach(order => {
+        const date = new Date(order.created_at)
+        const monthKey = `${date.getFullYear()}-${date.getMonth()}`
+        const monthName = monthNames[date.getMonth()]
+        const current = monthlyRevenueMap.get(monthKey) || 0
+        monthlyRevenueMap.set(monthKey, current + (order.total_amount || 0))
+    })
+
+    // Convert to array format for charts
+    const monthlyRevenue = Array.from(monthlyRevenueMap.entries())
+        .sort((a, b) => a[0].localeCompare(b[0]))
+        .slice(-6) // Get last 6 months
+        .map(([key, total]) => {
+            const [year, month] = key.split('-')
+            return {
+                name: monthNames[parseInt(month)],
+                total: Math.round(total)
+            }
+        })
+
+    // Fetch data for daily sales (last 7 days)
+    const sevenDaysAgo = new Date()
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7)
+
+    const { data: dailyOrdersData } = await supabase
+        .from('orders')
+        .select('total_amount, created_at')
+        .gte('created_at', sevenDaysAgo.toISOString())
+
+    // Group by day
+    const dailySalesMap = new Map<string, number>()
+
+    dailyOrdersData?.forEach(order => {
+        const date = new Date(order.created_at)
+        const dayKey = date.toISOString().split('T')[0]
+        const current = dailySalesMap.get(dayKey) || 0
+        dailySalesMap.set(dayKey, current + (order.total_amount || 0))
+    })
+
+    // Convert to array format for charts
+    const dailySales = Array.from(dailySalesMap.entries())
+        .sort((a, b) => a[0].localeCompare(b[0]))
+        .map(([dateStr, total]) => {
+            const date = new Date(dateStr)
+            const day = date.getDate()
+            const month = monthNames[date.getMonth()]
+            return {
+                name: `${day} ${month}`,
+                total: Math.round(total)
+            }
+        })
+
+    // Ensure we have at least some data for the charts
+    const defaultMonthlyRevenue = monthlyRevenue.length > 0 ? monthlyRevenue :
+        monthNames.slice(0, 6).map(name => ({ name, total: 0 }))
+
+    const defaultDailySales = dailySales.length > 0 ? dailySales :
+        Array.from({ length: 7 }, (_, i) => ({ name: `${i + 1}`, total: 0 }))
+
     const stats = [
         {
             title: 'إجمالي الإيرادات',
@@ -116,8 +189,8 @@ export default async function AdminDashboard() {
                             <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
                             <div className="flex items-center gap-2 mt-2">
                                 <div className={`flex items-center text-xs font-medium ${stat.changeType === 'positive' ? 'text-green-600' :
-                                        stat.changeType === 'negative' ? 'text-red-600' :
-                                            'text-blue-600'
+                                    stat.changeType === 'negative' ? 'text-red-600' :
+                                        'text-blue-600'
                                     }`}>
                                     {stat.changeType === 'positive' && <ArrowUpRight className="h-3 w-3 mr-1" />}
                                     {stat.changeType === 'negative' && <ArrowDownRight className="h-3 w-3 mr-1" />}
@@ -182,7 +255,10 @@ export default async function AdminDashboard() {
             </div>
 
             {/* Charts */}
-            <DashboardCharts />
+            <DashboardCharts
+                monthlyRevenue={defaultMonthlyRevenue}
+                dailySales={defaultDailySales}
+            />
 
             {/* Recent Orders */}
             <div className="grid gap-4 md:grid-cols-1">
