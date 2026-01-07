@@ -21,9 +21,11 @@ CREATE TABLE IF NOT EXISTS products (
   slug TEXT UNIQUE NOT NULL,
   description TEXT,
   price NUMERIC NOT NULL,
+  sale_price NUMERIC,
   images TEXT[] DEFAULT ARRAY[]::TEXT[],
   category_id BIGINT REFERENCES categories(id),
-  stock INTEGER DEFAULT 0
+  stock INTEGER DEFAULT 0,
+  in_stock BOOLEAN DEFAULT TRUE
 );
 
 -- Create Shipping Zones (Wilayas)
@@ -45,17 +47,91 @@ CREATE TABLE IF NOT EXISTS orders (
   total_amount NUMERIC NOT NULL,
   shipping_cost NUMERIC NOT NULL,
   delivery_type TEXT NOT NULL, -- 'home' | 'desk'
-  status TEXT DEFAULT 'pending', -- pending, confirmed, shipped, cancelled
+  status TEXT DEFAULT 'new', -- new, confirmed, shipping, delivered, cancelled, returned
   pixel_id TEXT -- For tracking which pixel event triggered this if needed
 );
 
--- Step 2: Enable RLS (Row Level Security)
+-- Create Settings Table
+CREATE TABLE IF NOT EXISTS settings (
+  key TEXT PRIMARY KEY,
+  value TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()) NOT NULL,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()) NOT NULL
+);
+
+-- Step 2: Seed Shipping Zones (58 Algerian Wilayas)
+-- ============================================
+
+INSERT INTO shipping_zones (wilaya_code, wilaya_name, home_delivery_price, desk_delivery_price, is_active)
+VALUES
+  (1, 'Adrar', 800, 600, true),
+  (2, 'Chlef', 600, 400, true),
+  (3, 'Laghouat', 700, 500, true),
+  (4, 'Oum El Bouaghi', 600, 400, true),
+  (5, 'Batna', 600, 400, true),
+  (6, 'Béjaïa', 500, 350, true),
+  (7, 'Biskra', 650, 450, true),
+  (8, 'Béchar', 850, 650, true),
+  (9, 'Blida', 400, 300, true),
+  (10, 'Bouira', 500, 350, true),
+  (11, 'Tamanrasset', 1200, 1000, true),
+  (12, 'Tébessa', 700, 500, true),
+  (13, 'Tlemcen', 650, 450, true),
+  (14, 'Tiaret', 600, 400, true),
+  (15, 'Tizi Ouzou', 500, 350, true),
+  (16, 'Algiers', 400, 300, true),
+  (17, 'Djelfa', 650, 450, true),
+  (18, 'Jijel', 550, 400, true),
+  (19, 'Sétif', 550, 400, true),
+  (20, 'Saïda', 650, 450, true),
+  (21, 'Skikda', 600, 400, true),
+  (22, 'Sidi Bel Abbès', 650, 450, true),
+  (23, 'Annaba', 600, 400, true),
+  (24, 'Guelma', 600, 400, true),
+  (25, 'Constantine', 550, 400, true),
+  (26, 'Médéa', 500, 350, true),
+  (27, 'Mostaganem', 600, 400, true),
+  (28, 'M''Sila', 600, 450, true),
+  (29, 'Mascara', 650, 450, true),
+  (30, 'Ouargla', 750, 550, true),
+  (31, 'Oran', 500, 350, true),
+  (32, 'El Bayadh', 750, 550, true),
+  (33, 'Illizi', 1100, 900, true),
+  (34, 'Bordj Bou Arréridj', 550, 400, true),
+  (35, 'Boumerdès', 450, 300, true),
+  (36, 'El Tarf', 650, 450, true),
+  (37, 'Tindouf', 1200, 1000, true),
+  (38, 'Tissemsilt', 600, 400, true),
+  (39, 'El Oued', 700, 500, true),
+  (40, 'Khenchela', 650, 450, true),
+  (41, 'Souk Ahras', 650, 450, true),
+  (42, 'Tipaza', 450, 300, true),
+  (43, 'Mila', 600, 400, true),
+  (44, 'Aïn Defla', 550, 400, true),
+  (45, 'Naâma', 800, 600, true),
+  (46, 'Aïn Témouchent', 600, 400, true),
+  (47, 'Ghardaïa', 750, 550, true),
+  (48, 'Relizane', 600, 400, true),
+  (49, 'Timimoun', 900, 700, true),
+  (50, 'Bordj Badji Mokhtar', 1300, 1100, true),
+  (51, 'Ouled Djellal', 700, 500, true),
+  (52, 'Béni Abbès', 950, 750, true),
+  (53, 'In Salah', 1000, 800, true),
+  (54, 'In Guezzam', 1400, 1200, true),
+  (55, 'Touggourt', 750, 550, true),
+  (56, 'Djanet', 1150, 950, true),
+  (57, 'El M''Ghair', 750, 550, true),
+  (58, 'El Meniaa', 800, 600, true)
+ON CONFLICT (wilaya_code) DO NOTHING;
+
+-- Step 3: Enable RLS (Row Level Security)
 -- ============================================
 
 ALTER TABLE products ENABLE ROW LEVEL SECURITY;
 ALTER TABLE categories ENABLE ROW LEVEL SECURITY;
 ALTER TABLE shipping_zones ENABLE ROW LEVEL SECURITY;
 ALTER TABLE orders ENABLE ROW LEVEL SECURITY;
+ALTER TABLE settings ENABLE ROW LEVEL SECURITY;
 
 -- Step 3: Drop Existing Policies (to avoid conflicts)
 -- ============================================
@@ -141,6 +217,19 @@ CREATE POLICY "Enable update for all users" ON orders
   FOR UPDATE USING (true);
 
 CREATE POLICY "Enable delete for all users" ON orders
+  FOR DELETE USING (true);
+
+-- Settings: Allow ALL operations for everyone
+CREATE POLICY "Enable read access for all users" ON settings
+  FOR SELECT USING (true);
+
+CREATE POLICY "Enable insert for all users" ON settings
+  FOR INSERT WITH CHECK (true);
+
+CREATE POLICY "Enable update for all users" ON settings
+  FOR UPDATE USING (true);
+
+CREATE POLICY "Enable delete for all users" ON settings
   FOR DELETE USING (true);
 
 -- Step 5: Storage Setup

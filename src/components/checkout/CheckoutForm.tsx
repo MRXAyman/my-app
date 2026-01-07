@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { Loader2 } from 'lucide-react'
+import { Loader2, Home, Building2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
@@ -21,7 +21,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 import { wilayas } from '@/lib/algeria-data'
-import { useShipping } from '@/hooks/use-shipping' // Ensure this hook is created/correct
+import { useShipping } from '@/hooks/use-shipping'
 import { createClient } from '@/utils/supabase/client'
 
 const phoneRegex = /^(05|06|07)[0-9]{8}$/
@@ -31,7 +31,7 @@ const formSchema = z.object({
     phone: z.string().regex(phoneRegex, { message: 'رقم الهاتف غير صالح (يجب أن يبدأ ب 05، 06 أو 07)' }),
     wilaya: z.string().min(1, { message: 'يرجى اختيار الولاية' }),
     commune: z.string().min(1, { message: 'يرجى كتابة البلدية' }),
-    deliveryType: z.enum(['home', 'desk'], { required_error: 'يرجى اختيار نوع التوصيل' }),
+    deliveryType: z.enum(['home', 'desk']),
 })
 
 interface CheckoutFormProps {
@@ -62,6 +62,18 @@ export function CheckoutForm({ productId, productPrice, productTitle }: Checkout
     // Custom hook to fetch shipping rates. 
     // Make sure useShipping handles "undefined" or empty string gracefully.
     const { rates, loading: loadingShipping } = useShipping(selectedWilaya)
+
+    // Automatically select available delivery type
+    useEffect(() => {
+        if (rates) {
+            const currentType = form.getValues('deliveryType')
+            if (currentType === 'home' && !rates.home_delivery_available && rates.desk_delivery_available) {
+                form.setValue('deliveryType', 'desk')
+            } else if (currentType === 'desk' && !rates.desk_delivery_available && rates.home_delivery_available) {
+                form.setValue('deliveryType', 'home')
+            }
+        }
+    }, [rates, form])
 
     const shippingPrice = rates
         ? (selectedDeliveryType === 'home' ? rates.home_delivery_price : rates.desk_delivery_price)
@@ -94,15 +106,18 @@ export function CheckoutForm({ productId, productPrice, productTitle }: Checkout
             status: 'pending'
         }
 
-        const { error } = await supabase.from('orders').insert(orderData)
+        const { data: insertedOrder, error } = await supabase
+            .from('orders')
+            .insert(orderData)
+            .select('id')
+            .single()
 
         if (error) {
             console.error('Error placing order:', error)
             alert('حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.')
-        } else {
-            alert('تم استلام طلبك بنجاح! شكرا لثقتكم.')
-            form.reset()
-            // Optional: router.push('/thank-you')
+        } else if (insertedOrder) {
+            // Redirect to success page with order details
+            router.push(`/order-success?orderId=${insertedOrder.id}&total=${totalPrice}`)
         }
         setIsSubmitting(false)
     }
@@ -193,38 +208,80 @@ export function CheckoutForm({ productId, productPrice, productTitle }: Checkout
                                         defaultValue={field.value}
                                         className="flex flex-col space-y-3"
                                     >
-                                        <FormItem className="flex items-center space-x-3 space-x-reverse space-y-0 rounded-md border p-3 hover:bg-gray-50">
-                                            <FormControl>
-                                                <RadioGroupItem value="home" />
-                                            </FormControl>
-                                            <FormLabel className="font-normal flex-1 flex justify-between items-center cursor-pointer">
-                                                <span className="mr-2">توصيل للمنزل</span>
-                                                {loadingShipping ? (
-                                                    <Loader2 className="h-3 w-3 animate-spin" />
-                                                ) : rates ? (
-                                                    <span className="font-bold text-green-600">{rates.home_delivery_price} د.ج</span>
-                                                ) : (
-                                                    <span className="text-muted-foreground text-xs">اختر الولاية</span>
-                                                )}
-                                            </FormLabel>
-                                        </FormItem>
-                                        <FormItem className="flex items-center space-x-3 space-x-reverse space-y-0 rounded-md border p-3 hover:bg-gray-50">
-                                            <FormControl>
-                                                <RadioGroupItem value="desk" />
-                                            </FormControl>
-                                            <FormLabel className="font-normal flex-1 flex justify-between items-center cursor-pointer">
-                                                <span className="mr-2">توصيل للمكتب (Yalidine/StopDesk)</span>
-                                                {loadingShipping ? (
-                                                    <Loader2 className="h-3 w-3 animate-spin" />
-                                                ) : rates ? (
-                                                    <span className="font-bold text-green-600">{rates.desk_delivery_price} د.ج</span>
-                                                ) : (
-                                                    <span className="text-muted-foreground text-xs">اختر الولاية</span>
-                                                )}
-                                            </FormLabel>
-                                        </FormItem>
+                                        <div className="space-y-1">
+                                            <FormItem
+                                                className={`flex items-center space-x-3 space-x-reverse space-y-0 rounded-md border p-3 ${rates && !rates.home_delivery_available
+                                                    ? 'bg-gray-100 opacity-60 cursor-not-allowed'
+                                                    : 'hover:bg-gray-50 bg-white'
+                                                    }`}
+                                            >
+                                                <FormControl>
+                                                    <RadioGroupItem
+                                                        value="home"
+                                                        disabled={rates ? !rates.home_delivery_available : false}
+                                                    />
+                                                </FormControl>
+                                                <FormLabel className="font-normal flex-1 flex justify-between items-center cursor-pointer">
+                                                    <div className="flex items-center gap-2">
+                                                        <Home className="h-4 w-4 text-gray-500" />
+                                                        <span className="mr-2 font-medium">توصيل للمنزل</span>
+                                                    </div>
+                                                    {loadingShipping ? (
+                                                        <Loader2 className="h-3 w-3 animate-spin" />
+                                                    ) : rates ? (
+                                                        rates.home_delivery_available ? (
+                                                            <span className="font-bold text-green-600">{rates.home_delivery_price} د.ج</span>
+                                                        ) : (
+                                                            <span className="text-red-500 text-sm">غير متوفر</span>
+                                                        )
+                                                    ) : (
+                                                        <span className="text-muted-foreground text-xs">اختر الولاية</span>
+                                                    )}
+                                                </FormLabel>
+                                            </FormItem>
+                                        </div>
+
+                                        <div className="space-y-1">
+                                            <FormItem
+                                                className={`flex items-center space-x-3 space-x-reverse space-y-0 rounded-md border p-3 ${rates && !rates.desk_delivery_available
+                                                    ? 'bg-gray-100 opacity-60 cursor-not-allowed'
+                                                    : 'hover:bg-gray-50 bg-white'
+                                                    }`}
+                                            >
+                                                <FormControl>
+                                                    <RadioGroupItem
+                                                        value="desk"
+                                                        disabled={rates ? !rates.desk_delivery_available : false}
+                                                    />
+                                                </FormControl>
+                                                <FormLabel className="font-normal flex-1 flex justify-between items-center cursor-pointer">
+                                                    <div className="flex items-center gap-2">
+                                                        <Building2 className="h-4 w-4 text-gray-500" />
+                                                        <span className="mr-2 font-medium">توصيل للمكتب (Yalidine/StopDesk)</span>
+                                                    </div>
+                                                    {loadingShipping ? (
+                                                        <Loader2 className="h-3 w-3 animate-spin" />
+                                                    ) : rates ? (
+                                                        rates.desk_delivery_available ? (
+                                                            <span className="font-bold text-green-600">{rates.desk_delivery_price} د.ج</span>
+                                                        ) : (
+                                                            <span className="text-red-500 text-sm">غير متوفر</span>
+                                                        )
+                                                    ) : (
+                                                        <span className="text-muted-foreground text-xs">اختر الولاية</span>
+                                                    )}
+                                                </FormLabel>
+                                            </FormItem>
+                                        </div>
                                     </RadioGroup>
                                 </FormControl>
+
+                                {rates && rates.estimated_delivery_time && (
+                                    <div className="flex items-center gap-2 text-sm text-muted-foreground mt-2 bg-blue-50 p-2 rounded text-blue-700">
+                                        <span>مدة التوصيل المتوقعة: {rates.estimated_delivery_time}</span>
+                                    </div>
+                                )}
+
                                 <FormMessage />
                             </FormItem>
                         )}

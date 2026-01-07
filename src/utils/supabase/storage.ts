@@ -75,3 +75,69 @@ export async function uploadProductImage(file: File): Promise<{ url?: string; er
         return { error }
     }
 }
+
+/**
+ * Upload multiple images to the products bucket
+ * Returns array of URLs in the same order as input files
+ */
+export async function uploadMultipleProductImages(files: File[]): Promise<{
+    urls?: string[];
+    error?: any;
+}> {
+    const supabase = createClient()
+
+    try {
+        const uploadPromises = files.map(async (file) => {
+            const fileExt = file.name.split('.').pop()
+            const fileName = `${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`
+            const filePath = fileName
+
+            const { error: uploadError } = await supabase.storage
+                .from('products')
+                .upload(filePath, file, {
+                    cacheControl: '3600',
+                    upsert: false
+                })
+
+            if (uploadError) {
+                throw uploadError
+            }
+
+            const { data } = supabase.storage.from('products').getPublicUrl(filePath)
+            return data.publicUrl
+        })
+
+        const urls = await Promise.all(uploadPromises)
+        return { urls }
+    } catch (error) {
+        console.error('Multiple upload error:', error)
+        return { error }
+    }
+}
+
+/**
+ * Delete an image from the products bucket
+ */
+export async function deleteProductImage(imageUrl: string): Promise<{ success: boolean; error?: any }> {
+    const supabase = createClient()
+
+    try {
+        // Extract filename from URL
+        const urlParts = imageUrl.split('/')
+        const fileName = urlParts[urlParts.length - 1]
+
+        const { error } = await supabase.storage
+            .from('products')
+            .remove([fileName])
+
+        if (error) {
+            console.error('Delete error:', error)
+            return { success: false, error }
+        }
+
+        return { success: true }
+    } catch (error) {
+        console.error('Unexpected delete error:', error)
+        return { success: false, error }
+    }
+}

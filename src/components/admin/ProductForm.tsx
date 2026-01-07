@@ -1,15 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { Loader2, Upload, X } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { Switch } from '@/components/ui/switch'
 import {
     Form,
     FormControl,
@@ -17,63 +18,129 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
+    FormDescription,
 } from '@/components/ui/form'
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 import { createClient } from '@/utils/supabase/client'
-import { uploadProductImage } from '@/utils/supabase/storage'
+import { MultiImageUpload } from '@/components/admin/MultiImageUpload'
+import { ProductVariantsComponent, ProductVariants } from '@/components/admin/ProductVariants'
 
 const productSchema = z.object({
     title: z.string().min(3, 'العنوان يجب أن يكون 3 أحرف على الأقل'),
-    price: z.preprocess((val) => Number(val), z.number().min(1, 'السعر مطلوب')),
     description: z.string().optional(),
-    stock: z.preprocess((val) => Number(val), z.number().min(0).default(0)),
-    category_id: z.string().optional(), // For now optional
+    category_id: z.string().min(1, 'يرجى اختيار الصنف'),
+    is_active: z.boolean().default(true),
+    // For simple products - these will be ignored if variants are used
+    price: z.preprocess((val) => val ? Number(val) : 0, z.number().min(0)),
+    sale_price: z.preprocess((val) => val ? Number(val) : 0, z.number().min(0)),
+    stock: z.preprocess((val) => val ? Number(val) : 0, z.number().min(0)),
 })
 
-export function ProductForm() {
+interface ProductFormProps {
+    initialData?: any
+}
+
+export function ProductForm({ initialData }: ProductFormProps) {
     const router = useRouter()
     const [isSubmitting, setIsSubmitting] = useState(false)
-    const [imageFile, setImageFile] = useState<File | null>(null)
-    const [imagePreview, setImagePreview] = useState<string | null>(null)
+    const [images, setImages] = useState<string[]>(initialData?.images || [])
+    const [categories, setCategories] = useState<{ id: number; name: string }[]>([])
+    const [variants, setVariants] = useState<ProductVariants | null>(initialData?.variants || null)
+    const supabase = createClient()
 
     const form = useForm<z.infer<typeof productSchema>>({
         resolver: zodResolver(productSchema),
         defaultValues: {
-            title: '',
-            price: 0,
-            description: '',
-            stock: 10,
+            title: initialData?.title || '',
+            description: initialData?.description || '',
+            category_id: initialData?.category_id?.toString() || '',
+            is_active: initialData?.is_active ?? true,
+            price: initialData?.price || 0,
+            sale_price: initialData?.sale_price || 0,
+            stock: initialData?.stock || 0,
         },
     })
 
-    const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0]
-        if (file) {
-            setImageFile(file)
-            setImagePreview(URL.createObjectURL(file))
+    useEffect(() => {
+        async function fetchCategories() {
+            const supabase = createClient()
+            const { data } = await supabase.from('categories').select('id, name')
+            if (data) {
+                setCategories(data)
+            }
         }
-    }
+        fetchCategories()
+    }, [])
 
     async function onSubmit(values: z.infer<typeof productSchema>) {
         setIsSubmitting(true)
         try {
-            let imageUrl = null
-            if (imageFile) {
-                const result = await uploadProductImage(imageFile)
-                if (result.error) {
-                    throw result.error
-                }
-                imageUrl = result.url
+            // Validation
+            if (images.length === 0) {
+                alert('يرجى رفع صورة واحدة على الأقل')
+                setIsSubmitting(false)
+                return
+            }
+
+            // Validate variants
+            if (variants && variants.items.length === 0) {
+                alert('يرجى إضافة متغيرات للمنتج أو اختيار "منتج بسيط"')
+                setIsSubmitting(false)
+                return
             }
 
             const supabase = createClient()
-            const { error } = await supabase.from('products').insert({
+
+            // Prepare product data
+            const productData: any = {
                 title: values.title,
-                price: values.price,
                 description: values.description,
-                stock: values.stock,
-                images: imageUrl ? [imageUrl] : [],
-                slug: values.title.toLowerCase().replace(/ /g, '-') + '-' + Date.now(), // Simple slug generation
-            })
+                category_id: parseInt(values.category_id),
+                images: images,
+                slug: values.title.toLowerCase().replace(/ /g, '-') + '-' + Date.now(),
+                is_active: values.is_active,
+                variants: variants,
+            }
+
+            // For simple products, use the form values
+            if (!variants) {
+                productData.price = values.price || 0
+                productData.sale_price = values.sale_price || 0
+                productData.stock = values.stock || 0
+                productData.in_stock = (values.stock || 0) > 0
+            } else {
+                // For products with variants, calculate totals
+                const totalStock = variants.items.reduce((sum, item) => sum + item.stock, 0)
+                const minPrice = Math.min(...variants.items.map(item => item.sale_price || item.price))
+
+                productData.price = minPrice
+                productData.sale_price = 0
+                productData.stock = totalStock
+                productData.in_stock = totalStock > 0
+            }
+
+            let error;
+
+            if (initialData?.id) {
+                // Update existing product
+                const { error: updateError } = await supabase
+                    .from('products')
+                    .update(productData)
+                    .eq('id', initialData.id)
+                error = updateError
+            } else {
+                // Insert new product
+                const { error: insertError } = await supabase
+                    .from('products')
+                    .insert(productData)
+                error = insertError
+            }
 
             if (error) throw error
 
@@ -87,122 +154,195 @@ export function ProductForm() {
         }
     }
 
+    const isSimpleProduct = !variants
+
     return (
-        <div className="max-w-2xl bg-white p-6 rounded-lg border shadow-sm" dir="rtl">
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <div className="min-h-screen bg-gray-50 py-8 px-4" dir="rtl">
+            <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-sm border p-8">
+                    <div className="mb-6">
+                        <h2 className="text-2xl font-bold text-gray-900">إضافة منتج جديد</h2>
+                        <p className="text-sm text-muted-foreground mt-1">
+                            املأ جميع الحقول المطلوبة لإضافة منتج جديد إلى المتجر
+                        </p>
+                    </div>
 
-                    {/* Image Upload */}
-                    <div className="space-y-2">
-                        <FormLabel>صورة المنتج</FormLabel>
-                        <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-gray-50 transition-colors relative">
-                            <Input
-                                type="file"
-                                accept="image/*"
-                                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                                onChange={handleImageChange}
+                    <Form {...form}>
+                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                            {/* Images Upload */}
+                            <div className="space-y-2">
+                                <FormLabel className="text-base font-semibold">صور المنتج *</FormLabel>
+                                <FormDescription>
+                                    ارفع صور المنتج (الصورة الأولى ستكون الصورة الرئيسية)
+                                </FormDescription>
+                                <MultiImageUpload
+                                    images={images}
+                                    onChange={setImages}
+                                    maxImages={10}
+                                />
+                            </div>
+
+                            {/* Basic Info */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <FormField
+                                    control={form.control}
+                                    name="title"
+                                    render={({ field }) => (
+                                        <FormItem className="md:col-span-2">
+                                            <FormLabel>اسم المنتج *</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="مثال: ساعة يد رجالية..." {...field} />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+
+                                <FormField
+                                    control={form.control}
+                                    name="category_id"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>الصنف *</FormLabel>
+                                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                                <FormControl>
+                                                    <SelectTrigger className="flex-row-reverse">
+                                                        <SelectValue placeholder="اختر الصنف" />
+                                                    </SelectTrigger>
+                                                </FormControl>
+                                                <SelectContent>
+                                                    {categories.map((category) => (
+                                                        <SelectItem key={category.id} value={category.id.toString()} className="justify-end">
+                                                            {category.name}
+                                                        </SelectItem>
+                                                    ))}
+                                                </SelectContent>
+                                            </Select>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+
+                                <FormField
+                                    control={form.control}
+                                    name="is_active"
+                                    render={({ field }) => (
+                                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 bg-gray-50/50">
+                                            <div className="space-y-0.5">
+                                                <FormLabel className="text-base">تفعيل المنتج</FormLabel>
+                                                <FormDescription>
+                                                    سيظهر المنتج في المتجر للعملاء
+                                                </FormDescription>
+                                            </div>
+                                            <FormControl>
+                                                <Switch
+                                                    checked={field.value}
+                                                    onCheckedChange={field.onChange}
+                                                />
+                                            </FormControl>
+                                        </FormItem>
+                                    )}
+                                />
+                            </div>
+
+                            <FormField
+                                control={form.control}
+                                name="description"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>الوصف</FormLabel>
+                                        <FormControl>
+                                            <Textarea
+                                                placeholder="وصف تفصيلي للمنتج..."
+                                                className="h-32 resize-none"
+                                                {...field}
+                                            />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
                             />
-                            {imagePreview ? (
-                                <div className="relative w-full h-48">
-                                    <img src={imagePreview} alt="Preview" className="w-full h-full object-contain" />
-                                    <Button
-                                        type="button"
-                                        variant="destructive"
-                                        size="icon"
-                                        className="absolute top-2 right-2 h-6 w-6"
-                                        onClick={(e) => {
-                                            e.preventDefault()
-                                            setImageFile(null)
-                                            setImagePreview(null)
-                                        }}
-                                    >
-                                        <X className="h-3 w-3" />
-                                    </Button>
+
+                            {/* Product Variants */}
+                            <ProductVariantsComponent
+                                value={variants}
+                                onChange={setVariants}
+                                basePrice={form.watch('price') || 0}
+                                baseSalePrice={form.watch('sale_price')}
+                                baseStock={form.watch('stock') || 0}
+                            />
+
+                            {/* Simple Product Fields */}
+                            {isSimpleProduct && (
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 border rounded-lg bg-blue-50/30">
+                                    <FormField
+                                        control={form.control}
+                                        name="price"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>السعر (د.ج) *</FormLabel>
+                                                <FormControl>
+                                                    <Input type="number" {...field} />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+
+                                    <FormField
+                                        control={form.control}
+                                        name="sale_price"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>سعر التخفيض (اختياري)</FormLabel>
+                                                <FormControl>
+                                                    <Input type="number" {...field} value={field.value || ''} />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+
+                                    <FormField
+                                        control={form.control}
+                                        name="stock"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>الكمية *</FormLabel>
+                                                <FormControl>
+                                                    <Input type="number" {...field} />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
                                 </div>
-                            ) : (
-                                <>
-                                    <Upload className="h-10 w-10 text-gray-400 mb-2" />
-                                    <span className="text-sm text-gray-500">اضغط لرفع صورة</span>
-                                </>
                             )}
-                        </div>
-                    </div>
 
-                    <FormField
-                        control={form.control}
-                        name="title"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>اسم المنتج</FormLabel>
-                                <FormControl>
-                                    <Input placeholder="مثال: ساعة يد..." {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-
-                    <div className="grid grid-cols-2 gap-4">
-                        <FormField
-                            control={form.control}
-                            name="price"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>السعر (د.ج)</FormLabel>
-                                    <FormControl>
-                                        <Input type="number" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-
-                        <FormField
-                            control={form.control}
-                            name="stock"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>المخزون</FormLabel>
-                                    <FormControl>
-                                        <Input type="number" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                    <FormField
-                        control={form.control}
-                        name="description"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>الوصف</FormLabel>
-                                <FormControl>
-                                    <Textarea placeholder="وصف تفصيلي للمنتج..." className="h-32" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-
-                    <div className="flex justify-end gap-3 pt-4">
-                        <Button type="button" variant="outline" onClick={() => router.back()}>
-                            إلغاء
-                        </Button>
-                        <Button type="submit" disabled={isSubmitting}>
-                            {isSubmitting ? (
-                                <>
-                                    <Loader2 className="ml-2 h-4 w-4 animate-spin" />
-                                    جاري الحفظ...
-                                </>
-                            ) : (
-                                'حفظ المنتج'
-                            )}
-                        </Button>
-                    </div>
-                </form>
-            </Form>
+                            {/* Actions */}
+                            <div className="flex justify-end gap-3 pt-6 border-t">
+                                <Button type="button" variant="outline" onClick={() => router.back()}>
+                                    إلغاء
+                                </Button>
+                                <Button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 min-w-[120px]"
+                                >
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 className="ml-2 h-4 w-4 animate-spin" />
+                                            جاري الحفظ...
+                                        </>
+                                    ) : (
+                                        initialData ? 'حفظ التعديلات' : 'حفظ المنتج'
+                                    )}
+                                </Button>
+                            </div>
+                        </form>
+                    </Form>
+                </div>
+            </div>
         </div>
     )
 }

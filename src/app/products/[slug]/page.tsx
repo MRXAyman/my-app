@@ -4,6 +4,7 @@ import { createClient } from "@/utils/supabase/server"
 import { CheckoutForm } from "@/components/checkout/CheckoutForm"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Star } from "lucide-react"
+import { ImageGallery } from "@/components/product/ImageGallery"
 
 // Mock data in case DB is empty for demonstration
 const MOCK_PRODUCT = {
@@ -78,18 +79,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     {/* Product Info */}
                     <div className="order-1 lg:order-2">
                         <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                            {/* Image Placeholder */}
-                            <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 mb-6 overflow-hidden relative group">
-                                {product.images && product.images.length > 0 ? (
-                                    <img
-                                        src={product.images[0]}
-                                        alt={product.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                    />
-                                ) : (
-                                    <span className="text-4xl text-gray-300">صورة المنتج</span>
-                                )}
-                            </div>
+                            {/* Image Gallery */}
+                            <ImageGallery images={product.images || []} title={product.title} />
 
                             <h1 className="text-3xl font-bold tracking-tight text-gray-900 mb-2">{product.title}</h1>
 
