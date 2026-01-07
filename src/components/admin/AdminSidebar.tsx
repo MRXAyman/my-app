@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useMemo } from 'react'
 import {
     LayoutDashboard,
     Package,
@@ -15,20 +16,15 @@ import {
     UserCircle,
     ChevronLeft,
     Bell,
-    TrendingUp
+    TrendingUp,
+    Loader2
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
+import { useDashboardStats } from '@/hooks/use-dashboard-stats'
 
-const navigation = [
-    { name: 'لوحة القيادة', href: '/admin', icon: LayoutDashboard, badge: null },
-    { name: 'المنتجات', href: '/admin/products', icon: Package, badge: null },
-    { name: 'الأصناف', href: '/admin/categories', icon: FolderTree, badge: null },
-    { name: 'الطلبات', href: '/admin/orders', icon: ShoppingCart, badge: '3' },
-    { name: 'الشحن', href: '/admin/shipping', icon: Truck, badge: null },
-    { name: 'الإعدادات', href: '/admin/settings', icon: Settings, badge: null },
-]
+
 
 interface AdminSidebarProps {
     open: boolean
@@ -38,6 +34,17 @@ interface AdminSidebarProps {
 
 export function AdminSidebar({ open, setOpen, handleLogout }: AdminSidebarProps) {
     const pathname = usePathname()
+    const { stats, loading: statsLoading } = useDashboardStats()
+
+    // Memoize navigation items to prevent unnecessary re-renders
+    const navigation = useMemo(() => [
+        { name: 'لوحة القيادة', href: '/admin', icon: LayoutDashboard, badge: null },
+        { name: 'المنتجات', href: '/admin/products', icon: Package, badge: stats.lowStockProducts > 0 ? stats.lowStockProducts.toString() : null },
+        { name: 'الأصناف', href: '/admin/categories', icon: FolderTree, badge: null },
+        { name: 'الطلبات', href: '/admin/orders', icon: ShoppingCart, badge: stats.pendingOrdersCount > 0 ? stats.pendingOrdersCount.toString() : null },
+        { name: 'الشحن', href: '/admin/shipping', icon: Truck, badge: null },
+        { name: 'الإعدادات', href: '/admin/settings', icon: Settings, badge: null },
+    ], [stats.pendingOrdersCount, stats.lowStockProducts])
 
     return (
         <>
@@ -83,6 +90,7 @@ export function AdminSidebar({ open, setOpen, handleLogout }: AdminSidebarProps)
                                 <Link
                                     key={item.name}
                                     href={item.href}
+                                    prefetch={true}
                                     onClick={() => setOpen(false)}
                                     className={cn(
                                         "flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 group relative overflow-hidden",
@@ -132,16 +140,24 @@ export function AdminSidebar({ open, setOpen, handleLogout }: AdminSidebarProps)
                             <TrendingUp className="h-4 w-4 text-blue-600" />
                             <span className="text-xs font-semibold text-blue-900">الأداء اليوم</span>
                         </div>
-                        <div className="space-y-2">
-                            <div className="flex justify-between items-center">
-                                <span className="text-xs text-gray-600">طلبات جديدة</span>
-                                <span className="text-sm font-bold text-gray-900">12</span>
+                        {statsLoading ? (
+                            <div className="flex items-center justify-center py-4">
+                                <Loader2 className="h-5 w-5 animate-spin text-blue-600" />
                             </div>
-                            <div className="flex justify-between items-center">
-                                <span className="text-xs text-gray-600">الإيرادات</span>
-                                <span className="text-sm font-bold text-green-600">45,231 د.ج</span>
+                        ) : (
+                            <div className="space-y-2">
+                                <div className="flex justify-between items-center">
+                                    <span className="text-xs text-gray-600">طلبات جديدة</span>
+                                    <span className="text-sm font-bold text-gray-900">{stats.todayOrdersCount}</span>
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <span className="text-xs text-gray-600">الإيرادات</span>
+                                    <span className="text-sm font-bold text-green-600">
+                                        {stats.todayRevenue.toLocaleString('ar-DZ')} د.ج
+                                    </span>
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </div>
 

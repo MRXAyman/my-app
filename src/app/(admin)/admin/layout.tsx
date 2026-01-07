@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from 'next/navigation'
 import { createClient } from '@/utils/supabase/client'
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { AdminSidebar } from '@/components/admin/AdminSidebar'
 import { AdminHeader } from '@/components/admin/AdminHeader'
 
@@ -15,12 +15,17 @@ export default function AdminLayout({
     const router = useRouter()
     const [sidebarOpen, setSidebarOpen] = useState(false)
 
-    const handleLogout = async () => {
+    // Memoize handlers to prevent unnecessary re-renders
+    const handleLogout = useCallback(async () => {
         const supabase = createClient()
         await supabase.auth.signOut()
         router.push('/admin/login')
         router.refresh()
-    }
+    }, [router])
+
+    const handleSetSidebarOpen = useCallback((open: boolean) => {
+        setSidebarOpen(open)
+    }, [])
 
     // Don't show sidebar on login page
     if (pathname === '/admin/login') {
@@ -32,13 +37,13 @@ export default function AdminLayout({
             <div className="flex h-screen overflow-hidden">
                 <AdminSidebar
                     open={sidebarOpen}
-                    setOpen={setSidebarOpen}
+                    setOpen={handleSetSidebarOpen}
                     handleLogout={handleLogout}
                 />
 
                 <div className="flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
                     <AdminHeader
-                        setSidebarOpen={setSidebarOpen}
+                        setSidebarOpen={handleSetSidebarOpen}
                         handleLogout={handleLogout}
                     />
 

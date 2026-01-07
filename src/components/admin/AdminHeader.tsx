@@ -1,6 +1,6 @@
 'use client'
 
-import { Bell, Menu, Search, User, ChevronLeft, Download, Plus, Settings as SettingsIcon } from 'lucide-react'
+import { Bell, Menu, Search, User, ChevronLeft, Download, Plus, Settings as SettingsIcon, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
@@ -14,6 +14,7 @@ import {
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
+import { useNotifications } from '@/hooks/use-notifications'
 
 interface AdminHeaderProps {
     setSidebarOpen: (open: boolean) => void
@@ -23,6 +24,8 @@ interface AdminHeaderProps {
 export function AdminHeader({ setSidebarOpen, handleLogout }: AdminHeaderProps) {
     const pathname = usePathname()
     const pathSegments = pathname.split('/').filter(Boolean).slice(1) // Remove 'admin'
+    const { notifications, loading: notificationsLoading, unreadCount, markAsRead } = useNotifications()
+
 
     const breadcrumbs = {
         products: 'المنتجات',
@@ -34,14 +37,20 @@ export function AdminHeader({ setSidebarOpen, handleLogout }: AdminHeaderProps) 
         edit: 'تعديل',
     }
 
-    // Mock notifications
-    const notifications = [
-        { id: 1, title: 'طلب جديد', message: 'طلب رقم #1234', time: 'منذ 5 دقائق', unread: true },
-        { id: 2, title: 'منتج نفذ', message: 'المنتج "سماعات" نفذ من المخزون', time: 'منذ ساعة', unread: true },
-        { id: 3, title: 'تحديث النظام', message: 'تم تحديث النظام بنجاح', time: 'منذ 3 ساعات', unread: false },
-    ]
+    // Helper function to get time ago in Arabic
+    const getTimeAgo = (dateString: string): string => {
+        const now = new Date()
+        const past = new Date(dateString)
+        const diffMs = now.getTime() - past.getTime()
+        const diffMins = Math.floor(diffMs / 60000)
+        const diffHours = Math.floor(diffMs / 3600000)
+        const diffDays = Math.floor(diffMs / 86400000)
 
-    const unreadCount = notifications.filter(n => n.unread).length
+        if (diffMins < 1) return 'الآن'
+        if (diffMins < 60) return `منذ ${diffMins} دقيقة`
+        if (diffHours < 24) return `منذ ${diffHours} ساعة`
+        return `منذ ${diffDays} يوم`
+    }
 
     return (
         <header className="sticky top-0 z-30 flex h-16 items-center gap-x-4 border-b bg-white/95 backdrop-blur-md px-6 shadow-sm">
@@ -135,26 +144,44 @@ export function AdminHeader({ setSidebarOpen, handleLogout }: AdminHeaderProps) 
                                 )}
                             </DropdownMenuLabel>
                             <DropdownMenuSeparator />
-                            <div className="max-h-[300px] overflow-y-auto">
-                                {notifications.map((notification) => (
-                                    <DropdownMenuItem key={notification.id} className="flex flex-col items-start p-3 cursor-pointer">
-                                        <div className="flex items-start justify-between w-full">
-                                            <div className="flex-1">
-                                                <p className="text-sm font-medium">{notification.title}</p>
-                                                <p className="text-xs text-muted-foreground mt-1">{notification.message}</p>
-                                                <p className="text-xs text-muted-foreground mt-1">{notification.time}</p>
+                            {notificationsLoading ? (
+                                <div className="flex items-center justify-center py-8">
+                                    <Loader2 className="h-6 w-6 animate-spin text-primary" />
+                                </div>
+                            ) : (
+                                <>
+                                    <div className="max-h-[300px] overflow-y-auto">
+                                        {notifications.length === 0 ? (
+                                            <div className="py-8 text-center text-sm text-muted-foreground">
+                                                لا توجد إشعارات
                                             </div>
-                                            {notification.unread && (
-                                                <div className="h-2 w-2 bg-blue-500 rounded-full mt-1" />
-                                            )}
-                                        </div>
+                                        ) : (
+                                            notifications.map((notification) => (
+                                                <DropdownMenuItem
+                                                    key={notification.id}
+                                                    className="flex flex-col items-start p-3 cursor-pointer"
+                                                    onClick={() => markAsRead(notification.id)}
+                                                >
+                                                    <div className="flex items-start justify-between w-full">
+                                                        <div className="flex-1">
+                                                            <p className="text-sm font-medium">{notification.title}</p>
+                                                            <p className="text-xs text-muted-foreground mt-1">{notification.message}</p>
+                                                            <p className="text-xs text-muted-foreground mt-1">{getTimeAgo(notification.created_at)}</p>
+                                                        </div>
+                                                        {!notification.is_read && (
+                                                            <div className="h-2 w-2 bg-blue-500 rounded-full mt-1" />
+                                                        )}
+                                                    </div>
+                                                </DropdownMenuItem>
+                                            ))
+                                        )}
+                                    </div>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem className="text-center text-sm text-primary cursor-pointer justify-center">
+                                        عرض جميع الإشعارات
                                     </DropdownMenuItem>
-                                ))}
-                            </div>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuItem className="text-center text-sm text-primary cursor-pointer justify-center">
-                                عرض جميع الإشعارات
-                            </DropdownMenuItem>
+                                </>
+                            )}
                         </DropdownMenuContent>
                     </DropdownMenu>
 
