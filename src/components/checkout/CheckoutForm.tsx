@@ -257,7 +257,7 @@ export function CheckoutForm({ productId, productPrice, productTitle }: Checkout
                                                 <FormLabel className="font-normal flex-1 flex justify-between items-center cursor-pointer">
                                                     <div className="flex items-center gap-2">
                                                         <Building2 className="h-4 w-4 text-gray-500" />
-                                                        <span className="mr-2 font-medium">توصيل للمكتب (Yalidine/StopDesk)</span>
+                                                        <span className="mr-2 font-medium">توصيل للمكتب</span>
                                                     </div>
                                                     {loadingShipping ? (
                                                         <Loader2 className="h-3 w-3 animate-spin" />
