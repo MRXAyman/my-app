@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label'
 import { Loader2, Store, FileCode, Truck, Settings as SettingsIcon, Save } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { BrandSettingsTab } from '@/components/admin/BrandSettingsTab'
 
 export default function AdminSettingsPage() {
     const [activeTab, setActiveTab] = useState('integrations')
@@ -150,31 +151,7 @@ export default function AdminSettingsPage() {
 
                 {/* General Tab */}
                 {activeTab === 'general' && (
-                    <Card className="border-0 shadow-lg animate-in slide-in-from-bottom-2 duration-300 overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl" />
-                        <CardHeader className="bg-gradient-to-r from-blue-50/50 to-cyan-50/50 border-b relative">
-                            <div className="flex items-center gap-3">
-                                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shadow-lg">
-                                    <Store className="h-6 w-6 text-white" />
-                                </div>
-                                <div>
-                                    <CardTitle className="text-xl">إعدادات المتجر العامة</CardTitle>
-                                    <CardDescription className="mt-1">
-                                        معلومات المتجر والإعدادات الأساسية
-                                    </CardDescription>
-                                </div>
-                            </div>
-                        </CardHeader>
-                        <CardContent className="p-8 relative">
-                            <div className="text-center py-12 text-gray-500">
-                                <Store className="h-16 w-16 mx-auto mb-4 opacity-20" />
-                                <p className="text-sm font-medium">إعدادات المتجر العامة قريباً...</p>
-                                <p className="text-xs text-muted-foreground mt-2">
-                                    سيتم إضافة إعدادات اسم المتجر، الشعار، ومعلومات الاتصال
-                                </p>
-                            </div>
-                        </CardContent>
-                    </Card>
+                    <BrandSettingsTab />
                 )}
 
                 {/* Shipping Tab */}

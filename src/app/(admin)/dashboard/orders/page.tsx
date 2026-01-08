@@ -1,4 +1,4 @@
-import { supabase } from "@/utils/supabase/client"
+import { createClient } from "@/utils/supabase/server"
 import {
     Table,
     TableBody,
@@ -16,6 +16,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 export const dynamic = 'force-dynamic'
 
 async function getOrders() {
+    const supabase = await createClient()
     const { data, error } = await supabase
         .from("orders")
         .select("*")

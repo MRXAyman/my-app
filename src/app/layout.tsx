@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Cairo } from "next/font/google"; // Added Cairo
+import { Geist, Geist_Mono, Tajawal } from "next/font/google";
 import "./globals.css";
 import { FacebookPixel } from "@/components/FacebookPixel";
 import { createClient } from "@/utils/supabase/server";
@@ -13,19 +13,28 @@ const geistMono = Geist_Mono({
     subsets: ["latin"],
 });
 
-const cairo = Cairo({
-    variable: "--font-cairo",
+const tajawal = Tajawal({
+    variable: "--font-tajawal",
     subsets: ["arabic"],
+    weight: ["200", "300", "400", "500", "700", "800", "900"],
     display: "swap",
 });
 
-export const metadata = {
-    title: "DzShop - متجر إلكتروني جزائري",
-    description: "أفضل المنتجات بأسعار تنافسية",
-    icons: {
-        icon: '/favicon.ico',
-    },
-};
+export async function generateMetadata() {
+    const supabase = await createClient()
+    const { data: brandSettings } = await supabase
+        .from('brand_settings')
+        .select('site_name, favicon_url')
+        .single()
+
+    return {
+        title: brandSettings?.site_name || "DzShop - متجر إلكتروني جزائري",
+        description: "أفضل المنتجات بأسعار تنافسية - توصيل سريع لجميع الولايات",
+        icons: {
+            icon: brandSettings?.favicon_url || '/favicon.ico',
+        },
+    }
+}
 
 export default async function RootLayout({
     children,
@@ -39,7 +48,7 @@ export default async function RootLayout({
     return (
         <html lang="ar" dir="rtl" suppressHydrationWarning>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} antialiased bg-gray-50 font-cairo`}
+                className={`${geistSans.variable} ${geistMono.variable} ${tajawal.variable} antialiased bg-gray-50 font-tajawal`}
             >
                 <FacebookPixel pixelId={pixelId} />
                 {children}

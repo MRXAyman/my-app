@@ -35,7 +35,7 @@ const productSchema = z.object({
     title: z.string().min(3, 'العنوان يجب أن يكون 3 أحرف على الأقل'),
     description: z.string().optional(),
     category_id: z.string().min(1, 'يرجى اختيار الصنف'),
-    is_active: z.boolean().default(true),
+    is_active: z.boolean().optional().default(true),
     // For simple products - these will be ignored if variants are used
     price: z.preprocess((val) => val ? Number(val) : 0, z.number().min(0)),
     sale_price: z.preprocess((val) => val ? Number(val) : 0, z.number().min(0)),

@@ -1,54 +1,88 @@
 import Link from 'next/link'
-import { ArrowLeft, Sparkles } from 'lucide-react'
+import { ArrowLeft, Sparkles, TrendingUp, Award, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export function HeroSection() {
     return (
-        <section className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 py-20 px-4 sm:px-6 lg:px-8" dir="rtl">
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-10 left-10 w-96 h-96 bg-yellow-200 rounded-full mix-blend-overlay filter blur-3xl animate-pulse delay-1000"></div>
+        <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-teal-50 py-16 md:py-24 px-4 sm:px-6 lg:px-8" dir="rtl">
+            {/* Subtle Background Pattern */}
+            <div className="absolute inset-0 opacity-[0.03]">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-sky-500 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500 rounded-full blur-3xl"></div>
             </div>
 
-            <div className="relative max-w-7xl mx-auto text-center">
-                <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white mb-6 animate-bounce">
-                    <Sparkles className="w-4 h-4" />
-                    <span className="text-sm font-medium">عروض حصرية ومحدودة</span>
-                </div>
-
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
-                    تسوق بثقة من منزلك
-                    <br />
-                    <span className="text-yellow-200">دفع عند الاستلام</span>
-                </h1>
-
-                <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-                    منتجات عالية الجودة، توصيل سريع لجميع الولايات، وضمان استرجاع المال
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Link href="#products">
-                        <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 font-bold text-lg px-8 py-6 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300">
-                            تصفح المنتجات
-                            <ArrowLeft className="mr-2 h-5 w-5" />
-                        </Button>
-                    </Link>
-                </div>
-
-                {/* Trust Indicators */}
-                <div className="mt-12 grid grid-cols-3 gap-6 max-w-3xl mx-auto">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                        <div className="text-3xl font-bold text-white mb-1">+5000</div>
-                        <div className="text-white/80 text-sm">عميل سعيد</div>
+            <div className="relative max-w-7xl mx-auto">
+                <div className="text-center max-w-4xl mx-auto space-y-8">
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-sky-500/10 to-teal-500/10 backdrop-blur-sm px-5 py-2.5 rounded-full border border-sky-200/50">
+                        <Sparkles className="w-4 h-4 text-sky-600" />
+                        <span className="text-sm font-semibold text-sky-700">عروض حصرية لفترة محدودة</span>
                     </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                        <div className="text-3xl font-bold text-white mb-1">58</div>
-                        <div className="text-white/80 text-sm">ولاية نغطيها</div>
+
+                    {/* Main Heading */}
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                        تسوق بذكاء من منزلك
+                        <br />
+                        <span className="bg-gradient-to-r from-sky-600 to-teal-600 bg-clip-text text-transparent">
+                            دفع عند الاستلام
+                        </span>
+                    </h1>
+
+                    {/* Description */}
+                    <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        منتجات عالية الجودة، توصيل سريع لجميع الولايات، وضمان استرجاع المال
+                    </p>
+
+                    {/* CTA Button */}
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                        <Link href="#products">
+                            <Button
+                                size="lg"
+                                className="bg-gradient-to-r from-sky-600 to-teal-600 hover:from-sky-700 hover:to-teal-700 text-white font-bold text-lg px-10 py-6 rounded-xl shadow-lg shadow-sky-500/25 hover:shadow-xl hover:shadow-sky-500/30 transform hover:scale-105 transition-all duration-300"
+                            >
+                                تصفح المنتجات
+                                <ArrowLeft className="mr-2 h-5 w-5" />
+                            </Button>
+                        </Link>
                     </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                        <div className="text-3xl font-bold text-white mb-1">24/7</div>
-                        <div className="text-white/80 text-sm">خدمة العملاء</div>
+
+                    {/* Trust Stats */}
+                    <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto pt-8">
+                        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-gray-200/50 hover:border-sky-300 transition-all duration-300 hover:shadow-lg">
+                            <div className="flex items-center justify-center mb-2">
+                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-500 to-teal-500 flex items-center justify-center">
+                                    <TrendingUp className="w-5 h-5 text-white" />
+                                </div>
+                            </div>
+                            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-sky-600 to-teal-600 bg-clip-text text-transparent mb-1">
+                                +5000
+                            </div>
+                            <div className="text-gray-600 text-xs md:text-sm font-medium">عميل سعيد</div>
+                        </div>
+
+                        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-gray-200/50 hover:border-sky-300 transition-all duration-300 hover:shadow-lg">
+                            <div className="flex items-center justify-center mb-2">
+                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-500 to-teal-500 flex items-center justify-center">
+                                    <Zap className="w-5 h-5 text-white" />
+                                </div>
+                            </div>
+                            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-sky-600 to-teal-600 bg-clip-text text-transparent mb-1">
+                                58
+                            </div>
+                            <div className="text-gray-600 text-xs md:text-sm font-medium">ولاية نغطيها</div>
+                        </div>
+
+                        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-gray-200/50 hover:border-sky-300 transition-all duration-300 hover:shadow-lg">
+                            <div className="flex items-center justify-center mb-2">
+                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-500 to-teal-500 flex items-center justify-center">
+                                    <Award className="w-5 h-5 text-white" />
+                                </div>
+                            </div>
+                            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-sky-600 to-teal-600 bg-clip-text text-transparent mb-1">
+                                24/7
+                            </div>
+                            <div className="text-gray-600 text-xs md:text-sm font-medium">خدمة العملاء</div>
+                        </div>
                     </div>
                 </div>
             </div>
