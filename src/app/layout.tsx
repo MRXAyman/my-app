@@ -36,22 +36,36 @@ export async function generateMetadata() {
     }
 }
 
+import { FooterWrapper } from "@/components/layout/FooterWrapper";
+
+// ... existing imports ...
+
 export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
     const supabase = await createClient()
-    const { data: settings } = await supabase.from('settings').select('value').eq('key', 'facebook_pixel_id').single()
-    const pixelId = settings?.value || null
+
+    // Fetch settings and brand data in parallel
+    const [settingsResponse, brandResponse] = await Promise.all([
+        supabase.from('settings').select('value').eq('key', 'facebook_pixel_id').single(),
+        supabase.from('brand_settings').select('*').single()
+    ])
+
+    const pixelId = settingsResponse.data?.value || null
+    const brandSettings = brandResponse.data
 
     return (
         <html lang="ar" dir="rtl" suppressHydrationWarning>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} ${tajawal.variable} antialiased bg-gray-50 font-tajawal`}
+                className={`${geistSans.variable} ${geistMono.variable} ${tajawal.variable} antialiased bg-gray-50 font-tajawal min-h-screen flex flex-col`}
             >
                 <FacebookPixel pixelId={pixelId} />
-                {children}
+                <main className="flex-grow">
+                    {children}
+                </main>
+                <FooterWrapper brandSettings={brandSettings} />
             </body>
         </html>
     );

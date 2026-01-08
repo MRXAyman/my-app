@@ -26,6 +26,13 @@ export async function POST(request: NextRequest) {
         const formData = await request.formData()
 
         const siteName = formData.get('site_name') as string
+        const phoneNumber = formData.get('phone_number') as string
+        const email = formData.get('email') as string
+        const facebookUrl = formData.get('facebook_url') as string
+        const instagramUrl = formData.get('instagram_url') as string
+        const tiktokUrl = formData.get('tiktok_url') as string
+        const youtubeUrl = formData.get('youtube_url') as string
+
         const logoFile = formData.get('logo') as File | null
         const faviconFile = formData.get('favicon') as File | null
         const deleteLogo = formData.get('delete_logo') === 'true'
@@ -137,6 +144,12 @@ export async function POST(request: NextRequest) {
                 site_name: siteName,
                 logo_url: logoUrl,
                 favicon_url: faviconUrl,
+                phone_number: phoneNumber,
+                email: email,
+                facebook_url: facebookUrl,
+                instagram_url: instagramUrl,
+                tiktok_url: tiktokUrl,
+                youtube_url: youtubeUrl,
             })
             .eq('id', currentSettings?.id)
             .select()

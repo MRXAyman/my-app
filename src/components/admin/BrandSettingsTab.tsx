@@ -6,13 +6,19 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { ImageUpload } from '@/components/admin/ImageUpload'
-import { Store, Loader2, Save, CheckCircle2 } from 'lucide-react'
+import { Store, Loader2, Save, CheckCircle2, Phone, Mail, Facebook, Instagram, Youtube, Video } from 'lucide-react'
 
 interface BrandSettings {
     id: string
     site_name: string
     logo_url: string | null
     favicon_url: string | null
+    phone_number: string | null
+    email: string | null
+    facebook_url: string | null
+    instagram_url: string | null
+    tiktok_url: string | null
+    youtube_url: string | null
 }
 
 export function BrandSettingsTab() {
@@ -21,6 +27,12 @@ export function BrandSettingsTab() {
     const [success, setSuccess] = useState(false)
 
     const [siteName, setSiteName] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const [email, setEmail] = useState('')
+    const [facebookUrl, setFacebookUrl] = useState('')
+    const [instagramUrl, setInstagramUrl] = useState('')
+    const [tiktokUrl, setTiktokUrl] = useState('')
+    const [youtubeUrl, setYoutubeUrl] = useState('')
     const [logoFile, setLogoFile] = useState<File | null>(null)
     const [faviconFile, setFaviconFile] = useState<File | null>(null)
     const [deleteLogo, setDeleteLogo] = useState(false)
@@ -37,7 +49,14 @@ export function BrandSettingsTab() {
             if (response.ok) {
                 const data = await response.json()
                 setCurrentSettings(data)
+                setCurrentSettings(data)
                 setSiteName(data.site_name || '')
+                setPhoneNumber(data.phone_number || '')
+                setEmail(data.email || '')
+                setFacebookUrl(data.facebook_url || '')
+                setInstagramUrl(data.instagram_url || '')
+                setTiktokUrl(data.tiktok_url || '')
+                setYoutubeUrl(data.youtube_url || '')
                 setDeleteLogo(false)
                 setDeleteFavicon(false)
             }
@@ -55,6 +74,12 @@ export function BrandSettingsTab() {
         try {
             const formData = new FormData()
             formData.append('site_name', siteName)
+            formData.append('phone_number', phoneNumber)
+            formData.append('email', email)
+            formData.append('facebook_url', facebookUrl)
+            formData.append('instagram_url', instagramUrl)
+            formData.append('tiktok_url', tiktokUrl)
+            formData.append('youtube_url', youtubeUrl)
 
             if (logoFile) {
                 formData.append('logo', logoFile)
@@ -139,6 +164,95 @@ export function BrandSettingsTab() {
                     <p className="text-xs text-muted-foreground">
                         سيظهر هذا الاسم في عنوان المتصفح وفي ترويسة الموقع
                     </p>
+                </div>
+
+                {/* Contact Info */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t">
+                    <div className="space-y-3">
+                        <Label htmlFor="phone_number" className="text-sm font-semibold flex items-center gap-2">
+                            <Phone className="w-4 h-4" /> رقم الهاتف
+                        </Label>
+                        <Input
+                            id="phone_number"
+                            placeholder="مثال: 0550123456"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                            className="h-11"
+                            dir="ltr"
+                        />
+                    </div>
+                    <div className="space-y-3">
+                        <Label htmlFor="email" className="text-sm font-semibold flex items-center gap-2">
+                            <Mail className="w-4 h-4" /> البريد الإلكتروني
+                        </Label>
+                        <Input
+                            id="email"
+                            placeholder="مثال: contact@dzshop.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="h-11"
+                            dir="ltr"
+                        />
+                    </div>
+                </div>
+
+                {/* Social Media */}
+                <div className="space-y-4 pt-4 border-t">
+                    <h3 className="text-lg font-semibold text-gray-900">روابط التواصل الاجتماعي</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-3">
+                            <Label htmlFor="facebook" className="text-sm font-semibold flex items-center gap-2">
+                                <Facebook className="w-4 h-4" /> فيسبوك
+                            </Label>
+                            <Input
+                                id="facebook"
+                                placeholder="رابط صفحة الفيسبوك"
+                                value={facebookUrl}
+                                onChange={(e) => setFacebookUrl(e.target.value)}
+                                className="h-11"
+                                dir="ltr"
+                            />
+                        </div>
+                        <div className="space-y-3">
+                            <Label htmlFor="instagram" className="text-sm font-semibold flex items-center gap-2">
+                                <Instagram className="w-4 h-4" /> انستغرام
+                            </Label>
+                            <Input
+                                id="instagram"
+                                placeholder="رابط حساب انستغرام"
+                                value={instagramUrl}
+                                onChange={(e) => setInstagramUrl(e.target.value)}
+                                className="h-11"
+                                dir="ltr"
+                            />
+                        </div>
+                        <div className="space-y-3">
+                            <Label htmlFor="tiktok" className="text-sm font-semibold flex items-center gap-2">
+                                <Video className="w-4 h-4" /> تيك توك
+                            </Label>
+                            <Input
+                                id="tiktok"
+                                placeholder="رابط حساب تيك توك"
+                                value={tiktokUrl}
+                                onChange={(e) => setTiktokUrl(e.target.value)}
+                                className="h-11"
+                                dir="ltr"
+                            />
+                        </div>
+                        <div className="space-y-3">
+                            <Label htmlFor="youtube" className="text-sm font-semibold flex items-center gap-2">
+                                <Youtube className="w-4 h-4" /> يوتيوب
+                            </Label>
+                            <Input
+                                id="youtube"
+                                placeholder="رابط قناة يوتيوب"
+                                value={youtubeUrl}
+                                onChange={(e) => setYoutubeUrl(e.target.value)}
+                                className="h-11"
+                                dir="ltr"
+                            />
+                        </div>
+                    </div>
                 </div>
 
                 {/* Logo Upload */}

@@ -4,6 +4,12 @@ CREATE TABLE IF NOT EXISTS brand_settings (
   site_name TEXT NOT NULL DEFAULT 'DzShop',
   logo_url TEXT,
   favicon_url TEXT,
+  phone_number TEXT,
+  email TEXT,
+  facebook_url TEXT,
+  instagram_url TEXT,
+  tiktok_url TEXT,
+  youtube_url TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
