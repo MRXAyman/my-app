@@ -49,15 +49,17 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 </Link>
 
                 <div className="lg:grid lg:grid-cols-2 lg:gap-x-12 lg:items-start">
+                    {/* Image Gallery - Shows second on mobile, first on desktop */}
+                    <div className="order-2 lg:order-1 mb-8 lg:mb-0">
+                        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                            <ImageGallery images={product.images || []} title={product.title} />
+                        </div>
+                    </div>
+
                     {/* Product Info - Shows first on mobile, second on desktop */}
                     <div className="order-1 lg:order-2">
                         <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                            {/* Image Gallery */}
-                            <ImageGallery images={product.images || []} title={product.title} />
-
                             <h1 className="text-3xl font-bold tracking-tight text-gray-900 mb-2">{product.title}</h1>
-
-
 
                             <div className="mt-4 p-4 bg-primary/5 rounded-lg border border-primary/10 inline-block">
                                 <p className="text-3xl tracking-tight text-primary font-bold">{product.price} د.ج</p>
@@ -100,30 +102,30 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Product Order Form (One-page Checkout) - Shows on desktop only, sticky */}
-                    <div className="hidden lg:block lg:order-1">
-                        <div className="sticky top-10">
-                            <CheckoutForm
-                                productId={product.id}
-                                productPrice={product.price}
-                                productTitle={product.title}
-                            />
+                        {/* Checkout Form - Shows on desktop only, below product info */}
+                        <div className="hidden lg:block mt-8">
+                            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <CheckoutForm
+                                    productId={product.id}
+                                    productPrice={product.price}
+                                    productTitle={product.title}
+                                />
 
-                            {/* Trust Badges */}
-                            <div className="mt-6 grid grid-cols-3 gap-4 text-center text-xs text-gray-500">
-                                <div className="flex flex-col items-center p-2 bg-white rounded shadow-sm">
-                                    <span className="font-bold mb-1 text-gray-900">دفع عند الاستلام</span>
-                                    <span>افحص منتجك قبل الدفع</span>
-                                </div>
-                                <div className="flex flex-col items-center p-وصف المنتج2 bg-white rounded shadow-sm">
-                                    <span className="font-bold mb-1 text-gray-900">توصيل سريع</span>
-                                    <span>3-1 أيام لجميع الولايات</span>
-                                </div>
-                                <div className="flex flex-col items-center p-2 bg-white rounded shadow-sm">
-                                    <span className="font-bold mb-1 text-gray-900">ضمان الجودة</span>
-                                    <span>استبدال في حالة عطب</span>
+                                {/* Trust Badges */}
+                                <div className="mt-6 grid grid-cols-3 gap-4 text-center text-xs text-gray-500">
+                                    <div className="flex flex-col items-center p-2 bg-gray-50 rounded shadow-sm">
+                                        <span className="font-bold mb-1 text-gray-900">دفع عند الاستلام</span>
+                                        <span>افحص منتجك قبل الدفع</span>
+                                    </div>
+                                    <div className="flex flex-col items-center p-2 bg-gray-50 rounded shadow-sm">
+                                        <span className="font-bold mb-1 text-gray-900">توصيل سريع</span>
+                                        <span>3-1 أيام لجميع الولايات</span>
+                                    </div>
+                                    <div className="flex flex-col items-center p-2 bg-gray-50 rounded shadow-sm">
+                                        <span className="font-bold mb-1 text-gray-900">ضمان الجودة</span>
+                                        <span>استبدال في حالة عطب</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

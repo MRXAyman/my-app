@@ -103,7 +103,7 @@ export function ProductForm({ initialData }: ProductFormProps) {
                 description: values.description,
                 category_id: parseInt(values.category_id),
                 images: images,
-                slug: values.title.toLowerCase().replace(/ /g, '-') + '-' + Date.now(),
+                slug: Date.now().toString(),
                 is_active: values.is_active,
                 variants: variants,
             }

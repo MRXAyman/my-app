@@ -1,91 +1,77 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Sparkles, TrendingUp, Award, Zap } from 'lucide-react'
+import { ArrowLeft, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export function HeroSection() {
+    const [scrollY, setScrollY] = useState(0)
+
+    useEffect(() => {
+        const handleScroll = () => setScrollY(window.scrollY)
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
     return (
-        <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-teal-50 py-16 md:py-24 px-4 sm:px-6 lg:px-8" dir="rtl">
-            {/* Subtle Background Pattern */}
-            <div className="absolute inset-0 opacity-[0.03]">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-sky-500 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500 rounded-full blur-3xl"></div>
+        <section className="relative h-[70vh] sm:h-[85vh] lg:h-[90vh] min-h-[500px] sm:min-h-[600px] w-full bg-gradient-to-br from-stone-50 to-stone-100 overflow-hidden" dir="rtl">
+            {/* Background Image with Parallax */}
+            <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-gradient-to-l from-white/40 via-white/60 to-white/80 sm:from-white/30 sm:via-white/50 sm:to-white/70 z-10" />
+                <img
+                    src="/hero_luxury_bag.png"
+                    alt="Luxury Bag Collection"
+                    className="w-full h-full object-contain object-center scale-125 sm:scale-110 opacity-90 transition-transform duration-300"
+                    style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+                />
             </div>
 
-            <div className="relative max-w-7xl mx-auto">
-                <div className="text-center max-w-4xl mx-auto space-y-8">
+            {/* Animated Background Elements */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-20 right-20 w-2 h-2 bg-amber-400 rounded-full animate-pulse opacity-60" />
+                <div className="absolute top-40 right-40 w-3 h-3 bg-stone-400 rounded-full animate-pulse opacity-40" style={{ animationDelay: '1s' }} />
+                <div className="absolute bottom-32 right-32 w-2 h-2 bg-amber-300 rounded-full animate-pulse opacity-50" style={{ animationDelay: '2s' }} />
+            </div>
+
+            {/* Content */}
+            <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center z-20">
+                <div className="w-full max-w-full sm:max-w-2xl glass-effect p-6 sm:p-10 md:p-14 lg:p-16 border-r-2 sm:border-r-4 border-stone-900 shadow-luxury animate-fade-in-up">
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-sky-500/10 to-teal-500/10 backdrop-blur-sm px-5 py-2.5 rounded-full border border-sky-200/50">
-                        <Sparkles className="w-4 h-4 text-sky-600" />
-                        <span className="text-sm font-semibold text-sky-700">عروض حصرية لفترة محدودة</span>
+                    <div className="inline-flex items-center gap-2 bg-stone-900 text-white px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 group hover:bg-stone-800 transition-colors">
+                        <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-amber-400 animate-pulse" />
+                        <span className="text-[10px] sm:text-xs font-medium tracking-widest uppercase">تشكيلة حصرية 2026</span>
                     </div>
 
                     {/* Main Heading */}
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                        تسوق بذكاء من منزلك
-                        <br />
-                        <span className="bg-gradient-to-r from-sky-600 to-teal-600 bg-clip-text text-transparent">
-                            دفع عند الاستلام
-                        </span>
+                    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-stone-900 leading-[1.1] sm:leading-[1.05] mb-4 sm:mb-6 font-cairo">
+                        أناقتك تبدأ من<br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-l from-stone-700 to-stone-900 inline-block animate-gradient">حقيبتك</span>
                     </h1>
 
                     {/* Description */}
-                    <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                        منتجات عالية الجودة، توصيل سريع لجميع الولايات، وضمان استرجاع المال
+                    <p className="text-sm sm:text-lg md:text-xl text-stone-600 mb-6 sm:mb-10 max-w-xl leading-relaxed font-light">
+                        اكتشفي مجموعتنا الجديدة من الحقائب الفاخرة التي تجمع بين التصميم العصري والجودة الاستثنائية
                     </p>
 
                     {/* CTA Button */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                    <div className="flex flex-wrap gap-3 sm:gap-4">
                         <Link href="#products">
-                            <Button
-                                size="lg"
-                                className="bg-gradient-to-r from-sky-600 to-teal-600 hover:from-sky-700 hover:to-teal-700 text-white font-bold text-lg px-10 py-6 rounded-xl shadow-lg shadow-sky-500/25 hover:shadow-xl hover:shadow-sky-500/30 transform hover:scale-105 transition-all duration-300"
-                            >
-                                تصفح المنتجات
-                                <ArrowLeft className="mr-2 h-5 w-5" />
+                            <Button className="bg-stone-900 hover:bg-stone-800 text-white text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-7 h-auto tracking-wide transition-all duration-500 hover:pr-10 sm:hover:pr-12 hover:shadow-2xl group relative overflow-hidden w-full sm:w-auto">
+                                <span className="relative z-10 flex items-center justify-center">
+                                    تسوقي الآن
+                                    <ArrowLeft className="mr-2 sm:mr-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:mr-4 sm:group-hover:mr-5 transition-all duration-500" />
+                                </span>
+                                <div className="absolute inset-0 bg-gradient-to-l from-stone-700 to-stone-900 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             </Button>
                         </Link>
                     </div>
-
-                    {/* Trust Stats */}
-                    <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto pt-8">
-                        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-gray-200/50 hover:border-sky-300 transition-all duration-300 hover:shadow-lg">
-                            <div className="flex items-center justify-center mb-2">
-                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-500 to-teal-500 flex items-center justify-center">
-                                    <TrendingUp className="w-5 h-5 text-white" />
-                                </div>
-                            </div>
-                            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-sky-600 to-teal-600 bg-clip-text text-transparent mb-1">
-                                +5000
-                            </div>
-                            <div className="text-gray-600 text-xs md:text-sm font-medium">عميل سعيد</div>
-                        </div>
-
-                        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-gray-200/50 hover:border-sky-300 transition-all duration-300 hover:shadow-lg">
-                            <div className="flex items-center justify-center mb-2">
-                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-500 to-teal-500 flex items-center justify-center">
-                                    <Zap className="w-5 h-5 text-white" />
-                                </div>
-                            </div>
-                            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-sky-600 to-teal-600 bg-clip-text text-transparent mb-1">
-                                58
-                            </div>
-                            <div className="text-gray-600 text-xs md:text-sm font-medium">ولاية نغطيها</div>
-                        </div>
-
-                        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-gray-200/50 hover:border-sky-300 transition-all duration-300 hover:shadow-lg">
-                            <div className="flex items-center justify-center mb-2">
-                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-500 to-teal-500 flex items-center justify-center">
-                                    <Award className="w-5 h-5 text-white" />
-                                </div>
-                            </div>
-                            <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-sky-600 to-teal-600 bg-clip-text text-transparent mb-1">
-                                24/7
-                            </div>
-                            <div className="text-gray-600 text-xs md:text-sm font-medium">خدمة العملاء</div>
-                        </div>
-                    </div>
                 </div>
             </div>
+
+            {/* Decorative Elements - Hidden on mobile */}
+            <div className="hidden sm:block absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-stone-200/30 to-transparent rounded-full blur-3xl animate-pulse"></div>
+            <div className="hidden sm:block absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-stone-100/40 to-transparent rounded-full blur-3xl" style={{ animationDelay: '1s' }}></div>
         </section>
     )
 }
