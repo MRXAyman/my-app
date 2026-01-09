@@ -19,6 +19,7 @@ export interface Order {
         price: number
         title: string
         image?: string
+        variant_display?: string
     }>
     total_amount: number
     shipping_cost: number

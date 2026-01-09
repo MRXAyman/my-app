@@ -309,6 +309,9 @@ export function OrderDetailsDialog({
                                         )}
                                         <div>
                                             <p className="font-medium">{item.title}</p>
+                                            {item.variant_display && (
+                                                <p className="text-sm text-primary font-medium">{item.variant_display}</p>
+                                            )}
                                             <p className="text-sm text-muted-foreground">الكمية: {item.quantity}</p>
                                         </div>
                                     </div>

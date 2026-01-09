@@ -34,13 +34,23 @@ const formSchema = z.object({
     deliveryType: z.enum(['home', 'desk']),
 })
 
+interface VariantItem {
+    color?: string
+    size?: string
+    price: number
+    sale_price?: number
+    stock: number
+    sku?: string
+}
+
 interface CheckoutFormProps {
     productId: number
     productPrice: number
     productTitle: string
+    selectedVariant?: VariantItem | null
 }
 
-export function CheckoutForm({ productId, productPrice, productTitle }: CheckoutFormProps) {
+export function CheckoutForm({ productId, productPrice, productTitle, selectedVariant }: CheckoutFormProps) {
     const router = useRouter()
     const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -85,6 +95,15 @@ export function CheckoutForm({ productId, productPrice, productTitle }: Checkout
         setIsSubmitting(true)
         const supabase = createClient()
 
+        // Build variant info string for display
+        let variantInfo = ''
+        if (selectedVariant) {
+            const parts = []
+            if (selectedVariant.color) parts.push(`اللون: ${selectedVariant.color}`)
+            if (selectedVariant.size) parts.push(`المقاس: ${selectedVariant.size}`)
+            variantInfo = parts.join(' - ')
+        }
+
         const orderData = {
             customer_info: {
                 name: values.fullName,
@@ -97,7 +116,13 @@ export function CheckoutForm({ productId, productPrice, productTitle }: Checkout
                     product_id: productId,
                     title: productTitle,
                     quantity: 1,
-                    price: productPrice
+                    price: productPrice,
+                    variant: selectedVariant ? {
+                        color: selectedVariant.color,
+                        size: selectedVariant.size,
+                        sku: selectedVariant.sku
+                    } : null,
+                    variant_display: variantInfo || null
                 }
             ],
             shipping_cost: shippingPrice,

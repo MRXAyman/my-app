@@ -26,6 +26,8 @@ export type VariantType = 'simple' | 'colors' | 'sizes' | 'hybrid'
 
 export interface VariantItem {
     color?: string
+    colorHex?: string
+    image?: string
     size?: string
     price: number
     sale_price?: number
@@ -47,6 +49,7 @@ interface ProductVariantsProps {
     basePrice?: number
     baseSalePrice?: number
     baseStock?: number
+    productImages?: string[]
 }
 
 export function ProductVariantsComponent({
@@ -55,6 +58,7 @@ export function ProductVariantsComponent({
     basePrice = 0,
     baseSalePrice,
     baseStock = 0,
+    productImages = [],
 }: ProductVariantsProps) {
     const [variantType, setVariantType] = useState<VariantType>(value?.type || 'simple')
     const [colors, setColors] = useState<string[]>(value?.options.colors || [])
@@ -281,17 +285,18 @@ export function ProductVariantsComponent({
                                 <Table>
                                     <TableHeader>
                                         <TableRow className="bg-gray-50">
-                                            {variantType === 'colors' && (
-                                                <TableHead className="text-right">اللون</TableHead>
+                                            {(variantType === 'colors' || variantType === 'hybrid') && (
+                                                <>
+                                                    <TableHead className="text-right">اللون</TableHead>
+                                                    <TableHead className="text-right">كود اللون (Hex)</TableHead>
+                                                    <TableHead className="text-right">رابط الصورة</TableHead>
+                                                </>
                                             )}
                                             {variantType === 'sizes' && (
                                                 <TableHead className="text-right">المقاس</TableHead>
                                             )}
                                             {variantType === 'hybrid' && (
-                                                <>
-                                                    <TableHead className="text-right">اللون</TableHead>
-                                                    <TableHead className="text-right">المقاس</TableHead>
-                                                </>
+                                                <TableHead className="text-right">المقاس</TableHead>
                                             )}
                                             <TableHead className="text-right">السعر (د.ج)</TableHead>
                                             <TableHead className="text-right">سعر التخفيض</TableHead>
@@ -301,17 +306,82 @@ export function ProductVariantsComponent({
                                     <TableBody>
                                         {variantItems.map((item, index) => (
                                             <TableRow key={index}>
-                                                {variantType === 'colors' && (
-                                                    <TableCell className="font-medium">{item.color}</TableCell>
+                                                {(variantType === 'colors' || variantType === 'hybrid') && (
+                                                    <>
+                                                        <TableCell className="font-medium">{item.color}</TableCell>
+                                                        <TableCell>
+                                                            <div className="flex items-center gap-2">
+                                                                <Input
+                                                                    type="text"
+                                                                    value={item.colorHex || ''}
+                                                                    onChange={(e) =>
+                                                                        handleVariantItemChange(
+                                                                            index,
+                                                                            'colorHex',
+                                                                            e.target.value
+                                                                        )
+                                                                    }
+                                                                    placeholder="#000000"
+                                                                    className="w-28"
+                                                                />
+                                                                <div
+                                                                    className="w-8 h-8 rounded border-2 border-gray-300"
+                                                                    style={{ backgroundColor: item.colorHex || '#cccccc' }}
+                                                                />
+                                                            </div>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            {productImages.length > 0 ? (
+                                                                <div className="flex items-center gap-2">
+                                                                    <Select
+                                                                        value={item.image || 'no-image'}
+                                                                        onValueChange={(value) =>
+                                                                            handleVariantItemChange(
+                                                                                index,
+                                                                                'image',
+                                                                                value === 'no-image' ? '' : value
+                                                                            )
+                                                                        }
+                                                                    >
+                                                                        <SelectTrigger className="w-40 flex-row-reverse">
+                                                                            <SelectValue placeholder="اختر صورة" />
+                                                                        </SelectTrigger>
+                                                                        <SelectContent>
+                                                                            <SelectItem value="no-image" className="justify-end">
+                                                                                بدون صورة
+                                                                            </SelectItem>
+                                                                            {productImages.map((img, imgIndex) => (
+                                                                                <SelectItem
+                                                                                    key={imgIndex}
+                                                                                    value={img}
+                                                                                    className="justify-end"
+                                                                                >
+                                                                                    صورة {imgIndex + 1}
+                                                                                </SelectItem>
+                                                                            ))}
+                                                                        </SelectContent>
+                                                                    </Select>
+                                                                    {item.image && (
+                                                                        <img
+                                                                            src={item.image}
+                                                                            alt="معاينة"
+                                                                            className="w-12 h-12 object-cover rounded border"
+                                                                        />
+                                                                    )}
+                                                                </div>
+                                                            ) : (
+                                                                <p className="text-sm text-muted-foreground">
+                                                                    ارفع صور المنتج أولاً
+                                                                </p>
+                                                            )}
+                                                        </TableCell>
+                                                    </>
                                                 )}
                                                 {variantType === 'sizes' && (
                                                     <TableCell className="font-medium">{item.size}</TableCell>
                                                 )}
                                                 {variantType === 'hybrid' && (
-                                                    <>
-                                                        <TableCell className="font-medium">{item.color}</TableCell>
-                                                        <TableCell className="font-medium">{item.size}</TableCell>
-                                                    </>
+                                                    <TableCell className="font-medium">{item.size}</TableCell>
                                                 )}
                                                 <TableCell>
                                                     <Input

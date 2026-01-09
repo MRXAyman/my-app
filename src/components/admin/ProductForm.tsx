@@ -270,6 +270,7 @@ export function ProductForm({ initialData }: ProductFormProps) {
                                 basePrice={form.watch('price') || 0}
                                 baseSalePrice={form.watch('sale_price')}
                                 baseStock={form.watch('stock') || 0}
+                                productImages={images}
                             />
 
                             {/* Simple Product Fields */}
