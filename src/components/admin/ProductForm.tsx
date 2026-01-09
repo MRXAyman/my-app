@@ -30,6 +30,8 @@ import {
 import { createClient } from '@/utils/supabase/client'
 import { MultiImageUpload } from '@/components/admin/MultiImageUpload'
 import { ProductVariantsComponent, ProductVariants } from '@/components/admin/ProductVariants'
+import { BundleOffersComponent } from '@/components/admin/BundleOffers'
+import { BundleOffer } from '@/types/bundle'
 
 const productSchema = z.object({
     title: z.string().min(3, 'العنوان يجب أن يكون 3 أحرف على الأقل'),
@@ -52,6 +54,7 @@ export function ProductForm({ initialData }: ProductFormProps) {
     const [images, setImages] = useState<string[]>(initialData?.images || [])
     const [categories, setCategories] = useState<{ id: number; name: string }[]>([])
     const [variants, setVariants] = useState<ProductVariants | null>(initialData?.variants || null)
+    const [bundleOffers, setBundleOffers] = useState<BundleOffer[]>(initialData?.bundle_offers || [])
     const supabase = createClient()
 
     const form = useForm<z.infer<typeof productSchema>>({
@@ -106,6 +109,7 @@ export function ProductForm({ initialData }: ProductFormProps) {
                 slug: Date.now().toString(),
                 is_active: values.is_active,
                 variants: variants,
+                bundle_offers: bundleOffers.length > 0 ? bundleOffers : null,
             }
 
             // For simple products, use the form values
@@ -319,6 +323,17 @@ export function ProductForm({ initialData }: ProductFormProps) {
                                     />
                                 </div>
                             )}
+
+                            {/* Bundle Offers */}
+                            <BundleOffersComponent
+                                value={bundleOffers}
+                                onChange={setBundleOffers}
+                                basePrice={
+                                    variants && variants.items.length > 0
+                                        ? Math.min(...variants.items.map(item => item.sale_price || item.price))
+                                        : (form.watch('price') || 0)
+                                }
+                            />
 
                             {/* Actions */}
                             <div className="flex justify-end gap-3 pt-6 border-t">

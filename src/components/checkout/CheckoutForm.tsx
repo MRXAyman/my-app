@@ -23,6 +23,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { wilayas } from '@/lib/algeria-data'
 import { useShipping } from '@/hooks/use-shipping'
 import { createClient } from '@/utils/supabase/client'
+import { BundleOffer, BundleItem } from '@/types/bundle'
 
 const phoneRegex = /^(05|06|07)[0-9]{8}$/
 
@@ -48,9 +49,11 @@ interface CheckoutFormProps {
     productPrice: number
     productTitle: string
     selectedVariant?: VariantItem | null
+    selectedBundle?: BundleOffer | null
+    bundleItems?: BundleItem[]
 }
 
-export function CheckoutForm({ productId, productPrice, productTitle, selectedVariant }: CheckoutFormProps) {
+export function CheckoutForm({ productId, productPrice, productTitle, selectedVariant, selectedBundle, bundleItems = [] }: CheckoutFormProps) {
     const router = useRouter()
     const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -104,14 +107,37 @@ export function CheckoutForm({ productId, productPrice, productTitle, selectedVa
             variantInfo = parts.join(' - ')
         }
 
-        const orderData = {
-            customer_info: {
-                name: values.fullName,
-                phone: values.phone,
-                wilaya: wilayas.find(w => w.code === values.wilaya)?.name || values.wilaya,
-                commune: values.commune,
-            },
-            items: [
+        // Build order items based on bundle or single product
+        let orderItems
+        if (selectedBundle && bundleItems.length > 0) {
+            // Bundle order - create separate items for each bundle item
+            orderItems = bundleItems.map((item, index) => {
+                const parts = []
+                if (item.color) parts.push(`اللون: ${item.color}`)
+                if (item.size) parts.push(`المقاس: ${item.size}`)
+                const itemVariantInfo = parts.join(' - ')
+
+                return {
+                    product_id: productId,
+                    title: `${productTitle} (${selectedBundle.title || `عرض ${selectedBundle.quantity} قطع`} - القطعة ${index + 1})`,
+                    quantity: 1,
+                    price: productPrice, // Individual price for reference
+                    variant: item.color || item.size ? {
+                        color: item.color,
+                        size: item.size
+                    } : null,
+                    variant_display: itemVariantInfo || null,
+                    bundle_info: {
+                        bundle_title: selectedBundle.title,
+                        bundle_quantity: selectedBundle.quantity,
+                        bundle_price: selectedBundle.price,
+                        item_index: index + 1
+                    }
+                }
+            })
+        } else {
+            // Single product order
+            orderItems = [
                 {
                     product_id: productId,
                     title: productTitle,
@@ -124,7 +150,17 @@ export function CheckoutForm({ productId, productPrice, productTitle, selectedVa
                     } : null,
                     variant_display: variantInfo || null
                 }
-            ],
+            ]
+        }
+
+        const orderData = {
+            customer_info: {
+                name: values.fullName,
+                phone: values.phone,
+                wilaya: wilayas.find(w => w.code === values.wilaya)?.name || values.wilaya,
+                commune: values.commune,
+            },
+            items: orderItems,
             shipping_cost: shippingPrice,
             total_amount: totalPrice,
             delivery_type: values.deliveryType,

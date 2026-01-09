@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { ImageGallery } from "@/components/product/ImageGallery"
 import { ProductVariantSelector } from "@/components/product/ProductVariantSelector"
 import { CheckoutForm } from "@/components/checkout/CheckoutForm"
+import { BundleOfferSelector } from "@/components/product/BundleOfferSelector"
+import { BundleOffer, BundleItem } from "@/types/bundle"
 
 interface VariantItem {
     color?: string
@@ -31,6 +33,7 @@ interface Product {
     variants?: ProductVariants | null
     stock: number
     in_stock: boolean
+    bundle_offers?: BundleOffer[] | null
 }
 
 interface ProductPageClientProps {
@@ -40,6 +43,8 @@ interface ProductPageClientProps {
 export function ProductPageClient({ product }: ProductPageClientProps) {
     const [selectedVariant, setSelectedVariant] = useState<VariantItem | null>(null)
     const [currentImage, setCurrentImage] = useState<string | null>(null)
+    const [selectedBundle, setSelectedBundle] = useState<BundleOffer | null>(null)
+    const [bundleItems, setBundleItems] = useState<BundleItem[]>([])
 
     // Check if product has variants
     const hasVariants = product.variants && product.variants.items && product.variants.items.length > 0
@@ -55,7 +60,11 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
     let displayPrice = product.price
     let originalPrice = null
 
-    if (hasVariants && selectedVariant) {
+    if (selectedBundle) {
+        // Use bundle price
+        displayPrice = selectedBundle.price
+        originalPrice = product.price * selectedBundle.quantity
+    } else if (hasVariants && selectedVariant) {
         // Use variant price
         displayPrice = selectedVariant.sale_price && selectedVariant.sale_price > 0
             ? selectedVariant.sale_price
@@ -79,6 +88,16 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
     // Handle image change when variant is selected
     const handleImageChange = (image: string | null) => {
         setCurrentImage(image)
+    }
+
+    // Handle bundle selection
+    const handleBundleSelect = (bundle: BundleOffer | null, items: BundleItem[]) => {
+        setSelectedBundle(bundle)
+        setBundleItems(items)
+        // Reset single variant selection when bundle is selected
+        if (bundle) {
+            setSelectedVariant(null)
+        }
     }
 
     return (
@@ -108,10 +127,21 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
                     </div>
 
                     {/* Variant Selector */}
-                    {hasVariants && product.variants && (
+                    {hasVariants && product.variants && !selectedBundle && (
                         <ProductVariantSelector
                             variants={product.variants}
                             onVariantChange={setSelectedVariant}
+                            onImageChange={handleImageChange}
+                        />
+                    )}
+
+                    {/* Bundle Offers Selector */}
+                    {product.bundle_offers && product.bundle_offers.length > 0 && (
+                        <BundleOfferSelector
+                            bundleOffers={product.bundle_offers}
+                            variants={product.variants}
+                            basePrice={product.price}
+                            onBundleSelect={handleBundleSelect}
                             onImageChange={handleImageChange}
                         />
                     )}
@@ -149,6 +179,8 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
                             productPrice={displayPrice}
                             productTitle={product.title}
                             selectedVariant={selectedVariant}
+                            selectedBundle={selectedBundle}
+                            bundleItems={bundleItems}
                         />
 
                         {/* Trust Badges */}
@@ -177,6 +209,8 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
                             productPrice={displayPrice}
                             productTitle={product.title}
                             selectedVariant={selectedVariant}
+                            selectedBundle={selectedBundle}
+                            bundleItems={bundleItems}
                         />
 
                         {/* Trust Badges */}

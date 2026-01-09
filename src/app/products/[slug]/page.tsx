@@ -22,7 +22,7 @@ async function getProduct(slug: string) {
     const supabase = await createClient()
     const { data, error } = await supabase
         .from("products")
-        .select("id, title, price, sale_price, description, images, variants, stock, in_stock")
+        .select("id, title, price, sale_price, description, images, variants, stock, in_stock, bundle_offers")
         .eq("slug", slug)
         .single()
 
