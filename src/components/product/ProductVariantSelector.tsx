@@ -30,8 +30,8 @@ export function ProductVariantSelector({ variants, onVariantChange, onImageChang
     const [selectedSize, setSelectedSize] = useState<string | undefined>()
 
     // Get unique colors and sizes
-    const colors = Array.from(new Set(variants.items.map(item => item.color).filter(Boolean)))
-    const sizes = Array.from(new Set(variants.items.map(item => item.size).filter(Boolean)))
+    const colors = Array.from(new Set(variants.items.map(item => item.color).filter((item): item is string => Boolean(item))))
+    const sizes = Array.from(new Set(variants.items.map(item => item.size).filter((item): item is string => Boolean(item))))
 
     // Get color info (hex and image)
     const getColorInfo = (colorName: string) => {
