@@ -31,6 +31,9 @@ export interface Order {
     delivery_location?: string
     notes?: string
     last_status_update?: string
+    is_archived?: boolean
+    archived_at?: string
+    archived_by?: string
 }
 
 interface UseOrdersOptions {
@@ -41,6 +44,7 @@ interface UseOrdersOptions {
     dateFrom?: string
     dateTo?: string
     searchQuery?: string
+    showArchived?: boolean
 }
 
 export function useOrders(options: UseOrdersOptions = {}) {
@@ -59,6 +63,11 @@ export function useOrders(options: UseOrdersOptions = {}) {
                 .from('orders')
                 .select('*')
                 .order('created_at', { ascending: false })
+
+            // Filter archived orders (default: show only non-archived)
+            if (!options.showArchived) {
+                query = query.eq('is_archived', false)
+            }
 
             // Apply filters
             if (options.status) {
@@ -123,7 +132,7 @@ export function useOrders(options: UseOrdersOptions = {}) {
         return () => {
             supabase.removeChannel(channel)
         }
-    }, [options.status, options.wilaya, options.shippingCompany, options.deliveryLocation, options.dateFrom, options.dateTo, options.searchQuery])
+    }, [options.status, options.wilaya, options.shippingCompany, options.deliveryLocation, options.dateFrom, options.dateTo, options.searchQuery, options.showArchived])
 
     const updateOrderStatus = async (orderId: number, newStatus: string) => {
         const supabase = createClient()
@@ -202,12 +211,82 @@ export function useOrders(options: UseOrdersOptions = {}) {
         ))
     }
 
+    const archiveOrder = async (orderId: number, archivedBy: string = 'admin') => {
+        const supabase = createClient()
+
+        const { error } = await supabase
+            .from('orders')
+            .update({
+                is_archived: true,
+                archived_at: new Date().toISOString(),
+                archived_by: archivedBy
+            })
+            .eq('id', orderId)
+
+        if (error) {
+            throw new Error(error.message)
+        }
+
+        // Remove from list if not showing archived
+        if (!options.showArchived) {
+            setOrders(prev => prev.filter(order => order.id !== orderId))
+        } else {
+            // Optimistic update
+            setOrders(prev => prev.map(order =>
+                order.id === orderId
+                    ? {
+                        ...order,
+                        is_archived: true,
+                        archived_at: new Date().toISOString(),
+                        archived_by: archivedBy
+                    }
+                    : order
+            ))
+        }
+    }
+
+    const unarchiveOrder = async (orderId: number) => {
+        const supabase = createClient()
+
+        const { error } = await supabase
+            .from('orders')
+            .update({
+                is_archived: false,
+                archived_at: null,
+                archived_by: null
+            })
+            .eq('id', orderId)
+
+        if (error) {
+            throw new Error(error.message)
+        }
+
+        // Remove from list if showing only archived
+        if (options.showArchived) {
+            setOrders(prev => prev.filter(order => order.id !== orderId))
+        } else {
+            // Optimistic update
+            setOrders(prev => prev.map(order =>
+                order.id === orderId
+                    ? {
+                        ...order,
+                        is_archived: false,
+                        archived_at: undefined,
+                        archived_by: undefined
+                    }
+                    : order
+            ))
+        }
+    }
+
     return {
         orders,
         loading,
         error,
         updateOrderStatus,
         addCallAttempt,
-        updateOrderNotes
+        updateOrderNotes,
+        archiveOrder,
+        unarchiveOrder
     }
 }

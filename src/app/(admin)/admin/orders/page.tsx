@@ -18,9 +18,12 @@ import { OrderDetailsDialog } from "@/components/admin/OrderDetailsDialog"
 import { OrderStatusUpdater } from "@/components/admin/OrderStatusUpdater"
 import { OrderFilters } from "@/components/admin/OrderFilters"
 import { DuplicateOrderAlert } from "@/components/admin/DuplicateOrderAlert"
+import { ArchiveOrderButton } from "@/components/admin/ArchiveOrderButton"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Switch } from "@/components/ui/switch"
+import { Label } from "@/components/ui/label"
 import {
     Eye,
     Package,
@@ -31,7 +34,8 @@ import {
     Download,
     Phone,
     PhoneOff,
-    Printer
+    Printer,
+    Archive
 } from "lucide-react"
 import Link from "next/link"
 import { useSearchParams } from 'next/navigation'
@@ -44,10 +48,12 @@ export default function AdminOrdersPage() {
     const [selectedOrder, setSelectedOrder] = useState<Order | null>(null)
     const [dialogOpen, setDialogOpen] = useState(false)
     const [filters, setFilters] = useState({})
+    const [showArchived, setShowArchived] = useState(false)
 
-    const { orders, loading, updateOrderStatus, updateOrderNotes } = useOrders({
+    const { orders, loading, updateOrderStatus, updateOrderNotes, archiveOrder, unarchiveOrder } = useOrders({
         status: statusFilter,
         searchQuery,
+        showArchived,
         ...filters
     })
 
@@ -110,10 +116,24 @@ export default function AdminOrdersPage() {
                     </h2>
                     <p className="text-muted-foreground mt-1">نظام متقدم لإدارة الطلبات والمتابعة</p>
                 </div>
-                <Button variant="outline" className="gap-2" onClick={handleExport}>
-                    <Download className="h-4 w-4" />
-                    تصدير
-                </Button>
+                <div className="flex items-center gap-4">
+                    {/* Archive Toggle */}
+                    <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg border shadow-sm">
+                        <Archive className="h-4 w-4 text-gray-600" />
+                        <Label htmlFor="archive-toggle" className="text-sm font-medium cursor-pointer">
+                            عرض المؤرشفة
+                        </Label>
+                        <Switch
+                            id="archive-toggle"
+                            checked={showArchived}
+                            onCheckedChange={setShowArchived}
+                        />
+                    </div>
+                    <Button variant="outline" className="gap-2" onClick={handleExport}>
+                        <Download className="h-4 w-4" />
+                        تصدير
+                    </Button>
+                </div>
             </div>
 
             {/* KPI Cards */}
@@ -126,8 +146,8 @@ export default function AdminOrdersPage() {
                         <Button
                             variant={statusFilter === tab.value || (!statusFilter && tab.value === '') ? "default" : "outline"}
                             className={`gap-2 whitespace-nowrap ${statusFilter === tab.value || (!statusFilter && tab.value === '')
-                                    ? 'bg-gradient-to-r from-primary to-primary/90 shadow-lg shadow-primary/25'
-                                    : ''
+                                ? 'bg-gradient-to-r from-primary to-primary/90 shadow-lg shadow-primary/25'
+                                : ''
                                 }`}
                         >
                             <tab.icon className="h-4 w-4" />
@@ -135,8 +155,8 @@ export default function AdminOrdersPage() {
                             <Badge
                                 variant="secondary"
                                 className={`${statusFilter === tab.value || (!statusFilter && tab.value === '')
-                                        ? 'bg-white/20 text-white border-white/30'
-                                        : 'bg-gray-100'
+                                    ? 'bg-white/20 text-white border-white/30'
+                                    : 'bg-gray-100'
                                     }`}
                             >
                                 {tab.count}
@@ -264,6 +284,13 @@ export default function AdminOrdersPage() {
                                                 >
                                                     <Phone className="h-4 w-4" />
                                                 </Button>
+                                                <ArchiveOrderButton
+                                                    orderId={order.id}
+                                                    isArchived={order.is_archived}
+                                                    onArchive={archiveOrder}
+                                                    onUnarchive={unarchiveOrder}
+                                                    showLabel={false}
+                                                />
                                             </div>
                                         </TableCell>
                                     </TableRow>
