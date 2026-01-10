@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Tajawal } from "next/font/google";
 import "./globals.css";
 import { FacebookPixel } from "@/components/FacebookPixel";
 import { createClient } from "@/utils/supabase/server";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -66,6 +67,7 @@ export default async function RootLayout({
                     {children}
                 </main>
                 <FooterWrapper brandSettings={brandSettings} />
+                <SpeedInsights />
             </body>
         </html>
     );
