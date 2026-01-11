@@ -11,7 +11,13 @@ ADD COLUMN IF NOT EXISTS call_notes TEXT,
 ADD COLUMN IF NOT EXISTS shipping_company TEXT,
 ADD COLUMN IF NOT EXISTS delivery_location TEXT,
 ADD COLUMN IF NOT EXISTS notes TEXT,
-ADD COLUMN IF NOT EXISTS last_status_update TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW());
+ADD COLUMN IF NOT EXISTS last_status_update TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()),
+-- EcoTrack Shipping Integration Fields
+ADD COLUMN IF NOT EXISTS tracking_number TEXT,
+ADD COLUMN IF NOT EXISTS courier TEXT,
+ADD COLUMN IF NOT EXISTS shipment_status TEXT,
+ADD COLUMN IF NOT EXISTS shipped_at TIMESTAMP WITH TIME ZONE,
+ADD COLUMN IF NOT EXISTS ecotrack_order_id TEXT;
 
 -- Add index for phone number duplicate detection
 CREATE INDEX IF NOT EXISTS idx_orders_phone_created 

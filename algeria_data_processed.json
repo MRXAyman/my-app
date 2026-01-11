@@ -1,0 +1,6572 @@
+[
+  {
+    "code": 10,
+    "name_ar": "البويرة",
+    "name_ascii": "Bouira",
+    "communes": [
+      {
+        "name_ar": "عين العلوي",
+        "name_ascii": "Ain Laloui"
+      },
+      {
+        "name_ar": "الحجرة الزرقاء",
+        "name_ascii": "Hadjera Zerga"
+      },
+      {
+        "name_ar": "مزدور",
+        "name_ascii": "Mezdour"
+      },
+      {
+        "name_ar": "تاقديت",
+        "name_ascii": "Taguedite"
+      },
+      {
+        "name_ar": "ريدان",
+        "name_ascii": "Ridane"
+      },
+      {
+        "name_ar": "المعمورة",
+        "name_ascii": "Maamora"
+      },
+      {
+        "name_ar": "الحاكمية",
+        "name_ascii": "El-Hakimia"
+      },
+      {
+        "name_ar": "أهل القصر",
+        "name_ascii": "Ahl El Ksar"
+      },
+      {
+        "name_ar": "ديرة",
+        "name_ascii": "Dirah"
+      },
+      {
+        "name_ar": "الدشمية",
+        "name_ascii": "Dechmia"
+      },
+      {
+        "name_ar": "بشلول",
+        "name_ascii": "Bechloul"
+      },
+      {
+        "name_ar": "آث  منصور",
+        "name_ascii": "Ath Mansour"
+      },
+      {
+        "name_ar": "سحاريج",
+        "name_ascii": "Saharidj"
+      },
+      {
+        "name_ar": "العجيبة",
+        "name_ascii": "El Adjiba"
+      },
+      {
+        "name_ar": "الأسنام",
+        "name_ascii": "El Asnam"
+      },
+      {
+        "name_ar": "أمشدالة",
+        "name_ascii": "M Chedallah"
+      },
+      {
+        "name_ar": "برج أوخريص",
+        "name_ascii": "Bordj Okhriss"
+      },
+      {
+        "name_ar": "سور الغزلان",
+        "name_ascii": "Sour El Ghozlane"
+      },
+      {
+        "name_ar": "حنيف",
+        "name_ascii": "Hanif"
+      },
+      {
+        "name_ar": "شرفة",
+        "name_ascii": "Chorfa"
+      },
+      {
+        "name_ar": "أولاد راشد",
+        "name_ascii": "Ouled Rached"
+      },
+      {
+        "name_ar": "عين الحجر",
+        "name_ascii": "Ain El Hadjar"
+      },
+      {
+        "name_ar": "أغبالو",
+        "name_ascii": "Aghbalou"
+      },
+      {
+        "name_ar": "روراوة",
+        "name_ascii": "Raouraoua"
+      },
+      {
+        "name_ar": "الخبوزية",
+        "name_ascii": "El Khabouzia"
+      },
+      {
+        "name_ar": "بئر غبالو",
+        "name_ascii": "Bir Ghbalou"
+      },
+      {
+        "name_ar": "البويرة",
+        "name_ascii": "Bouira"
+      },
+      {
+        "name_ar": "عين الترك",
+        "name_ascii": "Ain Turk"
+      },
+      {
+        "name_ar": "أيت لعزيز",
+        "name_ascii": "Ait Laaziz"
+      },
+      {
+        "name_ar": "عين بسام",
+        "name_ascii": "Ain-Bessem"
+      },
+      {
+        "name_ar": "المقراني",
+        "name_ascii": "El-Mokrani"
+      },
+      {
+        "name_ar": "سوق الخميس",
+        "name_ascii": "Souk El Khemis"
+      },
+      {
+        "name_ar": "أعمر",
+        "name_ascii": "Aomar"
+      },
+      {
+        "name_ar": "جباحية",
+        "name_ascii": "Djebahia"
+      },
+      {
+        "name_ar": "الهاشمية",
+        "name_ascii": "El Hachimia"
+      },
+      {
+        "name_ar": "حيزر",
+        "name_ascii": "Haizer"
+      },
+      {
+        "name_ar": "تاغزوت",
+        "name_ascii": "Taghzout"
+      },
+      {
+        "name_ar": "بودربالة",
+        "name_ascii": "Bouderbala"
+      },
+      {
+        "name_ar": "بوكرم",
+        "name_ascii": "Boukram"
+      },
+      {
+        "name_ar": "قرومة",
+        "name_ascii": "Guerrouma"
+      },
+      {
+        "name_ar": "الأخضرية",
+        "name_ascii": "Lakhdaria"
+      },
+      {
+        "name_ar": "معلة",
+        "name_ascii": "Maala"
+      },
+      {
+        "name_ar": "قادرية",
+        "name_ascii": "Kadiria"
+      },
+      {
+        "name_ar": "زبربر",
+        "name_ascii": "Z'barbar (El Isseri )"
+      },
+      {
+        "name_ar": "وادي البردي",
+        "name_ascii": "Oued El Berdi"
+      }
+    ]
+  },
+  {
+    "code": 11,
+    "name_ar": "تمنراست",
+    "name_ascii": "Tamanrasset",
+    "communes": [
+      {
+        "name_ar": "تاظروك",
+        "name_ascii": "Tazrouk"
+      },
+      {
+        "name_ar": "ابلسة",
+        "name_ascii": "Abelsa"
+      },
+      {
+        "name_ar": "تمنراست",
+        "name_ascii": "Tamanrasset"
+      },
+      {
+        "name_ar": "عين امقل",
+        "name_ascii": "Ain Amguel"
+      },
+      {
+        "name_ar": "أدلس",
+        "name_ascii": "Idles"
+      }
+    ]
+  },
+  {
+    "code": 12,
+    "name_ar": "تبسة",
+    "name_ascii": "Tébessa",
+    "communes": [
+      {
+        "name_ar": "الحويجبات",
+        "name_ascii": "El-Houidjbet"
+      },
+      {
+        "name_ar": "العوينات",
+        "name_ascii": "El-Aouinet"
+      },
+      {
+        "name_ar": "فركان",
+        "name_ascii": "Ferkane"
+      },
+      {
+        "name_ar": "نقرين",
+        "name_ascii": "Negrine"
+      },
+      {
+        "name_ar": "بئر مقدم",
+        "name_ascii": "Bir Mokkadem"
+      },
+      {
+        "name_ar": "بئر الذهب",
+        "name_ascii": "Bir Dheheb"
+      },
+      {
+        "name_ar": "صفصاف الوسرى",
+        "name_ascii": "Saf Saf El Ouesra"
+      },
+      {
+        "name_ar": "قريقر",
+        "name_ascii": "Guorriguer"
+      },
+      {
+        "name_ar": "بكارية",
+        "name_ascii": "Bekkaria"
+      },
+      {
+        "name_ar": "بولحاف الدير",
+        "name_ascii": "Boulhaf Dyr"
+      },
+      {
+        "name_ar": "أم علي",
+        "name_ascii": "Oum Ali"
+      },
+      {
+        "name_ar": "بوخضرة",
+        "name_ascii": "Boukhadra"
+      },
+      {
+        "name_ar": "الماء الابيض",
+        "name_ascii": "El Malabiod"
+      },
+      {
+        "name_ar": "الونزة",
+        "name_ascii": "Ouenza"
+      },
+      {
+        "name_ar": "المريج",
+        "name_ascii": "El Meridj"
+      },
+      {
+        "name_ar": "عين الزرقاء",
+        "name_ascii": "Ain Zerga"
+      },
+      {
+        "name_ar": "سطح قنطيس",
+        "name_ascii": "Stah Guentis"
+      },
+      {
+        "name_ar": "العقلة",
+        "name_ascii": "El Ogla"
+      },
+      {
+        "name_ar": "المزرعة",
+        "name_ascii": "El Mezeraa"
+      },
+      {
+        "name_ar": "بجن",
+        "name_ascii": "Bedjene"
+      },
+      {
+        "name_ar": "مرسط",
+        "name_ascii": "Morsott"
+      },
+      {
+        "name_ar": "ثليجان",
+        "name_ascii": "Telidjen"
+      },
+      {
+        "name_ar": "الشريعة",
+        "name_ascii": "Cheria"
+      },
+      {
+        "name_ar": "العقلة المالحة",
+        "name_ascii": "El Ogla El Malha"
+      },
+      {
+        "name_ar": "بئر العاتر",
+        "name_ascii": "Bir-El-Ater"
+      },
+      {
+        "name_ar": "تبسة",
+        "name_ascii": "Tebessa"
+      },
+      {
+        "name_ar": "الحمامات",
+        "name_ascii": "Hammamet"
+      },
+      {
+        "name_ar": "الكويف",
+        "name_ascii": "El Kouif"
+      }
+    ]
+  },
+  {
+    "code": 13,
+    "name_ar": "تلمسان",
+    "name_ascii": "Tlemcen",
+    "communes": [
+      {
+        "name_ar": "باب العسة",
+        "name_ascii": "Bab El Assa"
+      },
+      {
+        "name_ar": "تيرني بني هديل",
+        "name_ascii": "Terny Beni Hediel"
+      },
+      {
+        "name_ar": "منصورة",
+        "name_ascii": "Mansourah"
+      },
+      {
+        "name_ar": "بني مستر",
+        "name_ascii": "Beni Mester"
+      },
+      {
+        "name_ar": "عين غرابة",
+        "name_ascii": "Ain Ghoraba"
+      },
+      {
+        "name_ar": "شتوان",
+        "name_ascii": "Chetouane"
+      },
+      {
+        "name_ar": "عمير",
+        "name_ascii": "Amieur"
+      },
+      {
+        "name_ar": "عين فزة",
+        "name_ascii": "Ain Fezza"
+      },
+      {
+        "name_ar": "هنين",
+        "name_ascii": "Honnaine"
+      },
+      {
+        "name_ar": "بني خلاد",
+        "name_ascii": "Beni Khellad"
+      },
+      {
+        "name_ar": "سيدي الجيلالي",
+        "name_ascii": "Sidi Djillali"
+      },
+      {
+        "name_ar": "البويهي",
+        "name_ascii": "Bouihi"
+      },
+      {
+        "name_ar": "ندرومة",
+        "name_ascii": "Nedroma"
+      },
+      {
+        "name_ar": "مسيردة الفواقة",
+        "name_ascii": "M'sirda Fouaga"
+      },
+      {
+        "name_ar": "مرسى بن مهيدي",
+        "name_ascii": "Marsa Ben M'hidi"
+      },
+      {
+        "name_ar": "سيدي مجاهد",
+        "name_ascii": "Sidi Medjahed"
+      },
+      {
+        "name_ar": "بني بوسعيد",
+        "name_ascii": "Beni Boussaid"
+      },
+      {
+        "name_ar": "سبدو",
+        "name_ascii": "Sebdou"
+      },
+      {
+        "name_ar": "القور",
+        "name_ascii": "El Gor"
+      },
+      {
+        "name_ar": "العريشة",
+        "name_ascii": "El Aricha"
+      },
+      {
+        "name_ar": "بوحلو",
+        "name_ascii": "Bouhlou"
+      },
+      {
+        "name_ar": "مغنية",
+        "name_ascii": "Maghnia"
+      },
+      {
+        "name_ar": "حمام بوغرارة",
+        "name_ascii": "Hammam Boughrara"
+      },
+      {
+        "name_ar": "زناتة",
+        "name_ascii": "Zenata"
+      },
+      {
+        "name_ar": "أولاد رياح",
+        "name_ascii": "Ouled Riyah"
+      },
+      {
+        "name_ar": "الحناية",
+        "name_ascii": "Hennaya"
+      },
+      {
+        "name_ar": "سيدي العبدلي",
+        "name_ascii": "Sidi Abdelli"
+      },
+      {
+        "name_ar": "سوق الثلاثاء",
+        "name_ascii": "Souk Tleta"
+      },
+      {
+        "name_ar": "بن سكران",
+        "name_ascii": "Bensekrane"
+      },
+      {
+        "name_ar": "فلاوسن",
+        "name_ascii": "Fellaoucene"
+      },
+      {
+        "name_ar": "عين الكبيرة",
+        "name_ascii": "Ain Kebira"
+      },
+      {
+        "name_ar": "عين فتاح",
+        "name_ascii": "Ain Fetah"
+      },
+      {
+        "name_ar": "تلمسان",
+        "name_ascii": "Tlemcen"
+      },
+      {
+        "name_ar": "عين النحالة",
+        "name_ascii": "Ain Nehala"
+      },
+      {
+        "name_ar": "عين تالوت",
+        "name_ascii": "Ain Tellout"
+      },
+      {
+        "name_ar": "عين يوسف",
+        "name_ascii": "Ain Youcef"
+      },
+      {
+        "name_ar": "بني وارسوس",
+        "name_ascii": "Beni Ouarsous"
+      },
+      {
+        "name_ar": "الفحول",
+        "name_ascii": "El Fehoul"
+      },
+      {
+        "name_ar": "الرمشي",
+        "name_ascii": "Remchi"
+      },
+      {
+        "name_ar": "سبعة شيوخ",
+        "name_ascii": "Sebbaa Chioukh"
+      },
+      {
+        "name_ar": "السواني",
+        "name_ascii": "Souani"
+      },
+      {
+        "name_ar": "صبرة",
+        "name_ascii": "Sabra"
+      },
+      {
+        "name_ar": "دار يغمراسن",
+        "name_ascii": "Dar Yaghmoracen"
+      },
+      {
+        "name_ar": "الغزوات",
+        "name_ascii": "Ghazaouet"
+      },
+      {
+        "name_ar": "السواحلية",
+        "name_ascii": "Souahlia"
+      },
+      {
+        "name_ar": "تيانت",
+        "name_ascii": "Tianet"
+      },
+      {
+        "name_ar": "بني صميل",
+        "name_ascii": "Beni Smiel"
+      },
+      {
+        "name_ar": "وادي الخضر",
+        "name_ascii": "Oued Lakhdar"
+      },
+      {
+        "name_ar": "أولاد ميمون",
+        "name_ascii": "Ouled Mimoun"
+      },
+      {
+        "name_ar": "بني بهدل",
+        "name_ascii": "Beni Bahdel"
+      },
+      {
+        "name_ar": "بني سنوس",
+        "name_ascii": "Beni Snous"
+      },
+      {
+        "name_ar": "العزايل",
+        "name_ascii": "Azail"
+      },
+      {
+        "name_ar": "جبالة",
+        "name_ascii": "Djebala"
+      }
+    ]
+  },
+  {
+    "code": 14,
+    "name_ar": "تيارت",
+    "name_ascii": "Tiaret",
+    "communes": [
+      {
+        "name_ar": "مهدية",
+        "name_ascii": "Mahdia"
+      },
+      {
+        "name_ar": "عين دزاريت",
+        "name_ascii": "Ain Dzarit"
+      },
+      {
+        "name_ar": "السبعين",
+        "name_ascii": "Sebaine"
+      },
+      {
+        "name_ar": "الفايجة",
+        "name_ascii": "Faidja"
+      },
+      {
+        "name_ar": "سي عبد الغني",
+        "name_ascii": "Si Abdelghani"
+      },
+      {
+        "name_ar": "السوقر",
+        "name_ascii": "Sougueur"
+      },
+      {
+        "name_ar": "توسنينة",
+        "name_ascii": "Tousnina"
+      },
+      {
+        "name_ar": "مغيلة",
+        "name_ascii": "Meghila"
+      },
+      {
+        "name_ar": "السبت",
+        "name_ascii": "Sebt"
+      },
+      {
+        "name_ar": "سيدي حسني",
+        "name_ascii": "Sidi Hosni"
+      },
+      {
+        "name_ar": "عين الحديد",
+        "name_ascii": "Ain El Hadid"
+      },
+      {
+        "name_ar": "فرندة",
+        "name_ascii": "Frenda"
+      },
+      {
+        "name_ar": "تخمرت",
+        "name_ascii": "Takhemaret"
+      },
+      {
+        "name_ar": "عين كرمس",
+        "name_ascii": "Ain Kermes"
+      },
+      {
+        "name_ar": "جبيلات الرصفاء",
+        "name_ascii": "Djebilet Rosfa"
+      },
+      {
+        "name_ar": "مادنة",
+        "name_ascii": "Madna"
+      },
+      {
+        "name_ar": "مدريسة",
+        "name_ascii": "Medrissa"
+      },
+      {
+        "name_ar": "سيدي عبد الرحمن",
+        "name_ascii": "Sidi Abderrahmane"
+      },
+      {
+        "name_ar": "قصر الشلالة",
+        "name_ascii": "Ksar Chellala"
+      },
+      {
+        "name_ar": "قرطوفة",
+        "name_ascii": "Guertoufa"
+      },
+      {
+        "name_ar": "سرغين",
+        "name_ascii": "Serghine"
+      },
+      {
+        "name_ar": "زمالة  الأمير عبد القادر",
+        "name_ascii": "Zmalet El Emir Abdelkade"
+      },
+      {
+        "name_ar": "وادي ليلي",
+        "name_ascii": "Oued Lilli"
+      },
+      {
+        "name_ar": "سيدي علي ملال",
+        "name_ascii": "Sidi Ali Mellal"
+      },
+      {
+        "name_ar": "جيلالي بن عمار",
+        "name_ascii": "Djillali Ben Amar"
+      },
+      {
+        "name_ar": "مشرع الصفا",
+        "name_ascii": "Mechraa Safa"
+      },
+      {
+        "name_ar": "تاقدمت",
+        "name_ascii": "Tagdempt"
+      },
+      {
+        "name_ar": "بوقرة",
+        "name_ascii": "Bougara"
+      },
+      {
+        "name_ar": "حمادية",
+        "name_ascii": "Hamadia"
+      },
+      {
+        "name_ar": "الرشايقة",
+        "name_ascii": "Rechaiga"
+      },
+      {
+        "name_ar": "تيدة",
+        "name_ascii": "Tidda"
+      },
+      {
+        "name_ar": "الناظورة",
+        "name_ascii": "Nadorah"
+      },
+      {
+        "name_ar": "تيارت",
+        "name_ascii": "Tiaret"
+      },
+      {
+        "name_ar": "مدروسة",
+        "name_ascii": "Medroussa"
+      },
+      {
+        "name_ar": "ملاكو",
+        "name_ascii": "Mellakou"
+      },
+      {
+        "name_ar": "سيدي بختي",
+        "name_ascii": "Sidi Bakhti"
+      },
+      {
+        "name_ar": "عين الذهب",
+        "name_ascii": "Ain Deheb"
+      },
+      {
+        "name_ar": "شحيمة",
+        "name_ascii": "Chehaima"
+      },
+      {
+        "name_ar": "النعيمة",
+        "name_ascii": "Naima"
+      },
+      {
+        "name_ar": "عين بوشقيف",
+        "name_ascii": "Ain Bouchekif"
+      },
+      {
+        "name_ar": "دحموني",
+        "name_ascii": "Dahmouni"
+      },
+      {
+        "name_ar": "الرحوية",
+        "name_ascii": "Rahouia"
+      }
+    ]
+  },
+  {
+    "code": 15,
+    "name_ar": "تيزي وزو",
+    "name_ascii": "Tizi Ouzou",
+    "communes": [
+      {
+        "name_ar": "ميزرانـــة",
+        "name_ascii": "Mizrana"
+      },
+      {
+        "name_ar": "إيجــار",
+        "name_ascii": "Idjeur"
+      },
+      {
+        "name_ar": "بني دوالة",
+        "name_ascii": "Beni-Douala"
+      },
+      {
+        "name_ar": "بني زيكــي",
+        "name_ascii": "Beni-Zikki"
+      },
+      {
+        "name_ar": "إيلولة أومـــالو",
+        "name_ascii": "Illoula Oumalou"
+      },
+      {
+        "name_ar": "أقني قغران",
+        "name_ascii": "Agouni-Gueghrane"
+      },
+      {
+        "name_ar": "أيت بــوادو",
+        "name_ascii": "Ait Bouaddou"
+      },
+      {
+        "name_ar": "واضية",
+        "name_ascii": "Ouadhias"
+      },
+      {
+        "name_ar": "تيزي نثلاثة",
+        "name_ascii": "Tizi N'tleta"
+      },
+      {
+        "name_ar": "أغريب",
+        "name_ascii": "Aghribs"
+      },
+      {
+        "name_ar": "أيت شافع",
+        "name_ascii": "Ait-Chafaa"
+      },
+      {
+        "name_ar": "أقرو",
+        "name_ascii": "Akerrou"
+      },
+      {
+        "name_ar": "أزفون",
+        "name_ascii": "Azeffoun"
+      },
+      {
+        "name_ar": "إفليـــسن",
+        "name_ascii": "Iflissen"
+      },
+      {
+        "name_ar": "تيقـزيرت",
+        "name_ascii": "Tigzirt"
+      },
+      {
+        "name_ar": "أسي يوسف",
+        "name_ascii": "Assi-Youcef"
+      },
+      {
+        "name_ar": "بوغني",
+        "name_ascii": "Boghni"
+      },
+      {
+        "name_ar": "بونوح",
+        "name_ascii": "Bounouh"
+      },
+      {
+        "name_ar": "مشطراس",
+        "name_ascii": "Mechtras"
+      },
+      {
+        "name_ar": "ذراع بن خدة",
+        "name_ascii": "Draa-Ben-Khedda"
+      },
+      {
+        "name_ar": "سيدي نعمان",
+        "name_ascii": "Sidi Namane"
+      },
+      {
+        "name_ar": "تادمايت",
+        "name_ascii": "Tadmait"
+      },
+      {
+        "name_ar": "تيرمتين",
+        "name_ascii": "Tirmitine"
+      },
+      {
+        "name_ar": "أيت بومهدي",
+        "name_ascii": "Ait Boumahdi"
+      },
+      {
+        "name_ar": "أيت تودرت",
+        "name_ascii": "Ait-Toudert"
+      },
+      {
+        "name_ar": "بني عيسي",
+        "name_ascii": "Beni-Aissi"
+      },
+      {
+        "name_ar": "واسيف",
+        "name_ascii": "Ouacif"
+      },
+      {
+        "name_ar": "أيت خليلي",
+        "name_ascii": "Ait Khellili"
+      },
+      {
+        "name_ar": "مقــلع",
+        "name_ascii": "Mekla"
+      },
+      {
+        "name_ar": "صوامـــع",
+        "name_ascii": "Souama"
+      },
+      {
+        "name_ar": "بني يني",
+        "name_ascii": "Beni-Yenni"
+      },
+      {
+        "name_ar": "إبودرارن",
+        "name_ascii": "Iboudrarene"
+      },
+      {
+        "name_ar": "تيزي وزو",
+        "name_ascii": "Tizi-Ouzou"
+      },
+      {
+        "name_ar": "أبي يوسف",
+        "name_ascii": "Abi-Youcef"
+      },
+      {
+        "name_ar": "عين الحمام",
+        "name_ascii": "Ain-El-Hammam"
+      },
+      {
+        "name_ar": "أيت يحيى",
+        "name_ascii": "Ait-Yahia"
+      },
+      {
+        "name_ar": "اقبيل",
+        "name_ascii": "Akbil"
+      },
+      {
+        "name_ar": "بوجيمة",
+        "name_ascii": "Boudjima"
+      },
+      {
+        "name_ar": "ماكودة",
+        "name_ascii": "Makouda"
+      },
+      {
+        "name_ar": "عين الزاوية",
+        "name_ascii": "Ain-Zaouia"
+      },
+      {
+        "name_ar": "أيت يحي موسى",
+        "name_ascii": "Ait Yahia Moussa"
+      },
+      {
+        "name_ar": "ذراع الميزان",
+        "name_ascii": "Draa-El-Mizan"
+      },
+      {
+        "name_ar": "فريقات",
+        "name_ascii": "Frikat"
+      },
+      {
+        "name_ar": "مكيرة",
+        "name_ascii": "M'kira"
+      },
+      {
+        "name_ar": "تيزي غنيف",
+        "name_ascii": "Tizi-Gheniff"
+      },
+      {
+        "name_ar": "يطــافن",
+        "name_ascii": "Yatafene"
+      },
+      {
+        "name_ar": "إيلـيــلتـن",
+        "name_ascii": "Illilten"
+      },
+      {
+        "name_ar": "إمســوحال",
+        "name_ascii": "Imsouhal"
+      },
+      {
+        "name_ar": "عزازقة",
+        "name_ascii": "Azazga"
+      },
+      {
+        "name_ar": "فريحة",
+        "name_ascii": "Freha"
+      },
+      {
+        "name_ar": "إيفيغاء",
+        "name_ascii": "Ifigha"
+      },
+      {
+        "name_ar": "إعــكورن",
+        "name_ascii": "Yakourene"
+      },
+      {
+        "name_ar": "زكري",
+        "name_ascii": "Zekri"
+      },
+      {
+        "name_ar": "أيت عقـواشة",
+        "name_ascii": "Ait Aggouacha"
+      },
+      {
+        "name_ar": "إيرجـــن",
+        "name_ascii": "Irdjen"
+      },
+      {
+        "name_ar": "الأربعــاء ناث إيراثن",
+        "name_ascii": "Larbaa Nath Irathen"
+      },
+      {
+        "name_ar": "أيت  أومالو",
+        "name_ascii": "Ait-Oumalou"
+      },
+      {
+        "name_ar": "تيزي راشد",
+        "name_ascii": "Tizi-Rached"
+      },
+      {
+        "name_ar": "أيت عيسى ميمون",
+        "name_ascii": "Ait-Aissa-Mimoun"
+      },
+      {
+        "name_ar": "واقنون",
+        "name_ascii": "Ouaguenoun"
+      },
+      {
+        "name_ar": "تيمـيزار",
+        "name_ascii": "Timizart"
+      },
+      {
+        "name_ar": "معـــاتقة",
+        "name_ascii": "Maatkas"
+      },
+      {
+        "name_ar": "سوق الإثنين",
+        "name_ascii": "Souk-El-Tenine"
+      },
+      {
+        "name_ar": "أيت محمود",
+        "name_ascii": "Ait-Mahmoud"
+      },
+      {
+        "name_ar": "بنــــي زمنزار",
+        "name_ascii": "Beni Zmenzer"
+      },
+      {
+        "name_ar": "إفــرحــونان",
+        "name_ascii": "Iferhounene"
+      },
+      {
+        "name_ar": "بوزقــن",
+        "name_ascii": "Bouzeguene"
+      }
+    ]
+  },
+  {
+    "code": 16,
+    "name_ar": "الجزائر",
+    "name_ascii": "Alger",
+    "communes": [
+      {
+        "name_ar": "حسين داي",
+        "name_ascii": "Hussein Dey"
+      },
+      {
+        "name_ar": "الكاليتوس",
+        "name_ascii": "Les Eucalyptus"
+      },
+      {
+        "name_ar": "سيدي موسى",
+        "name_ascii": "Sidi Moussa"
+      },
+      {
+        "name_ar": "القبة",
+        "name_ascii": "Kouba"
+      },
+      {
+        "name_ar": "محمد بلوزداد",
+        "name_ascii": "Mohamed Belouzdad"
+      },
+      {
+        "name_ar": "عين طاية",
+        "name_ascii": "Ain Taya"
+      },
+      {
+        "name_ar": "باب الزوار",
+        "name_ascii": "Bab Ezzouar"
+      },
+      {
+        "name_ar": "برج الكيفان",
+        "name_ascii": "Bordj El Kiffan"
+      },
+      {
+        "name_ar": "الدار البيضاء",
+        "name_ascii": "Dar El Beida"
+      },
+      {
+        "name_ar": "المرسى",
+        "name_ascii": "El Marsa"
+      },
+      {
+        "name_ar": "المحمدية",
+        "name_ascii": "Mohammadia"
+      },
+      {
+        "name_ar": "بئر توتة",
+        "name_ascii": "Bir Touta"
+      },
+      {
+        "name_ar": "اولاد شبل",
+        "name_ascii": "Ouled Chebel"
+      },
+      {
+        "name_ar": "تسالة المرجة",
+        "name_ascii": "Tessala El Merdja"
+      },
+      {
+        "name_ar": "هراوة",
+        "name_ascii": "Herraoua"
+      },
+      {
+        "name_ar": "رغاية",
+        "name_ascii": "Reghaia"
+      },
+      {
+        "name_ar": "الرويبة",
+        "name_ascii": "Rouiba"
+      },
+      {
+        "name_ar": "المعالمة",
+        "name_ascii": "Maalma"
+      },
+      {
+        "name_ar": "الرحمانية",
+        "name_ascii": "Rahmania"
+      },
+      {
+        "name_ar": "سويدانية",
+        "name_ascii": "Souidania"
+      },
+      {
+        "name_ar": "سطاوالي",
+        "name_ascii": "Staoueli"
+      },
+      {
+        "name_ar": "زرالدة",
+        "name_ascii": "Zeralda"
+      },
+      {
+        "name_ar": "بابا حسن",
+        "name_ascii": "Baba Hassen"
+      },
+      {
+        "name_ar": "الدويرة",
+        "name_ascii": "Douira"
+      },
+      {
+        "name_ar": "الدرارية",
+        "name_ascii": "Draria"
+      },
+      {
+        "name_ar": "العاشور",
+        "name_ascii": "El Achour"
+      },
+      {
+        "name_ar": "الخرايسية",
+        "name_ascii": "Khraissia"
+      },
+      {
+        "name_ar": "عين بنيان",
+        "name_ascii": "Ain Benian"
+      },
+      {
+        "name_ar": "الشراقة",
+        "name_ascii": "Cheraga"
+      },
+      {
+        "name_ar": "دالي ابراهيم",
+        "name_ascii": "Dely Ibrahim"
+      },
+      {
+        "name_ar": "الحمامات",
+        "name_ascii": "Hammamet"
+      },
+      {
+        "name_ar": "اولاد فايت",
+        "name_ascii": "Ouled Fayet"
+      },
+      {
+        "name_ar": "الجزائر الوسطى",
+        "name_ascii": "Alger Centre"
+      },
+      {
+        "name_ar": "المدنية",
+        "name_ascii": "El Madania"
+      },
+      {
+        "name_ar": "المرادية",
+        "name_ascii": "El Mouradia"
+      },
+      {
+        "name_ar": "سيدي امحمد",
+        "name_ascii": "Sidi M'hamed"
+      },
+      {
+        "name_ar": "السحاولة",
+        "name_ascii": "Sehaoula"
+      },
+      {
+        "name_ar": "بولوغين بن زيري",
+        "name_ascii": "Bologhine Ibnou Ziri"
+      },
+      {
+        "name_ar": "القصبة",
+        "name_ascii": "Casbah"
+      },
+      {
+        "name_ar": "وادي قريش",
+        "name_ascii": "Oued Koriche"
+      },
+      {
+        "name_ar": "الرايس حميدو",
+        "name_ascii": "Rais Hamidou"
+      },
+      {
+        "name_ar": "بئر مراد رايس",
+        "name_ascii": "Bir Mourad Rais"
+      },
+      {
+        "name_ar": "بئر خادم",
+        "name_ascii": "Birkhadem"
+      },
+      {
+        "name_ar": "جسر قسنطينة",
+        "name_ascii": "Djasr Kasentina"
+      },
+      {
+        "name_ar": "حيدرة",
+        "name_ascii": "Hydra"
+      },
+      {
+        "name_ar": "المغارية",
+        "name_ascii": "El Magharia"
+      },
+      {
+        "name_ar": "ابن عكنون",
+        "name_ascii": "Ben Aknoun"
+      },
+      {
+        "name_ar": "بني مسوس",
+        "name_ascii": "Beni Messous"
+      },
+      {
+        "name_ar": "بوزريعة",
+        "name_ascii": "Bouzareah"
+      },
+      {
+        "name_ar": "الابيار",
+        "name_ascii": "El Biar"
+      },
+      {
+        "name_ar": "باش جراح",
+        "name_ascii": "Bachedjerah"
+      },
+      {
+        "name_ar": "بوروبة",
+        "name_ascii": "Bourouba"
+      },
+      {
+        "name_ar": "الحراش",
+        "name_ascii": "El Harrach"
+      },
+      {
+        "name_ar": "وادي السمار",
+        "name_ascii": "Oued Smar"
+      },
+      {
+        "name_ar": "براقي",
+        "name_ascii": "Baraki"
+      },
+      {
+        "name_ar": "برج البحري",
+        "name_ascii": "Bordj El Bahri"
+      },
+      {
+        "name_ar": "باب الوادي",
+        "name_ascii": "Bab El Oued"
+      }
+    ]
+  },
+  {
+    "code": 17,
+    "name_ar": "الجلفة",
+    "name_ascii": "Djelfa",
+    "communes": [
+      {
+        "name_ar": "حاسي العش",
+        "name_ascii": "Hassi El Euch"
+      },
+      {
+        "name_ar": "عين الإبل",
+        "name_ascii": "Ain El Ibel"
+      },
+      {
+        "name_ar": "القديد",
+        "name_ascii": "El Guedid"
+      },
+      {
+        "name_ar": "الشارف",
+        "name_ascii": "Charef"
+      },
+      {
+        "name_ar": "بن يعقوب",
+        "name_ascii": "Benyagoub"
+      },
+      {
+        "name_ar": "سيدي بايزيد",
+        "name_ascii": "Sidi Baizid"
+      },
+      {
+        "name_ar": "مليليحة",
+        "name_ascii": "M'liliha"
+      },
+      {
+        "name_ar": "دار الشيوخ",
+        "name_ascii": "Dar Chioukh"
+      },
+      {
+        "name_ar": "تعظميت",
+        "name_ascii": "Taadmit"
+      },
+      {
+        "name_ar": "حد الصحاري",
+        "name_ascii": "Had Sahary"
+      },
+      {
+        "name_ar": "بويرة الأحداب",
+        "name_ascii": "Bouira Lahdab"
+      },
+      {
+        "name_ar": "عين فقه",
+        "name_ascii": "Ain Fekka"
+      },
+      {
+        "name_ar": "سيدي لعجال",
+        "name_ascii": "Sidi Laadjel"
+      },
+      {
+        "name_ar": "حاسي فدول",
+        "name_ascii": "Hassi Fedoul"
+      },
+      {
+        "name_ar": "الخميس",
+        "name_ascii": "El Khemis"
+      },
+      {
+        "name_ar": "سلمانة",
+        "name_ascii": "Selmana"
+      },
+      {
+        "name_ar": "سد الرحال",
+        "name_ascii": "Sed Rahal"
+      },
+      {
+        "name_ar": "مسعد",
+        "name_ascii": "Messaad"
+      },
+      {
+        "name_ar": "قطارة",
+        "name_ascii": "Guettara"
+      },
+      {
+        "name_ar": "دلدول",
+        "name_ascii": "Deldoul"
+      },
+      {
+        "name_ar": "زكار",
+        "name_ascii": "Zaccar"
+      },
+      {
+        "name_ar": "دويس",
+        "name_ascii": "Douis"
+      },
+      {
+        "name_ar": "الادريسية",
+        "name_ascii": "El Idrissia"
+      },
+      {
+        "name_ar": "عين الشهداء",
+        "name_ascii": "Ain Chouhada"
+      },
+      {
+        "name_ar": "الجلفة",
+        "name_ascii": "Djelfa"
+      },
+      {
+        "name_ar": "بيرين",
+        "name_ascii": "Birine"
+      },
+      {
+        "name_ar": "أم العظام",
+        "name_ascii": "Oum Laadham"
+      },
+      {
+        "name_ar": "فيض البطمة",
+        "name_ascii": "Faidh El Botma"
+      },
+      {
+        "name_ar": "عمورة",
+        "name_ascii": "Amourah"
+      },
+      {
+        "name_ar": "زعفران",
+        "name_ascii": "Zaafrane"
+      },
+      {
+        "name_ar": "قرنيني",
+        "name_ascii": "Guernini"
+      },
+      {
+        "name_ar": "عين وسارة",
+        "name_ascii": "Ain Oussera"
+      },
+      {
+        "name_ar": "بنهار",
+        "name_ascii": "Benhar"
+      },
+      {
+        "name_ar": "عين معبد",
+        "name_ascii": "Ain Maabed"
+      },
+      {
+        "name_ar": "حاسي بحبح",
+        "name_ascii": "Hassi Bahbah"
+      },
+      {
+        "name_ar": "مجبارة",
+        "name_ascii": "Moudjebara"
+      }
+    ]
+  },
+  {
+    "code": 18,
+    "name_ar": "جيجل",
+    "name_ascii": "Jijel",
+    "communes": [
+      {
+        "name_ar": "جيجل",
+        "name_ascii": "Jijel"
+      },
+      {
+        "name_ar": "العوانة",
+        "name_ascii": "El Aouana"
+      },
+      {
+        "name_ar": "سلمى بن زيادة",
+        "name_ascii": "Selma Benziada"
+      },
+      {
+        "name_ar": "أراقن سويسي",
+        "name_ascii": "Erraguene Souissi"
+      },
+      {
+        "name_ar": "بوسيف أولاد عسكر",
+        "name_ascii": "Boussif Ouled Askeur"
+      },
+      {
+        "name_ar": "زيامة منصورية",
+        "name_ascii": "Ziama Mansouriah"
+      },
+      {
+        "name_ar": "الشحنة",
+        "name_ascii": "Chahna"
+      },
+      {
+        "name_ar": "الامير عبد القادر",
+        "name_ascii": "Emir Abdelkader"
+      },
+      {
+        "name_ar": "وجانة",
+        "name_ascii": "Oudjana"
+      },
+      {
+        "name_ar": "الطاهير",
+        "name_ascii": "Taher"
+      },
+      {
+        "name_ar": "الشقفة",
+        "name_ascii": "Chekfa"
+      },
+      {
+        "name_ar": "القنار نشفي",
+        "name_ascii": "El Kennar Nouchfi"
+      },
+      {
+        "name_ar": "سيدي عبد العزيز",
+        "name_ascii": "Sidi Abdelaziz"
+      },
+      {
+        "name_ar": "الميلية",
+        "name_ascii": "El Milia"
+      },
+      {
+        "name_ar": "أولاد يحيى خدروش",
+        "name_ascii": "Ouled Yahia Khadrouch"
+      },
+      {
+        "name_ar": "أولاد رابح",
+        "name_ascii": "Ouled Rabah"
+      },
+      {
+        "name_ar": "سيدي معروف",
+        "name_ascii": "Sidi Marouf"
+      },
+      {
+        "name_ar": "غبالة",
+        "name_ascii": "Ghebala"
+      },
+      {
+        "name_ar": "السطارة",
+        "name_ascii": "Settara"
+      },
+      {
+        "name_ar": "بوراوي بلهادف",
+        "name_ascii": "Bouraoui Belhadef"
+      },
+      {
+        "name_ar": "العنصر",
+        "name_ascii": "El Ancer"
+      },
+      {
+        "name_ar": "خيري واد عجول",
+        "name_ascii": "Khiri Oued Adjoul"
+      },
+      {
+        "name_ar": "جيملة",
+        "name_ascii": "Djimla"
+      },
+      {
+        "name_ar": "قاوس",
+        "name_ascii": "Kaous"
+      },
+      {
+        "name_ar": "تاكسنة",
+        "name_ascii": "Texenna"
+      },
+      {
+        "name_ar": "برج الطهر",
+        "name_ascii": "Bordj T'har"
+      },
+      {
+        "name_ar": "بودريعة بني  ياجيس",
+        "name_ascii": "Boudria Beniyadjis"
+      },
+      {
+        "name_ar": "الجمعة بني حبيبي",
+        "name_ascii": "Djemaa Beni Habibi"
+      }
+    ]
+  },
+  {
+    "code": 19,
+    "name_ar": "سطيف",
+    "name_ascii": "Sétif",
+    "communes": [
+      {
+        "name_ar": "الرصفة",
+        "name_ascii": "Rosfa"
+      },
+      {
+        "name_ar": "واد البارد",
+        "name_ascii": "Oued El Bared"
+      },
+      {
+        "name_ar": "تيزي نبشار",
+        "name_ascii": "Tizi N'bechar"
+      },
+      {
+        "name_ar": "مزلوق",
+        "name_ascii": "Mezloug"
+      },
+      {
+        "name_ar": "قلال",
+        "name_ascii": "Guellal"
+      },
+      {
+        "name_ar": "قصر الابطال",
+        "name_ascii": "Kasr El Abtal"
+      },
+      {
+        "name_ar": "أولاد سي أحمد",
+        "name_ascii": "Ouled Si Ahmed"
+      },
+      {
+        "name_ar": "أيت نوال مزادة",
+        "name_ascii": "Ait Naoual Mezada"
+      },
+      {
+        "name_ar": "ايت تيزي",
+        "name_ascii": "Ait-Tizi"
+      },
+      {
+        "name_ar": "بوعنداس",
+        "name_ascii": "Bouandas"
+      },
+      {
+        "name_ar": "بوسلام",
+        "name_ascii": "Bousselam"
+      },
+      {
+        "name_ar": "حمام السخنة",
+        "name_ascii": "Hamam Soukhna"
+      },
+      {
+        "name_ar": "الطاية",
+        "name_ascii": "Taya"
+      },
+      {
+        "name_ar": "التلة",
+        "name_ascii": "Tella"
+      },
+      {
+        "name_ar": "عين ولمان",
+        "name_ascii": "Ain Oulmene"
+      },
+      {
+        "name_ar": "بوطالب",
+        "name_ascii": "Boutaleb"
+      },
+      {
+        "name_ar": "الحامة",
+        "name_ascii": "Hamma"
+      },
+      {
+        "name_ar": "أولاد تبان",
+        "name_ascii": "Ouled Tebben"
+      },
+      {
+        "name_ar": "عموشة",
+        "name_ascii": "Amoucha"
+      },
+      {
+        "name_ar": "صالح باي",
+        "name_ascii": "Salah Bey"
+      },
+      {
+        "name_ar": "عين أزال",
+        "name_ascii": "Ain Azel"
+      },
+      {
+        "name_ar": "عين الحجر",
+        "name_ascii": "Ain Lahdjar"
+      },
+      {
+        "name_ar": "بيضاء برج",
+        "name_ascii": "Beidha Bordj"
+      },
+      {
+        "name_ar": "بئر حدادة",
+        "name_ascii": "Bir Haddada"
+      },
+      {
+        "name_ar": "قنزات",
+        "name_ascii": "Guenzet"
+      },
+      {
+        "name_ar": "حربيل",
+        "name_ascii": "Harbil"
+      },
+      {
+        "name_ar": "عين الروى",
+        "name_ascii": "Ain-Roua"
+      },
+      {
+        "name_ar": "بني وسين",
+        "name_ascii": "Beni Oussine"
+      },
+      {
+        "name_ar": "أوريسيا",
+        "name_ascii": "El Ouricia"
+      },
+      {
+        "name_ar": "بوقاعة",
+        "name_ascii": "Bougaa"
+      },
+      {
+        "name_ar": "ذراع قبيلة",
+        "name_ascii": "Draa-Kebila"
+      },
+      {
+        "name_ar": "حمام قرقور",
+        "name_ascii": "Hammam Guergour"
+      },
+      {
+        "name_ar": "سطيف",
+        "name_ascii": "Setif"
+      },
+      {
+        "name_ar": "عين الكبيرة",
+        "name_ascii": "Ain El Kebira"
+      },
+      {
+        "name_ar": "الدهامشة",
+        "name_ascii": "Dehamcha"
+      },
+      {
+        "name_ar": "أولاد عدوان",
+        "name_ascii": "Ouled Addouane"
+      },
+      {
+        "name_ar": "عين السبت",
+        "name_ascii": "Ain-Sebt"
+      },
+      {
+        "name_ar": "بني عزيز",
+        "name_ascii": "Beni-Aziz"
+      },
+      {
+        "name_ar": "معاوية",
+        "name_ascii": "Maaouia"
+      },
+      {
+        "name_ar": "بلاعة",
+        "name_ascii": "Bellaa"
+      },
+      {
+        "name_ar": "بئر العرش",
+        "name_ascii": "Bir-El-Arch"
+      },
+      {
+        "name_ar": "الولجة",
+        "name_ascii": "El-Ouldja"
+      },
+      {
+        "name_ar": "تاشودة",
+        "name_ascii": "Tachouda"
+      },
+      {
+        "name_ar": "تالة إيفاسن",
+        "name_ascii": "Tala-Ifacene"
+      },
+      {
+        "name_ar": "سرج الغول",
+        "name_ascii": "Serdj-El-Ghoul"
+      },
+      {
+        "name_ar": "قجال",
+        "name_ascii": "Guidjel"
+      },
+      {
+        "name_ar": "أولاد صابر",
+        "name_ascii": "Ouled Sabor"
+      },
+      {
+        "name_ar": "بازر سكرة",
+        "name_ascii": "Bazer-Sakra"
+      },
+      {
+        "name_ar": "العلمة",
+        "name_ascii": "El Eulma"
+      },
+      {
+        "name_ar": "قلتة زرقاء",
+        "name_ascii": "Guelta Zerka"
+      },
+      {
+        "name_ar": "بني فودة",
+        "name_ascii": "Beni Fouda"
+      },
+      {
+        "name_ar": "جميلة",
+        "name_ascii": "Djemila"
+      },
+      {
+        "name_ar": "عين لقراج",
+        "name_ascii": "Ain-Legradj"
+      },
+      {
+        "name_ar": "بني شبانة",
+        "name_ascii": "Beni Chebana"
+      },
+      {
+        "name_ar": "بني ورتيلان",
+        "name_ascii": "Beni Ourtilane"
+      },
+      {
+        "name_ar": "بني موحلي",
+        "name_ascii": "Beni-Mouhli"
+      },
+      {
+        "name_ar": "عين عباسة",
+        "name_ascii": "Ain Abessa"
+      },
+      {
+        "name_ar": "عين أرنات",
+        "name_ascii": "Ain Arnat"
+      },
+      {
+        "name_ar": "بابور",
+        "name_ascii": "Babor"
+      },
+      {
+        "name_ar": "ماوكلان",
+        "name_ascii": "Maouaklane"
+      }
+    ]
+  },
+  {
+    "code": 20,
+    "name_ar": "سعيدة",
+    "name_ascii": "Saïda",
+    "communes": [
+      {
+        "name_ar": "سعيدة",
+        "name_ascii": "Saida"
+      },
+      {
+        "name_ar": "تيرسين",
+        "name_ascii": "Tircine"
+      },
+      {
+        "name_ar": "أولاد إبراهيم",
+        "name_ascii": "Ouled Brahim"
+      },
+      {
+        "name_ar": "عين السلطان",
+        "name_ascii": "Ain Soltane"
+      },
+      {
+        "name_ar": "المعمورة",
+        "name_ascii": "Maamora"
+      },
+      {
+        "name_ar": "الحساسنة",
+        "name_ascii": "El Hassasna"
+      },
+      {
+        "name_ar": "عين السخونة",
+        "name_ascii": "Ain Sekhouna"
+      },
+      {
+        "name_ar": "سيدي بوبكر",
+        "name_ascii": "Sidi Boubekeur"
+      },
+      {
+        "name_ar": "أولاد خالد",
+        "name_ascii": "Ouled Khaled"
+      },
+      {
+        "name_ar": "هونت",
+        "name_ascii": "Hounet"
+      },
+      {
+        "name_ar": "يوب",
+        "name_ascii": "Youb"
+      },
+      {
+        "name_ar": "دوي ثابت",
+        "name_ascii": "Doui Thabet"
+      },
+      {
+        "name_ar": "سيدي احمد",
+        "name_ascii": "Sidi Ahmed"
+      },
+      {
+        "name_ar": "مولاي العربي",
+        "name_ascii": "Moulay Larbi"
+      },
+      {
+        "name_ar": "عين الحجر",
+        "name_ascii": "Ain El Hadjar"
+      },
+      {
+        "name_ar": "سيدي عمر",
+        "name_ascii": "Sidi Amar"
+      }
+    ]
+  },
+  {
+    "code": 21,
+    "name_ar": "سكيكدة",
+    "name_ascii": "Skikda",
+    "communes": [
+      {
+        "name_ar": "عين بوزيان",
+        "name_ascii": "Ain Bouziane"
+      },
+      {
+        "name_ar": "صالح بو الشعور",
+        "name_ascii": "Salah Bouchaour"
+      },
+      {
+        "name_ar": "الحدائق",
+        "name_ascii": "El Hadaiek"
+      },
+      {
+        "name_ar": "زردازة",
+        "name_ascii": "Zerdezas"
+      },
+      {
+        "name_ar": "أولاد حبابة",
+        "name_ascii": "Ouled Habbaba"
+      },
+      {
+        "name_ar": "بني ولبان",
+        "name_ascii": "Beni Oulbane"
+      },
+      {
+        "name_ar": "سيدي مزغيش",
+        "name_ascii": "Sidi Mezghiche"
+      },
+      {
+        "name_ar": "بني بشير",
+        "name_ascii": "Beni Bechir"
+      },
+      {
+        "name_ar": "رمضان جمال",
+        "name_ascii": "Ramdane Djamel"
+      },
+      {
+        "name_ar": "بين الويدان",
+        "name_ascii": "Bin El Ouiden"
+      },
+      {
+        "name_ar": "مجاز الدشيش",
+        "name_ascii": "Emjez Edchich"
+      },
+      {
+        "name_ar": "تمالوس",
+        "name_ascii": "Tamalous"
+      },
+      {
+        "name_ar": "عين قشرة",
+        "name_ascii": "Ain Kechra"
+      },
+      {
+        "name_ar": "الولجة بولبلوط",
+        "name_ascii": "Ouldja Boulbalout"
+      },
+      {
+        "name_ar": "أم الطوب",
+        "name_ascii": "Oum Toub"
+      },
+      {
+        "name_ar": "الغدير",
+        "name_ascii": "El Ghedir"
+      },
+      {
+        "name_ar": "الكركرة",
+        "name_ascii": "Kerkara"
+      },
+      {
+        "name_ar": "الحروش",
+        "name_ascii": "El Arrouch"
+      },
+      {
+        "name_ar": "الزيتونة",
+        "name_ascii": "Zitouna"
+      },
+      {
+        "name_ar": "أولاد عطية",
+        "name_ascii": "Ouled Attia"
+      },
+      {
+        "name_ar": "وادي الزهور",
+        "name_ascii": "Oued Zhour"
+      },
+      {
+        "name_ar": "القل",
+        "name_ascii": "Collo"
+      },
+      {
+        "name_ar": "الشرايع",
+        "name_ascii": "Cheraia"
+      },
+      {
+        "name_ar": "بني زيد",
+        "name_ascii": "Beni Zid"
+      },
+      {
+        "name_ar": "خناق مايو",
+        "name_ascii": "Khenag Maoune"
+      },
+      {
+        "name_ar": "المرسى",
+        "name_ascii": "El Marsa"
+      },
+      {
+        "name_ar": "بن عزوز",
+        "name_ascii": "Ben Azzouz"
+      },
+      {
+        "name_ar": "بكوش لخضر",
+        "name_ascii": "Bekkouche Lakhdar"
+      },
+      {
+        "name_ar": "السبت",
+        "name_ascii": "Es Sebt"
+      },
+      {
+        "name_ar": "عين شرشار",
+        "name_ascii": "Ain Charchar"
+      },
+      {
+        "name_ar": "عزابة",
+        "name_ascii": "Azzaba"
+      },
+      {
+        "name_ar": "بوشطاطة",
+        "name_ascii": "Bouchetata"
+      },
+      {
+        "name_ar": "فلفلة",
+        "name_ascii": "Filfila"
+      },
+      {
+        "name_ar": "حمادي كرومة",
+        "name_ascii": "Hammadi Krouma"
+      },
+      {
+        "name_ar": "سكيكدة",
+        "name_ascii": "Skikda"
+      },
+      {
+        "name_ar": "عين زويت",
+        "name_ascii": "Ain Zouit"
+      },
+      {
+        "name_ar": "جندل سعدي محمد",
+        "name_ascii": "Djendel Saadi Mohamed"
+      },
+      {
+        "name_ar": "قنواع",
+        "name_ascii": "Kanoua"
+      }
+    ]
+  },
+  {
+    "code": 22,
+    "name_ar": "سيدي بلعباس",
+    "name_ascii": "Sidi Bel Abbès",
+    "communes": [
+      {
+        "name_ar": "سيدي علي بن يوب",
+        "name_ascii": "Sidi Ali Benyoub"
+      },
+      {
+        "name_ar": "مولاي سليسن",
+        "name_ascii": "Moulay Slissen"
+      },
+      {
+        "name_ar": "الحصيبة",
+        "name_ascii": "El Hacaiba"
+      },
+      {
+        "name_ar": "عين تندمين",
+        "name_ascii": "Ain Tindamine"
+      },
+      {
+        "name_ar": "تنيرة",
+        "name_ascii": "Tenira"
+      },
+      {
+        "name_ar": "وادي سفيون",
+        "name_ascii": "Oued Sefioun"
+      },
+      {
+        "name_ar": "حاسي دحو",
+        "name_ascii": "Hassi Dahou"
+      },
+      {
+        "name_ar": "وادي تاوريرة",
+        "name_ascii": "Oued Taourira"
+      },
+      {
+        "name_ar": "بن عشيبة شلية",
+        "name_ascii": "Benachiba Chelia"
+      },
+      {
+        "name_ar": "سيدي يعقوب",
+        "name_ascii": "Sidi Yacoub"
+      },
+      {
+        "name_ar": "سيدي لحسن",
+        "name_ascii": "Sidi Lahcene"
+      },
+      {
+        "name_ar": "سيدي خالد",
+        "name_ascii": "Sidi Khaled"
+      },
+      {
+        "name_ar": "طابية",
+        "name_ascii": "Tabia"
+      },
+      {
+        "name_ar": "سيدي ابراهيم",
+        "name_ascii": "Sidi Brahim"
+      },
+      {
+        "name_ar": "العمارنة",
+        "name_ascii": "Amarnas"
+      },
+      {
+        "name_ar": "بوخنفيس",
+        "name_ascii": "Boukhanefis"
+      },
+      {
+        "name_ar": "حاسي زهانة",
+        "name_ascii": "Hassi Zahana"
+      },
+      {
+        "name_ar": "شيطوان البلايلة",
+        "name_ascii": "Chetouane Belaila"
+      },
+      {
+        "name_ar": "بن باديس",
+        "name_ascii": "Ben Badis"
+      },
+      {
+        "name_ar": "بضرابين المقراني",
+        "name_ascii": "Bedrabine El Mokrani"
+      },
+      {
+        "name_ar": "سفيزف",
+        "name_ascii": "Sfisef"
+      },
+      {
+        "name_ar": "مسيد",
+        "name_ascii": "M'cid"
+      },
+      {
+        "name_ar": "بوجبهة البرج",
+        "name_ascii": "Boudjebaa El Bordj"
+      },
+      {
+        "name_ar": "عين أدن",
+        "name_ascii": "Ain- Adden"
+      },
+      {
+        "name_ar": "سيدي حمادوش",
+        "name_ascii": "Sidi Hamadouche"
+      },
+      {
+        "name_ar": "سيدي شعيب",
+        "name_ascii": "Sidi Chaib"
+      },
+      {
+        "name_ar": "مكدرة",
+        "name_ascii": "Makedra"
+      },
+      {
+        "name_ar": "عين البرد",
+        "name_ascii": "Ain El Berd"
+      },
+      {
+        "name_ar": "رجم دموش",
+        "name_ascii": "Redjem Demouche"
+      },
+      {
+        "name_ar": "راس الماء",
+        "name_ascii": "Ras El Ma"
+      },
+      {
+        "name_ar": "وادي السبع",
+        "name_ascii": "Oued Sebaa"
+      },
+      {
+        "name_ar": "مرحوم",
+        "name_ascii": "Marhoum"
+      },
+      {
+        "name_ar": "سيدي بلعباس",
+        "name_ascii": "Sidi Bel-Abbes"
+      },
+      {
+        "name_ar": "عين الثريد",
+        "name_ascii": "Ain Thrid"
+      },
+      {
+        "name_ar": "السهالة الثورة",
+        "name_ascii": "Sehala Thaoura"
+      },
+      {
+        "name_ar": "تسالة",
+        "name_ascii": "Tessala"
+      },
+      {
+        "name_ar": "بلعربي",
+        "name_ascii": "Belarbi"
+      },
+      {
+        "name_ar": "مصطفى بن ابراهيم",
+        "name_ascii": "Mostefa  Ben Brahim"
+      },
+      {
+        "name_ar": "تلموني",
+        "name_ascii": "Tilmouni"
+      },
+      {
+        "name_ar": "زروالة",
+        "name_ascii": "Zerouala"
+      },
+      {
+        "name_ar": "الضاية",
+        "name_ascii": "Dhaya"
+      },
+      {
+        "name_ar": "مزاورو",
+        "name_ascii": "Mezaourou"
+      },
+      {
+        "name_ar": "تغاليمت",
+        "name_ascii": "Teghalimet"
+      },
+      {
+        "name_ar": "تلاغ",
+        "name_ascii": "Telagh"
+      },
+      {
+        "name_ar": "عين قادة",
+        "name_ascii": "Ain Kada"
+      },
+      {
+        "name_ar": "لمطار",
+        "name_ascii": "Lamtar"
+      },
+      {
+        "name_ar": "سيدي علي بوسيدي",
+        "name_ascii": "Sidi Ali Boussidi"
+      },
+      {
+        "name_ar": "سيدي دحو الزاير",
+        "name_ascii": "Sidi Dahou Zairs"
+      },
+      {
+        "name_ar": "بئر الحمام",
+        "name_ascii": "Bir El Hammam"
+      },
+      {
+        "name_ar": "مرين",
+        "name_ascii": "Merine"
+      },
+      {
+        "name_ar": "تفسور",
+        "name_ascii": "Tefessour"
+      },
+      {
+        "name_ar": "تاودموت",
+        "name_ascii": "Taoudmout"
+      }
+    ]
+  },
+  {
+    "code": 23,
+    "name_ar": "عنابة",
+    "name_ascii": "Annaba",
+    "communes": [
+      {
+        "name_ar": "عنابة",
+        "name_ascii": "Annaba"
+      },
+      {
+        "name_ar": "سرايدي",
+        "name_ascii": "Seraidi"
+      },
+      {
+        "name_ar": "برحال",
+        "name_ascii": "Berrahal"
+      },
+      {
+        "name_ar": "واد العنب",
+        "name_ascii": "Oued El Aneb"
+      },
+      {
+        "name_ar": "الحجار",
+        "name_ascii": "El Hadjar"
+      },
+      {
+        "name_ar": "سيدي عمار",
+        "name_ascii": "Sidi Amar"
+      },
+      {
+        "name_ar": "البوني",
+        "name_ascii": "El Bouni"
+      },
+      {
+        "name_ar": "عين الباردة",
+        "name_ascii": "Ain El Berda"
+      },
+      {
+        "name_ar": "الشرفة",
+        "name_ascii": "Cheurfa"
+      },
+      {
+        "name_ar": "العلمة",
+        "name_ascii": "El Eulma"
+      },
+      {
+        "name_ar": "التريعات",
+        "name_ascii": "Treat"
+      },
+      {
+        "name_ar": "شطايبي",
+        "name_ascii": "Chetaibi"
+      }
+    ]
+  },
+  {
+    "code": 24,
+    "name_ar": "قالمة",
+    "name_ascii": "Guelma",
+    "communes": [
+      {
+        "name_ar": "نشماية",
+        "name_ascii": "Nechmaya"
+      },
+      {
+        "name_ar": "بوحمدان",
+        "name_ascii": "Bou Hamdane"
+      },
+      {
+        "name_ar": "حمام دباغ",
+        "name_ascii": "Hammam Debagh"
+      },
+      {
+        "name_ar": "الركنية",
+        "name_ascii": "Roknia"
+      },
+      {
+        "name_ar": "الدهوارة",
+        "name_ascii": "Dahouara"
+      },
+      {
+        "name_ar": "حمام النبايل",
+        "name_ascii": "Hammam N'bail"
+      },
+      {
+        "name_ar": "قالمة",
+        "name_ascii": "Guelma"
+      },
+      {
+        "name_ar": "بومهرة أحمد",
+        "name_ascii": "Boumahra Ahmed"
+      },
+      {
+        "name_ar": "عين بن بيضاء",
+        "name_ascii": "Ain Ben Beida"
+      },
+      {
+        "name_ar": "بوشقوف",
+        "name_ascii": "Bouchegouf"
+      },
+      {
+        "name_ar": "مجاز الصفاء",
+        "name_ascii": "Medjez Sfa"
+      },
+      {
+        "name_ar": "وادي فراغة",
+        "name_ascii": "Oued Ferragha"
+      },
+      {
+        "name_ar": "بوعاتي محمود",
+        "name_ascii": "Bouati Mahmoud"
+      },
+      {
+        "name_ar": "الفجوج",
+        "name_ascii": "El Fedjoudj"
+      },
+      {
+        "name_ar": "هيليوبوليس",
+        "name_ascii": "Heliopolis"
+      },
+      {
+        "name_ar": "مجاز عمار",
+        "name_ascii": "Medjez Amar"
+      },
+      {
+        "name_ar": "هواري بومدين",
+        "name_ascii": "Houari Boumedienne"
+      },
+      {
+        "name_ar": "رأس العقبة",
+        "name_ascii": "Ras El Agba"
+      },
+      {
+        "name_ar": "سلاوة عنونة",
+        "name_ascii": "Sellaoua Announa"
+      },
+      {
+        "name_ar": "جبالة الخميسي",
+        "name_ascii": "Djeballah Khemissi"
+      },
+      {
+        "name_ar": "برج صباط",
+        "name_ascii": "Bordj Sabath"
+      },
+      {
+        "name_ar": "وادي الزناتي",
+        "name_ascii": "Oued Zenati"
+      },
+      {
+        "name_ar": "عين رقادة",
+        "name_ascii": "Ain Regada"
+      },
+      {
+        "name_ar": "عين العربي",
+        "name_ascii": "Ain Larbi"
+      },
+      {
+        "name_ar": "عين مخلوف",
+        "name_ascii": "Ain Makhlouf"
+      },
+      {
+        "name_ar": "تاملوكة",
+        "name_ascii": "Tamlouka"
+      },
+      {
+        "name_ar": "عين صندل",
+        "name_ascii": "Ain Sandel"
+      },
+      {
+        "name_ar": "بوحشانة",
+        "name_ascii": "Bou Hachana"
+      },
+      {
+        "name_ar": "لخزارة",
+        "name_ascii": "Khezaras"
+      },
+      {
+        "name_ar": "بلخير",
+        "name_ascii": "Belkheir"
+      },
+      {
+        "name_ar": "بني مزلين",
+        "name_ascii": "Beni Mezline"
+      },
+      {
+        "name_ar": "قلعة بوصبع",
+        "name_ascii": "Guelaat Bou Sbaa"
+      },
+      {
+        "name_ar": "وادي الشحم",
+        "name_ascii": "Oued Cheham"
+      },
+      {
+        "name_ar": "بن جراح",
+        "name_ascii": "Bendjarah"
+      }
+    ]
+  },
+  {
+    "code": 25,
+    "name_ar": "قسنطينة",
+    "name_ascii": "Constantine",
+    "communes": [
+      {
+        "name_ar": "ديدوش مراد",
+        "name_ascii": "Didouche Mourad"
+      },
+      {
+        "name_ar": "حامة بوزيان",
+        "name_ascii": "Hamma Bouziane"
+      },
+      {
+        "name_ar": "بني حميدان",
+        "name_ascii": "Beni Hamidane"
+      },
+      {
+        "name_ar": "زيغود يوسف",
+        "name_ascii": "Zighoud Youcef"
+      },
+      {
+        "name_ar": "عين السمارة",
+        "name_ascii": "Ain Smara"
+      },
+      {
+        "name_ar": "الخروب",
+        "name_ascii": "El Khroub"
+      },
+      {
+        "name_ar": "أولاد رحمون",
+        "name_ascii": "Ouled Rahmoun"
+      },
+      {
+        "name_ar": "عين عبيد",
+        "name_ascii": "Ain Abid"
+      },
+      {
+        "name_ar": "أبن باديس الهرية",
+        "name_ascii": "Ben Badis"
+      },
+      {
+        "name_ar": "ابن زياد",
+        "name_ascii": "Ibn Ziad"
+      },
+      {
+        "name_ar": "بوجريو مسعود",
+        "name_ascii": "Messaoud Boudjeriou"
+      },
+      {
+        "name_ar": "قسنطينة",
+        "name_ascii": "Constantine"
+      }
+    ]
+  },
+  {
+    "code": 26,
+    "name_ar": "المدية",
+    "name_ascii": "Médéa",
+    "communes": [
+      {
+        "name_ar": "أولاد هلال",
+        "name_ascii": "Ouled Hellal"
+      },
+      {
+        "name_ar": "السواقي",
+        "name_ascii": "Souagui"
+      },
+      {
+        "name_ar": "قصر البخاري",
+        "name_ascii": "Ksar El Boukhari"
+      },
+      {
+        "name_ar": "مفاتحة",
+        "name_ascii": "M'fatha"
+      },
+      {
+        "name_ar": "السانق",
+        "name_ascii": "Saneg"
+      },
+      {
+        "name_ar": "العزيزية",
+        "name_ascii": "El Azizia"
+      },
+      {
+        "name_ar": "مغراوة",
+        "name_ascii": "Maghraoua"
+      },
+      {
+        "name_ar": "ميهوب",
+        "name_ascii": "Mihoub"
+      },
+      {
+        "name_ar": "بوعيش",
+        "name_ascii": "Bouaiche"
+      },
+      {
+        "name_ar": "بوغزول",
+        "name_ascii": "Boughzoul"
+      },
+      {
+        "name_ar": "الشهبونية",
+        "name_ascii": "Chabounia"
+      },
+      {
+        "name_ar": "حناشة",
+        "name_ascii": "Hannacha"
+      },
+      {
+        "name_ar": "عوامري",
+        "name_ascii": "Ouamri"
+      },
+      {
+        "name_ar": "وادي حربيل",
+        "name_ascii": "Oued Harbil"
+      },
+      {
+        "name_ar": "بني سليمان",
+        "name_ascii": "Beni Slimane"
+      },
+      {
+        "name_ar": "بوعيشون",
+        "name_ascii": "Bouaichoune"
+      },
+      {
+        "name_ar": "أولاد بوعشرة",
+        "name_ascii": "Ouled Bouachra"
+      },
+      {
+        "name_ar": "سي المحجوب",
+        "name_ascii": "Si Mahdjoub"
+      },
+      {
+        "name_ar": "بوسكن",
+        "name_ascii": "Bouskene"
+      },
+      {
+        "name_ar": "سيدي الربيع",
+        "name_ascii": "Sidi Rabie"
+      },
+      {
+        "name_ar": "البرواقية",
+        "name_ascii": "Berrouaghia"
+      },
+      {
+        "name_ar": "أولاد دايد",
+        "name_ascii": "Ouled Deid"
+      },
+      {
+        "name_ar": "الربعية",
+        "name_ascii": "Rebaia"
+      },
+      {
+        "name_ar": "مجبر",
+        "name_ascii": "Medjebar"
+      },
+      {
+        "name_ar": "ثلاث دوائر",
+        "name_ascii": "Tletat Ed Douair"
+      },
+      {
+        "name_ar": "الزبيرية",
+        "name_ascii": "Zoubiria"
+      },
+      {
+        "name_ar": "العيساوية",
+        "name_ascii": "Aissaouia"
+      },
+      {
+        "name_ar": "الحوضان",
+        "name_ascii": "El Haoudane"
+      },
+      {
+        "name_ar": "مزغنة",
+        "name_ascii": "Mezerana"
+      },
+      {
+        "name_ar": "تابلاط",
+        "name_ascii": "Tablat"
+      },
+      {
+        "name_ar": "بوغار",
+        "name_ascii": "Boghar"
+      },
+      {
+        "name_ar": "سغوان",
+        "name_ascii": "Seghouane"
+      },
+      {
+        "name_ar": "ذراع السمار",
+        "name_ascii": "Draa Esmar"
+      },
+      {
+        "name_ar": "المدية",
+        "name_ascii": "Medea"
+      },
+      {
+        "name_ar": "تمسقيدة",
+        "name_ascii": "Tamesguida"
+      },
+      {
+        "name_ar": "بن شكاو",
+        "name_ascii": "Ben Chicao"
+      },
+      {
+        "name_ar": "الحمدانية",
+        "name_ascii": "El Hamdania"
+      },
+      {
+        "name_ar": "وزرة",
+        "name_ascii": "Ouzera"
+      },
+      {
+        "name_ar": "تيزي مهدي",
+        "name_ascii": "Tizi Mahdi"
+      },
+      {
+        "name_ar": "عين بوسيف",
+        "name_ascii": "Ain Boucif"
+      },
+      {
+        "name_ar": "العوينات",
+        "name_ascii": "El Ouinet"
+      },
+      {
+        "name_ar": "الكاف الاخضر",
+        "name_ascii": "Kef Lakhdar"
+      },
+      {
+        "name_ar": "أولاد امعرف",
+        "name_ascii": "Ouled Emaaraf"
+      },
+      {
+        "name_ar": "سيدي دامد",
+        "name_ascii": "Sidi Demed"
+      },
+      {
+        "name_ar": "بعطة",
+        "name_ascii": "Baata"
+      },
+      {
+        "name_ar": "العمارية",
+        "name_ascii": "El Omaria"
+      },
+      {
+        "name_ar": "أولاد إبراهيم",
+        "name_ascii": "Ouled Brahim"
+      },
+      {
+        "name_ar": "بئر بن عابد",
+        "name_ascii": "Bir Ben Laabed"
+      },
+      {
+        "name_ar": "القلب الكبير",
+        "name_ascii": "El Guelbelkebir"
+      },
+      {
+        "name_ar": "سدراية",
+        "name_ascii": "Sedraya"
+      },
+      {
+        "name_ar": "عين اقصير",
+        "name_ascii": "Ain Ouksir"
+      },
+      {
+        "name_ar": "شلالة العذاورة",
+        "name_ascii": "Chelalet El Adhaoura"
+      },
+      {
+        "name_ar": "شنيقل",
+        "name_ascii": "Cheniguel"
+      },
+      {
+        "name_ar": "تفراوت",
+        "name_ascii": "Tafraout"
+      },
+      {
+        "name_ar": "بوشراحيل",
+        "name_ascii": "Bouchrahil"
+      },
+      {
+        "name_ar": "خمس جوامع",
+        "name_ascii": "Khams Djouamaa"
+      },
+      {
+        "name_ar": "سيدي نعمان",
+        "name_ascii": "Sidi Naamane"
+      },
+      {
+        "name_ar": "عزيز",
+        "name_ascii": "Aziz"
+      },
+      {
+        "name_ar": "دراق",
+        "name_ascii": "Derrag"
+      },
+      {
+        "name_ar": "أم الجليل",
+        "name_ascii": "Oum El Djellil"
+      },
+      {
+        "name_ar": "جواب",
+        "name_ascii": "Djouab"
+      },
+      {
+        "name_ar": "سيدي زهار",
+        "name_ascii": "Sidi Zahar"
+      },
+      {
+        "name_ar": "سيدي زيان",
+        "name_ascii": "Sidi Ziane"
+      },
+      {
+        "name_ar": "أولاد عنتر",
+        "name_ascii": "Ouled Antar"
+      }
+    ]
+  },
+  {
+    "code": 27,
+    "name_ar": "مستغانم",
+    "name_ascii": "Mostaganem",
+    "communes": [
+      {
+        "name_ar": "فرناقة",
+        "name_ascii": "Fornaka"
+      },
+      {
+        "name_ar": "وادي الخير",
+        "name_ascii": "Oued El Kheir"
+      },
+      {
+        "name_ar": "الحسيان (بني ياحي",
+        "name_ascii": "Hassiane"
+      },
+      {
+        "name_ar": "حاسي ماماش",
+        "name_ascii": "Hassi Mameche"
+      },
+      {
+        "name_ar": "مزغران",
+        "name_ascii": "Mazagran"
+      },
+      {
+        "name_ar": "ستيدية",
+        "name_ascii": "Stidia"
+      },
+      {
+        "name_ar": "عين تادلس",
+        "name_ascii": "Ain-Tedles"
+      },
+      {
+        "name_ar": "سيدي بلعطار",
+        "name_ascii": "Sidi Belaattar"
+      },
+      {
+        "name_ar": "سور",
+        "name_ascii": "Sour"
+      },
+      {
+        "name_ar": "عين بودينار",
+        "name_ascii": "Ain-Boudinar"
+      },
+      {
+        "name_ar": "خير الدين",
+        "name_ascii": "Kheir-Eddine"
+      },
+      {
+        "name_ar": "صيادة",
+        "name_ascii": "Sayada"
+      },
+      {
+        "name_ar": "سيدي علي",
+        "name_ascii": "Sidi Ali"
+      },
+      {
+        "name_ar": "تزقايت",
+        "name_ascii": "Tazgait"
+      },
+      {
+        "name_ar": "بن عبد المالك رمضان",
+        "name_ascii": "Benabdelmalek Ramdane"
+      },
+      {
+        "name_ar": "مستغانم",
+        "name_ascii": "Mostaganem"
+      },
+      {
+        "name_ar": "حجاج",
+        "name_ascii": "Hadjadj"
+      },
+      {
+        "name_ar": "سيدي لخضر",
+        "name_ascii": "Sidi-Lakhdar"
+      },
+      {
+        "name_ar": "عشعاشة",
+        "name_ascii": "Achaacha"
+      },
+      {
+        "name_ar": "خضرة",
+        "name_ascii": "Khadra"
+      },
+      {
+        "name_ar": "نكمارية",
+        "name_ascii": "Nekmaria"
+      },
+      {
+        "name_ar": "أولاد بوغالم",
+        "name_ascii": "Ouled Boughalem"
+      },
+      {
+        "name_ar": "بوقيراط",
+        "name_ascii": "Bouguirat"
+      },
+      {
+        "name_ar": "صفصاف",
+        "name_ascii": "Safsaf"
+      },
+      {
+        "name_ar": "سيرات",
+        "name_ascii": "Sirat"
+      },
+      {
+        "name_ar": "السوافلية",
+        "name_ascii": "Souaflia"
+      },
+      {
+        "name_ar": "عين سيدي الشريف",
+        "name_ascii": "Ain-Sidi Cherif"
+      },
+      {
+        "name_ar": "منصورة",
+        "name_ascii": "Mansourah"
+      },
+      {
+        "name_ar": "ماسرة",
+        "name_ascii": "Mesra"
+      },
+      {
+        "name_ar": "الطواهرية",
+        "name_ascii": "Touahria"
+      },
+      {
+        "name_ar": "عين نويسي",
+        "name_ascii": "Ain-Nouissy"
+      },
+      {
+        "name_ar": "أولاد مع الله",
+        "name_ascii": "Ouled-Maalah"
+      }
+    ]
+  },
+  {
+    "code": 28,
+    "name_ar": "المسيلة",
+    "name_ascii": "M'Sila",
+    "communes": [
+      {
+        "name_ar": "شلال",
+        "name_ascii": "Chellal"
+      },
+      {
+        "name_ar": "أولاد ماضي",
+        "name_ascii": "Ouled Madhi"
+      },
+      {
+        "name_ar": "خطوطي سد الجير",
+        "name_ascii": "Khettouti Sed-El-Jir"
+      },
+      {
+        "name_ar": "بلعايبة",
+        "name_ascii": "Belaiba"
+      },
+      {
+        "name_ar": "برهوم",
+        "name_ascii": "Berhoum"
+      },
+      {
+        "name_ar": "دهاهنة",
+        "name_ascii": "Dehahna"
+      },
+      {
+        "name_ar": "مقرة",
+        "name_ascii": "Magra"
+      },
+      {
+        "name_ar": "بني يلمان",
+        "name_ascii": "Beni Ilmane"
+      },
+      {
+        "name_ar": "بوطي السايح",
+        "name_ascii": "Bouti Sayeh"
+      },
+      {
+        "name_ar": "سيدي عيسى",
+        "name_ascii": "Sidi Aissa"
+      },
+      {
+        "name_ar": "عين الحجل",
+        "name_ascii": "Ain El Hadjel"
+      },
+      {
+        "name_ar": "سيدي هجرس",
+        "name_ascii": "Sidi Hadjeres"
+      },
+      {
+        "name_ar": "بوسعادة",
+        "name_ascii": "Bou Saada"
+      },
+      {
+        "name_ar": "الهامل",
+        "name_ascii": "El Hamel"
+      },
+      {
+        "name_ar": "ولتام",
+        "name_ascii": "Oulteme"
+      },
+      {
+        "name_ar": "بن زوه",
+        "name_ascii": "Benzouh"
+      },
+      {
+        "name_ar": "أولاد سيدي ابراهيم",
+        "name_ascii": "Ouled Sidi Brahim"
+      },
+      {
+        "name_ar": "سيدي عامر",
+        "name_ascii": "Sidi Ameur"
+      },
+      {
+        "name_ar": "تامسة",
+        "name_ascii": "Tamsa"
+      },
+      {
+        "name_ar": "بن سرور",
+        "name_ascii": "Ben Srour"
+      },
+      {
+        "name_ar": "محمد بوضياف",
+        "name_ascii": "Mohamed Boudiaf"
+      },
+      {
+        "name_ar": "أولاد سليمان",
+        "name_ascii": "Ouled Slimane"
+      },
+      {
+        "name_ar": "زرزور",
+        "name_ascii": "Zarzour"
+      },
+      {
+        "name_ar": "عين الملح",
+        "name_ascii": "Ain El Melh"
+      },
+      {
+        "name_ar": "عين فارس",
+        "name_ascii": "Ain Fares"
+      },
+      {
+        "name_ar": "عين الريش",
+        "name_ascii": "Ain Rich"
+      },
+      {
+        "name_ar": "بئر فضة",
+        "name_ascii": "Bir Foda"
+      },
+      {
+        "name_ar": "سيدي امحمد",
+        "name_ascii": "Sidi M'hamed"
+      },
+      {
+        "name_ar": "امجدل",
+        "name_ascii": "Medjedel"
+      },
+      {
+        "name_ar": "مناعة",
+        "name_ascii": "Menaa"
+      },
+      {
+        "name_ar": "جبل مساعد",
+        "name_ascii": "Djebel Messaad"
+      },
+      {
+        "name_ar": "سليم",
+        "name_ascii": "Slim"
+      },
+      {
+        "name_ar": "المسيلة",
+        "name_ascii": "M'sila"
+      },
+      {
+        "name_ar": "حمام الضلعة",
+        "name_ascii": "Hammam Dalaa"
+      },
+      {
+        "name_ar": "ونوغة",
+        "name_ascii": "Ouanougha"
+      },
+      {
+        "name_ar": "أولاد منصور",
+        "name_ascii": "Ouled Mansour"
+      },
+      {
+        "name_ar": "تارمونت",
+        "name_ascii": "Tarmount"
+      },
+      {
+        "name_ar": "المعاضيد",
+        "name_ascii": "Maadid"
+      },
+      {
+        "name_ar": "المطارفة",
+        "name_ascii": "M'tarfa"
+      },
+      {
+        "name_ar": "معاريف",
+        "name_ascii": "Maarif"
+      },
+      {
+        "name_ar": "أولاد دراج",
+        "name_ascii": "Ouled Derradj"
+      },
+      {
+        "name_ar": "السوامع",
+        "name_ascii": "Souamaa"
+      },
+      {
+        "name_ar": "الحوامد",
+        "name_ascii": "El Houamed"
+      },
+      {
+        "name_ar": "خبانة",
+        "name_ascii": "Khoubana"
+      },
+      {
+        "name_ar": "مسيف",
+        "name_ascii": "M'cif"
+      },
+      {
+        "name_ar": "عين الخضراء",
+        "name_ascii": "Ain Khadra"
+      },
+      {
+        "name_ar": "أولاد عدي لقبالة",
+        "name_ascii": "Ouled Addi Guebala"
+      }
+    ]
+  },
+  {
+    "code": 29,
+    "name_ar": "معسكر",
+    "name_ascii": "Mascara",
+    "communes": [
+      {
+        "name_ar": "وادي الأبطال",
+        "name_ascii": "Oued El Abtal"
+      },
+      {
+        "name_ar": "سيدي عبد المومن",
+        "name_ascii": "Sidi Abdelmoumene"
+      },
+      {
+        "name_ar": "سجرارة",
+        "name_ascii": "Sedjerara"
+      },
+      {
+        "name_ar": "المحمدية",
+        "name_ascii": "Mohammadia"
+      },
+      {
+        "name_ar": "تيغنيف",
+        "name_ascii": "Tighennif"
+      },
+      {
+        "name_ar": "مقطع الدوز",
+        "name_ascii": "Mocta-Douz"
+      },
+      {
+        "name_ar": "فراقيق",
+        "name_ascii": "Ferraguig"
+      },
+      {
+        "name_ar": "الغمري",
+        "name_ascii": "El Ghomri"
+      },
+      {
+        "name_ar": "زهانة",
+        "name_ascii": "Zahana"
+      },
+      {
+        "name_ar": "القعدة",
+        "name_ascii": "El Gaada"
+      },
+      {
+        "name_ar": "رأس عين عميروش",
+        "name_ascii": "Ras El Ain Amirouche"
+      },
+      {
+        "name_ar": "عقاز",
+        "name_ascii": "Oggaz"
+      },
+      {
+        "name_ar": "العلايمية",
+        "name_ascii": "Alaimia"
+      },
+      {
+        "name_ar": "سيق",
+        "name_ascii": "Sig"
+      },
+      {
+        "name_ar": "الشرفاء",
+        "name_ascii": "Chorfa"
+      },
+      {
+        "name_ar": "بوهني",
+        "name_ascii": "Bou Henni"
+      },
+      {
+        "name_ar": "المأمونية",
+        "name_ascii": "El Mamounia"
+      },
+      {
+        "name_ar": "القطنة",
+        "name_ascii": "El Gueitena"
+      },
+      {
+        "name_ar": "عين فارس",
+        "name_ascii": "Ain Fares"
+      },
+      {
+        "name_ar": "غروس",
+        "name_ascii": "Gharrous"
+      },
+      {
+        "name_ar": "بنيان",
+        "name_ascii": "Benian"
+      },
+      {
+        "name_ar": "عوف",
+        "name_ascii": "Aouf"
+      },
+      {
+        "name_ar": "قرجوم",
+        "name_ascii": "Guerdjoum"
+      },
+      {
+        "name_ar": "عين أفرص",
+        "name_ascii": "Ain Frass"
+      },
+      {
+        "name_ar": "عين فكان",
+        "name_ascii": "Ain Fekan"
+      },
+      {
+        "name_ar": "خلوية",
+        "name_ascii": "Khalouia"
+      },
+      {
+        "name_ar": "المنور",
+        "name_ascii": "El Menaouer"
+      },
+      {
+        "name_ar": "البرج",
+        "name_ascii": "El Bordj"
+      },
+      {
+        "name_ar": "سيدي بوسعيد",
+        "name_ascii": "Sidi Boussaid"
+      },
+      {
+        "name_ar": "المطمور",
+        "name_ascii": "Matemore"
+      },
+      {
+        "name_ar": "سيدي قادة",
+        "name_ascii": "Sidi Kada"
+      },
+      {
+        "name_ar": "ماقضة",
+        "name_ascii": "Makhda"
+      },
+      {
+        "name_ar": "معسكر",
+        "name_ascii": "Mascara"
+      },
+      {
+        "name_ar": "بوحنيفية",
+        "name_ascii": "Bouhanifia"
+      },
+      {
+        "name_ar": "غريس",
+        "name_ascii": "Ghriss"
+      },
+      {
+        "name_ar": "حسين",
+        "name_ascii": "Hacine"
+      },
+      {
+        "name_ar": "القرط",
+        "name_ascii": "El Keurt"
+      },
+      {
+        "name_ar": "فروحة",
+        "name_ascii": "Froha"
+      },
+      {
+        "name_ar": "تيزي",
+        "name_ascii": "Tizi"
+      },
+      {
+        "name_ar": "السهايلية",
+        "name_ascii": "Sehailia"
+      },
+      {
+        "name_ar": "ماوسة",
+        "name_ascii": "Maoussa"
+      },
+      {
+        "name_ar": "سيدي عبد الجبار",
+        "name_ascii": "Sidi Abdeldjebar"
+      },
+      {
+        "name_ar": "الحشم",
+        "name_ascii": "El Hachem"
+      },
+      {
+        "name_ar": "نسمط",
+        "name_ascii": "Nesmot"
+      },
+      {
+        "name_ar": "زلامطة",
+        "name_ascii": "Zelamta"
+      },
+      {
+        "name_ar": "عين فراح",
+        "name_ascii": "Ain Ferah"
+      },
+      {
+        "name_ar": "وادي التاغية",
+        "name_ascii": "Oued Taria"
+      }
+    ]
+  },
+  {
+    "code": 30,
+    "name_ar": "ورقلة",
+    "name_ascii": "Ouargla",
+    "communes": [
+      {
+        "name_ar": "ورقلة",
+        "name_ascii": "Ouargla"
+      },
+      {
+        "name_ar": "حاسي مسعود",
+        "name_ascii": "Hassi Messaoud"
+      },
+      {
+        "name_ar": "عين البيضاء",
+        "name_ascii": "Ain Beida"
+      },
+      {
+        "name_ar": "حاسي بن عبد الله",
+        "name_ascii": "Hassi Ben Abdellah"
+      },
+      {
+        "name_ar": "سيدي خويلد",
+        "name_ascii": "Sidi Khouiled"
+      },
+      {
+        "name_ar": "البرمة",
+        "name_ascii": "El Borma"
+      },
+      {
+        "name_ar": "الرويسات",
+        "name_ascii": "Rouissat"
+      },
+      {
+        "name_ar": "انقوسة",
+        "name_ascii": "N'goussa"
+      }
+    ]
+  },
+  {
+    "code": 31,
+    "name_ar": "وهران",
+    "name_ascii": "Oran",
+    "communes": [
+      {
+        "name_ar": "سيدي الشحمي",
+        "name_ascii": "Sidi Chami"
+      },
+      {
+        "name_ar": "حاسي مفسوخ",
+        "name_ascii": "Hassi Mefsoukh"
+      },
+      {
+        "name_ar": "بئر الجير",
+        "name_ascii": "Bir El Djir"
+      },
+      {
+        "name_ar": "حاسي بن عقبة",
+        "name_ascii": "Hassi Ben Okba"
+      },
+      {
+        "name_ar": "قديل",
+        "name_ascii": "Gdyel"
+      },
+      {
+        "name_ar": "حاسي بونيف",
+        "name_ascii": "Hassi Bounif"
+      },
+      {
+        "name_ar": "الكرمة",
+        "name_ascii": "El Kerma"
+      },
+      {
+        "name_ar": "السانية",
+        "name_ascii": "Es Senia"
+      },
+      {
+        "name_ar": "بن فريحة",
+        "name_ascii": "Ben Freha"
+      },
+      {
+        "name_ar": "أرزيو",
+        "name_ascii": "Arzew"
+      },
+      {
+        "name_ar": "سيدي بن يبقى",
+        "name_ascii": "Sidi Ben Yebka"
+      },
+      {
+        "name_ar": "عين البية",
+        "name_ascii": "Ain Biya"
+      },
+      {
+        "name_ar": "بطيوة",
+        "name_ascii": "Bethioua"
+      },
+      {
+        "name_ar": "مرسى الحجاج",
+        "name_ascii": "Marsat El Hadjadj"
+      },
+      {
+        "name_ar": "عين الترك",
+        "name_ascii": "Ain Turk"
+      },
+      {
+        "name_ar": "وهران",
+        "name_ascii": "Oran"
+      },
+      {
+        "name_ar": "العنصر",
+        "name_ascii": "El Ancor"
+      },
+      {
+        "name_ar": "المرسى الكبير",
+        "name_ascii": "Mers El Kebir"
+      },
+      {
+        "name_ar": "بوفاتيس",
+        "name_ascii": "Boufatis"
+      },
+      {
+        "name_ar": "البراية",
+        "name_ascii": "El Braya"
+      },
+      {
+        "name_ar": "وادي تليلات",
+        "name_ascii": "Oued Tlelat"
+      },
+      {
+        "name_ar": "عين الكرمة",
+        "name_ascii": "Ain Kerma"
+      },
+      {
+        "name_ar": "بوتليليس",
+        "name_ascii": "Boutlelis"
+      },
+      {
+        "name_ar": "مسرغين",
+        "name_ascii": "Messerghin"
+      },
+      {
+        "name_ar": "بوسفر",
+        "name_ascii": "Bousfer"
+      },
+      {
+        "name_ar": "طفراوي",
+        "name_ascii": "Tafraoui"
+      }
+    ]
+  },
+  {
+    "code": 32,
+    "name_ar": "البيض",
+    "name_ascii": "El Bayadh",
+    "communes": [
+      {
+        "name_ar": "عين العراك",
+        "name_ascii": "Ain El Orak"
+      },
+      {
+        "name_ar": "كراكدة",
+        "name_ascii": "Krakda"
+      },
+      {
+        "name_ar": "سيدي سليمان",
+        "name_ascii": "Sidi Slimane"
+      },
+      {
+        "name_ar": "سيدي عامر",
+        "name_ascii": "Sidi Ameur"
+      },
+      {
+        "name_ar": "بوعلام",
+        "name_ascii": "Boualem"
+      },
+      {
+        "name_ar": "البنود",
+        "name_ascii": "El Bnoud"
+      },
+      {
+        "name_ar": "بوقطب",
+        "name_ascii": "Bougtoub"
+      },
+      {
+        "name_ar": "الخيثر",
+        "name_ascii": "El Kheiter"
+      },
+      {
+        "name_ar": "توسمولين",
+        "name_ascii": "Tousmouline"
+      },
+      {
+        "name_ar": "سيدي طيفور",
+        "name_ascii": "Sidi Tiffour"
+      },
+      {
+        "name_ar": "ستيتن",
+        "name_ascii": "Stitten"
+      },
+      {
+        "name_ar": "البيض",
+        "name_ascii": "El Bayadh"
+      },
+      {
+        "name_ar": "رقاصة",
+        "name_ascii": "Rogassa"
+      },
+      {
+        "name_ar": "المحرة",
+        "name_ascii": "El Mehara"
+      },
+      {
+        "name_ar": "الكاف الأحمر",
+        "name_ascii": "Kef El Ahmar"
+      },
+      {
+        "name_ar": "بريزينة",
+        "name_ascii": "Brezina"
+      },
+      {
+        "name_ar": "الغاسول",
+        "name_ascii": "Ghassoul"
+      },
+      {
+        "name_ar": "الأبيض سيدي الشيخ",
+        "name_ascii": "Labiodh Sidi Cheikh"
+      },
+      {
+        "name_ar": "بوسمغون",
+        "name_ascii": "Boussemghoun"
+      },
+      {
+        "name_ar": "الشقيق",
+        "name_ascii": "Cheguig"
+      },
+      {
+        "name_ar": "شلالة",
+        "name_ascii": "Chellala"
+      },
+      {
+        "name_ar": "اربوات",
+        "name_ascii": "Arbaouat"
+      }
+    ]
+  },
+  {
+    "code": 33,
+    "name_ar": "إليزي",
+    "name_ascii": "Illizi",
+    "communes": [
+      {
+        "name_ar": "برج عمر إدريس",
+        "name_ascii": "Bordj Omar Driss"
+      },
+      {
+        "name_ar": "دبداب",
+        "name_ascii": "Debdeb"
+      },
+      {
+        "name_ar": "إن أمناس",
+        "name_ascii": "In Amenas"
+      },
+      {
+        "name_ar": "إيليزي",
+        "name_ascii": "Illizi"
+      }
+    ]
+  },
+  {
+    "code": 34,
+    "name_ar": "برج بوعريريج",
+    "name_ascii": "Bordj Bou Arreridj",
+    "communes": [
+      {
+        "name_ar": "الحمادية",
+        "name_ascii": "Elhammadia"
+      },
+      {
+        "name_ar": "أولاد سيدي ابراهيم",
+        "name_ascii": "Ouled Sidi-Brahim"
+      },
+      {
+        "name_ar": "عين تاغروت",
+        "name_ascii": "Ain Taghrout"
+      },
+      {
+        "name_ar": "تيكستار",
+        "name_ascii": "Tixter"
+      },
+      {
+        "name_ar": "بليمور",
+        "name_ascii": "Belimour"
+      },
+      {
+        "name_ar": "العناصر",
+        "name_ascii": "El Annasseur"
+      },
+      {
+        "name_ar": "غيلاسة",
+        "name_ascii": "Ghailasa"
+      },
+      {
+        "name_ar": "تقلعيت",
+        "name_ascii": "Taglait"
+      },
+      {
+        "name_ar": "برج الغدير",
+        "name_ascii": "Bordj Ghedir"
+      },
+      {
+        "name_ar": "العش",
+        "name_ascii": "El Euch"
+      },
+      {
+        "name_ar": "سيدي أمبارك",
+        "name_ascii": "Sidi-Embarek"
+      },
+      {
+        "name_ar": "خليل",
+        "name_ascii": "Khelil"
+      },
+      {
+        "name_ar": "بئر قاصد علي",
+        "name_ascii": "Bir Kasdali"
+      },
+      {
+        "name_ar": "تفرق",
+        "name_ascii": "Tefreg"
+      },
+      {
+        "name_ar": "الماين",
+        "name_ascii": "El Main"
+      },
+      {
+        "name_ar": "جعافرة",
+        "name_ascii": "Djaafra"
+      },
+      {
+        "name_ar": "القلة",
+        "name_ascii": "Colla"
+      },
+      {
+        "name_ar": "ثنية النصر",
+        "name_ascii": "Teniet En Nasr"
+      },
+      {
+        "name_ar": "المهير",
+        "name_ascii": "El M'hir"
+      },
+      {
+        "name_ar": "القصور",
+        "name_ascii": "Ksour"
+      },
+      {
+        "name_ar": "المنصورة",
+        "name_ascii": "Mansoura"
+      },
+      {
+        "name_ar": "حرازة",
+        "name_ascii": "Haraza"
+      },
+      {
+        "name_ar": "الرابطة",
+        "name_ascii": "Rabta"
+      },
+      {
+        "name_ar": "الياشير",
+        "name_ascii": "El Achir"
+      },
+      {
+        "name_ar": "حسناوة",
+        "name_ascii": "Hasnaoua"
+      },
+      {
+        "name_ar": "مجانة",
+        "name_ascii": "Medjana"
+      },
+      {
+        "name_ar": "عين تسرة",
+        "name_ascii": "Ain Tesra"
+      },
+      {
+        "name_ar": "أولاد أبراهم",
+        "name_ascii": "Ouled Brahem"
+      },
+      {
+        "name_ar": "رأس الوادي",
+        "name_ascii": "Ras El Oued"
+      },
+      {
+        "name_ar": "برج زمورة",
+        "name_ascii": "Bordj Zemmoura"
+      },
+      {
+        "name_ar": "أولاد دحمان",
+        "name_ascii": "Ouled Dahmane"
+      },
+      {
+        "name_ar": "تسامرت",
+        "name_ascii": "Tassamert"
+      },
+      {
+        "name_ar": "برج بوعريرج",
+        "name_ascii": "B. B. Arreridj"
+      },
+      {
+        "name_ar": "بن داود",
+        "name_ascii": "Ben Daoud"
+      }
+    ]
+  },
+  {
+    "code": 35,
+    "name_ar": "بومرداس",
+    "name_ascii": "Boumerdès",
+    "communes": [
+      {
+        "name_ar": "الخروبة",
+        "name_ascii": "El Kharrouba"
+      },
+      {
+        "name_ar": "دلس",
+        "name_ascii": "Dellys"
+      },
+      {
+        "name_ar": "بن شود",
+        "name_ascii": "Ben Choud"
+      },
+      {
+        "name_ar": "أعفير",
+        "name_ascii": "Afir"
+      },
+      {
+        "name_ar": "الثنية",
+        "name_ascii": "Thenia"
+      },
+      {
+        "name_ar": "بني عمران",
+        "name_ascii": "Beni Amrane"
+      },
+      {
+        "name_ar": "خميس الخشنة",
+        "name_ascii": "Khemis El Khechna"
+      },
+      {
+        "name_ar": "عمال",
+        "name_ascii": "Ammal"
+      },
+      {
+        "name_ar": "تيمزريت",
+        "name_ascii": "Timezrit"
+      },
+      {
+        "name_ar": "زموري",
+        "name_ascii": "Zemmouri"
+      },
+      {
+        "name_ar": "الاربعطاش",
+        "name_ascii": "Larbatache"
+      },
+      {
+        "name_ar": "يسر",
+        "name_ascii": "Isser"
+      },
+      {
+        "name_ar": "شعبة العامر",
+        "name_ascii": "Chabet El Ameur"
+      },
+      {
+        "name_ar": "أولاد عيسى",
+        "name_ascii": "Ouled Aissa"
+      },
+      {
+        "name_ar": "الناصرية",
+        "name_ascii": "Naciria"
+      },
+      {
+        "name_ar": "بوزقزة قدارة",
+        "name_ascii": "Bouzegza Keddara"
+      },
+      {
+        "name_ar": "سوق الحد",
+        "name_ascii": "Souk El Had"
+      },
+      {
+        "name_ar": "سيدي داود",
+        "name_ascii": "Sidi Daoud"
+      },
+      {
+        "name_ar": "بغلية",
+        "name_ascii": "Baghlia"
+      },
+      {
+        "name_ar": "لقاطة",
+        "name_ascii": "Leghata"
+      },
+      {
+        "name_ar": "جنات",
+        "name_ascii": "Djinet"
+      },
+      {
+        "name_ar": "تيجلابين",
+        "name_ascii": "Tidjelabine"
+      },
+      {
+        "name_ar": "سي مصطفى",
+        "name_ascii": "Si Mustapha"
+      },
+      {
+        "name_ar": "أولاد هداج",
+        "name_ascii": "Ouled Hedadj"
+      },
+      {
+        "name_ar": "أولاد موسى",
+        "name_ascii": "Ouled Moussa"
+      },
+      {
+        "name_ar": "بومرداس",
+        "name_ascii": "Boumerdes"
+      },
+      {
+        "name_ar": "قورصو",
+        "name_ascii": "Corso"
+      },
+      {
+        "name_ar": "برج منايل",
+        "name_ascii": "Bordj Menaiel"
+      },
+      {
+        "name_ar": "بودواو",
+        "name_ascii": "Boudouaou"
+      },
+      {
+        "name_ar": "بودواو البحري",
+        "name_ascii": "Boudouaou El Bahri"
+      },
+      {
+        "name_ar": "تاورقة",
+        "name_ascii": "Taourga"
+      },
+      {
+        "name_ar": "حمادي",
+        "name_ascii": "Hammedi"
+      }
+    ]
+  },
+  {
+    "code": 36,
+    "name_ar": "الطارف",
+    "name_ascii": "El Tarf",
+    "communes": [
+      {
+        "name_ar": "عين العسل",
+        "name_ascii": "Ain El Assel"
+      },
+      {
+        "name_ar": "بوقوس",
+        "name_ascii": "Bougous"
+      },
+      {
+        "name_ar": "الطارف",
+        "name_ascii": "El Tarf"
+      },
+      {
+        "name_ar": "الزيتونة",
+        "name_ascii": "Zitouna"
+      },
+      {
+        "name_ar": "البسباس",
+        "name_ascii": "Besbes"
+      },
+      {
+        "name_ar": "عين الكرمة",
+        "name_ascii": "Ain Kerma"
+      },
+      {
+        "name_ar": "بوحجار",
+        "name_ascii": "Bouhadjar"
+      },
+      {
+        "name_ar": "حمام بني صالح",
+        "name_ascii": "Hammam Beni Salah"
+      },
+      {
+        "name_ar": "وادي الزيتون",
+        "name_ascii": "Oued Zitoun"
+      },
+      {
+        "name_ar": "بن مهيدي",
+        "name_ascii": "Ben M Hidi"
+      },
+      {
+        "name_ar": "بريحان",
+        "name_ascii": "Berrihane"
+      },
+      {
+        "name_ar": "شبيطة مختار",
+        "name_ascii": "Chebaita Mokhtar"
+      },
+      {
+        "name_ar": "الشط",
+        "name_ascii": "Echatt"
+      },
+      {
+        "name_ar": "العيون",
+        "name_ascii": "El Aioun"
+      },
+      {
+        "name_ar": "القالة",
+        "name_ascii": "El Kala"
+      },
+      {
+        "name_ar": "السوارخ",
+        "name_ascii": "Souarekh"
+      },
+      {
+        "name_ar": "زريزر",
+        "name_ascii": "Zerizer"
+      },
+      {
+        "name_ar": "بوثلجة",
+        "name_ascii": "Bouteldja"
+      },
+      {
+        "name_ar": "الشافية",
+        "name_ascii": "Chefia"
+      },
+      {
+        "name_ar": "بحيرة الطيور",
+        "name_ascii": "Lac Des Oiseaux"
+      },
+      {
+        "name_ar": "شحاني",
+        "name_ascii": "Chihani"
+      },
+      {
+        "name_ar": "رمل السوق",
+        "name_ascii": "Raml Souk"
+      },
+      {
+        "name_ar": "عصفور",
+        "name_ascii": "Asfour"
+      },
+      {
+        "name_ar": "الذرعـان",
+        "name_ascii": "Drean"
+      }
+    ]
+  },
+  {
+    "code": 37,
+    "name_ar": "تندوف",
+    "name_ascii": "Tindouf",
+    "communes": [
+      {
+        "name_ar": "تندوف",
+        "name_ascii": "Tindouf"
+      },
+      {
+        "name_ar": "أم العسل",
+        "name_ascii": "Oum El Assel"
+      }
+    ]
+  },
+  {
+    "code": 38,
+    "name_ar": "تيسمسيلت",
+    "name_ascii": "Tissemsilt",
+    "communes": [
+      {
+        "name_ar": "خميستي",
+        "name_ascii": "Khemisti"
+      },
+      {
+        "name_ar": "ثنية الاحد",
+        "name_ascii": "Theniet El Had"
+      },
+      {
+        "name_ar": "أولاد بسام",
+        "name_ascii": "Ouled Bessam"
+      },
+      {
+        "name_ar": "سيدي بوتوشنت",
+        "name_ascii": "Sidi Boutouchent"
+      },
+      {
+        "name_ar": "تيسمسيلت",
+        "name_ascii": "Tissemsilt"
+      },
+      {
+        "name_ar": "سيدي العنتري",
+        "name_ascii": "Sidi Lantri"
+      },
+      {
+        "name_ar": "بني شعيب",
+        "name_ascii": "Beni Chaib"
+      },
+      {
+        "name_ar": "بني لحسن",
+        "name_ascii": "Beni Lahcene"
+      },
+      {
+        "name_ar": "سيدي عابد",
+        "name_ascii": "Sidi Abed"
+      },
+      {
+        "name_ar": "سيدي سليمان",
+        "name_ascii": "Sidi Slimane"
+      },
+      {
+        "name_ar": "بوقائد",
+        "name_ascii": "Boucaid"
+      },
+      {
+        "name_ar": "الأربعاء",
+        "name_ascii": "Larbaa"
+      },
+      {
+        "name_ar": "الأزهرية",
+        "name_ascii": "Lazharia"
+      },
+      {
+        "name_ar": "لرجام",
+        "name_ascii": "Lardjem"
+      },
+      {
+        "name_ar": "الملعب",
+        "name_ascii": "Melaab"
+      },
+      {
+        "name_ar": "العيون",
+        "name_ascii": "Layoune"
+      },
+      {
+        "name_ar": "تملاحت",
+        "name_ascii": "Tamellahet"
+      },
+      {
+        "name_ar": "اليوسفية",
+        "name_ascii": "Youssoufia"
+      },
+      {
+        "name_ar": "برج الأمير عبد القادر",
+        "name_ascii": "Bordj El Emir Abdelkader"
+      },
+      {
+        "name_ar": "عماري",
+        "name_ascii": "Ammari"
+      },
+      {
+        "name_ar": "المعاصم",
+        "name_ascii": "Maacem"
+      },
+      {
+        "name_ar": "برج بونعامة",
+        "name_ascii": "Bordj Bounaama"
+      }
+    ]
+  },
+  {
+    "code": 39,
+    "name_ar": "الوادي",
+    "name_ascii": "El Oued",
+    "communes": [
+      {
+        "name_ar": "دوار الماء",
+        "name_ascii": "Douar El Maa"
+      },
+      {
+        "name_ar": "العقلة",
+        "name_ascii": "El Ogla"
+      },
+      {
+        "name_ar": "المقرن",
+        "name_ascii": "Magrane"
+      },
+      {
+        "name_ar": "سيدي عون",
+        "name_ascii": "Sidi Aoun"
+      },
+      {
+        "name_ar": "اميه وانسة",
+        "name_ascii": "Mih Ouansa"
+      },
+      {
+        "name_ar": "كوينين",
+        "name_ascii": "Kouinine"
+      },
+      {
+        "name_ar": "البياضة",
+        "name_ascii": "Bayadha"
+      },
+      {
+        "name_ar": "النخلة",
+        "name_ascii": "Nakhla"
+      },
+      {
+        "name_ar": "الرباح",
+        "name_ascii": "Robbah"
+      },
+      {
+        "name_ar": "قمار",
+        "name_ascii": "Guemar"
+      },
+      {
+        "name_ar": "بن  قشة",
+        "name_ascii": "Ben Guecha"
+      },
+      {
+        "name_ar": "ورماس",
+        "name_ascii": "Ourmes"
+      },
+      {
+        "name_ar": "تغزوت",
+        "name_ascii": "Taghzout"
+      },
+      {
+        "name_ar": "الحمراية",
+        "name_ascii": "Hamraia"
+      },
+      {
+        "name_ar": "الرقيبة",
+        "name_ascii": "Reguiba"
+      },
+      {
+        "name_ar": "الدبيلة",
+        "name_ascii": "Debila"
+      },
+      {
+        "name_ar": "حساني عبد الكريم",
+        "name_ascii": "Hassani Abdelkrim"
+      },
+      {
+        "name_ar": "حاسي خليفة",
+        "name_ascii": "Hassi Khalifa"
+      },
+      {
+        "name_ar": "الطريفاوي",
+        "name_ascii": "Trifaoui"
+      },
+      {
+        "name_ar": "الطالب العربي",
+        "name_ascii": "Taleb Larbi"
+      },
+      {
+        "name_ar": "وادي العلندة",
+        "name_ascii": "Oued El Alenda"
+      },
+      {
+        "name_ar": "الوادي",
+        "name_ascii": "El-Oued"
+      }
+    ]
+  },
+  {
+    "code": 40,
+    "name_ar": "خنشلة",
+    "name_ascii": "Khenchela",
+    "communes": [
+      {
+        "name_ar": "خيران",
+        "name_ascii": "Khirane"
+      },
+      {
+        "name_ar": "بابار",
+        "name_ascii": "Babar"
+      },
+      {
+        "name_ar": "المحمل",
+        "name_ascii": "El Mahmal"
+      },
+      {
+        "name_ar": "أولاد رشاش",
+        "name_ascii": "Ouled Rechache"
+      },
+      {
+        "name_ar": "جلال",
+        "name_ascii": "Djellal"
+      },
+      {
+        "name_ar": "يابوس",
+        "name_ascii": "Yabous"
+      },
+      {
+        "name_ar": "خنشلة",
+        "name_ascii": "Khenchela"
+      },
+      {
+        "name_ar": "قايس",
+        "name_ascii": "Kais"
+      },
+      {
+        "name_ar": "شلية",
+        "name_ascii": "Chelia"
+      },
+      {
+        "name_ar": "الرميلة",
+        "name_ascii": "Remila"
+      },
+      {
+        "name_ar": "تاوزيانت",
+        "name_ascii": "Taouzianat"
+      },
+      {
+        "name_ar": "بغاي",
+        "name_ascii": "Baghai"
+      },
+      {
+        "name_ar": "الحامة",
+        "name_ascii": "El Hamma"
+      },
+      {
+        "name_ar": "انسيغة",
+        "name_ascii": "Ensigha"
+      },
+      {
+        "name_ar": "طامزة",
+        "name_ascii": "Tamza"
+      },
+      {
+        "name_ar": "عين الطويلة",
+        "name_ascii": "Ain Touila"
+      },
+      {
+        "name_ar": "متوسة",
+        "name_ascii": "M'toussa"
+      },
+      {
+        "name_ar": "بوحمامة",
+        "name_ascii": "Bouhmama"
+      },
+      {
+        "name_ar": "الولجة",
+        "name_ascii": "El Oueldja"
+      },
+      {
+        "name_ar": "مصارة",
+        "name_ascii": "M'sara"
+      },
+      {
+        "name_ar": "ششار",
+        "name_ascii": "Chechar"
+      }
+    ]
+  },
+  {
+    "code": 41,
+    "name_ar": "سوق أهراس",
+    "name_ascii": "Souk Ahras",
+    "communes": [
+      {
+        "name_ar": "سوق أهراس",
+        "name_ascii": "Souk Ahras"
+      },
+      {
+        "name_ar": "عين سلطان",
+        "name_ascii": "Ain Soltane"
+      },
+      {
+        "name_ar": "سدراتة",
+        "name_ascii": "Sedrata"
+      },
+      {
+        "name_ar": "الحنانشة",
+        "name_ascii": "Hanencha"
+      },
+      {
+        "name_ar": "المشروحة",
+        "name_ascii": "Machroha"
+      },
+      {
+        "name_ar": "عين الزانة",
+        "name_ascii": "Ain Zana"
+      },
+      {
+        "name_ar": "أولاد إدريس",
+        "name_ascii": "Ouled Driss"
+      },
+      {
+        "name_ar": "ترقالت",
+        "name_ascii": "Terraguelt"
+      },
+      {
+        "name_ar": "أم العظايم",
+        "name_ascii": "Oum El Adhaim"
+      },
+      {
+        "name_ar": "وادي الكبريت",
+        "name_ascii": "Oued Kebrit"
+      },
+      {
+        "name_ar": "تيفاش",
+        "name_ascii": "Tiffech"
+      },
+      {
+        "name_ar": "الراقوبة",
+        "name_ascii": "Ragouba"
+      },
+      {
+        "name_ar": "الدريعة",
+        "name_ascii": "Drea"
+      },
+      {
+        "name_ar": "تاورة",
+        "name_ascii": "Taoura"
+      },
+      {
+        "name_ar": "الزعرورية",
+        "name_ascii": "Zaarouria"
+      },
+      {
+        "name_ar": "الحدادة",
+        "name_ascii": "Haddada"
+      },
+      {
+        "name_ar": "الخضارة",
+        "name_ascii": "Khedara"
+      },
+      {
+        "name_ar": "أولاد مومن",
+        "name_ascii": "Ouled Moumen"
+      },
+      {
+        "name_ar": "المراهنة",
+        "name_ascii": "Merahna"
+      },
+      {
+        "name_ar": "ويلان",
+        "name_ascii": "Ouillen"
+      },
+      {
+        "name_ar": "سيدي فرج",
+        "name_ascii": "Sidi Fredj"
+      },
+      {
+        "name_ar": "بئر بوحوش",
+        "name_ascii": "Bir Bouhouche"
+      },
+      {
+        "name_ar": "سافل الويدان",
+        "name_ascii": "Safel El Ouiden"
+      },
+      {
+        "name_ar": "خميسة",
+        "name_ascii": "Khemissa"
+      },
+      {
+        "name_ar": "مداوروش",
+        "name_ascii": "M'daourouche"
+      },
+      {
+        "name_ar": "الزوابي",
+        "name_ascii": "Zouabi"
+      }
+    ]
+  },
+  {
+    "code": 42,
+    "name_ar": "تيبازة",
+    "name_ascii": "Tipaza",
+    "communes": [
+      {
+        "name_ar": "حجوط",
+        "name_ascii": "Hadjout"
+      },
+      {
+        "name_ar": "مراد",
+        "name_ascii": "Merad"
+      },
+      {
+        "name_ar": "مناصر",
+        "name_ascii": "Menaceur"
+      },
+      {
+        "name_ar": "أغبال",
+        "name_ascii": "Aghbal"
+      },
+      {
+        "name_ar": "الناظور",
+        "name_ascii": "Nador"
+      },
+      {
+        "name_ar": "سيدي عامر",
+        "name_ascii": "Sidi-Amar"
+      },
+      {
+        "name_ar": "قوراية",
+        "name_ascii": "Gouraya"
+      },
+      {
+        "name_ar": "مسلمون",
+        "name_ascii": "Messelmoun"
+      },
+      {
+        "name_ar": "شرشال",
+        "name_ascii": "Cherchell"
+      },
+      {
+        "name_ar": "حجرة النص",
+        "name_ascii": "Hadjret Ennous"
+      },
+      {
+        "name_ar": "سيدي غيلاس",
+        "name_ascii": "Sidi Ghiles"
+      },
+      {
+        "name_ar": "الداموس",
+        "name_ascii": "Damous"
+      },
+      {
+        "name_ar": "الأرهاط",
+        "name_ascii": "Larhat"
+      },
+      {
+        "name_ar": "فوكة",
+        "name_ascii": "Fouka"
+      },
+      {
+        "name_ar": "عين تاقورايت",
+        "name_ascii": "Ain Tagourait"
+      },
+      {
+        "name_ar": "بوهارون",
+        "name_ascii": "Bou Haroun"
+      },
+      {
+        "name_ar": "بواسماعيل",
+        "name_ascii": "Bou Ismail"
+      },
+      {
+        "name_ar": "خميستي",
+        "name_ascii": "Khemisti"
+      },
+      {
+        "name_ar": "أحمر العين",
+        "name_ascii": "Ahmer El Ain"
+      },
+      {
+        "name_ar": "بورقيقة",
+        "name_ascii": "Bourkika"
+      },
+      {
+        "name_ar": "دواودة",
+        "name_ascii": "Douaouda"
+      },
+      {
+        "name_ar": "سيدي راشد",
+        "name_ascii": "Sidi Rached"
+      },
+      {
+        "name_ar": "الحطاطبة",
+        "name_ascii": "Attatba"
+      },
+      {
+        "name_ar": "الشعيبة",
+        "name_ascii": "Chaiba"
+      },
+      {
+        "name_ar": "القليعة",
+        "name_ascii": "Kolea"
+      },
+      {
+        "name_ar": "سيدي سميان",
+        "name_ascii": "Sidi Semiane"
+      },
+      {
+        "name_ar": "تيبازة",
+        "name_ascii": "Tipaza"
+      },
+      {
+        "name_ar": "بني ميلك",
+        "name_ascii": "Beni Mileuk"
+      }
+    ]
+  },
+  {
+    "code": 43,
+    "name_ar": "ميلة",
+    "name_ascii": "Mila",
+    "communes": [
+      {
+        "name_ar": "مشيرة",
+        "name_ascii": "El Mechira"
+      },
+      {
+        "name_ar": "العياضي برباس",
+        "name_ascii": "El Ayadi Barbes"
+      },
+      {
+        "name_ar": " عين البيضاء أحريش",
+        "name_ascii": "Ain Beida Harriche"
+      },
+      {
+        "name_ar": "تسالة لمطاعي",
+        "name_ascii": "Tassala Lematai"
+      },
+      {
+        "name_ar": "ترعي باينان",
+        "name_ascii": "Terrai Bainen"
+      },
+      {
+        "name_ar": "اعميرة اراس",
+        "name_ascii": "Amira Arres"
+      },
+      {
+        "name_ar": "تسدان حدادة",
+        "name_ascii": "Tassadane Haddada"
+      },
+      {
+        "name_ar": "مينار زارزة",
+        "name_ascii": "Minar Zarza"
+      },
+      {
+        "name_ar": "سيدي مروان",
+        "name_ascii": "Sidi Merouane"
+      },
+      {
+        "name_ar": "الشيقارة",
+        "name_ascii": "Chigara"
+      },
+      {
+        "name_ar": "حمالة",
+        "name_ascii": "Hamala"
+      },
+      {
+        "name_ar": "القرارم قوقة",
+        "name_ascii": "Grarem Gouga"
+      },
+      {
+        "name_ar": "تيبرقنت",
+        "name_ascii": "Tiberguent"
+      },
+      {
+        "name_ar": "الرواشد",
+        "name_ascii": "Rouached"
+      },
+      {
+        "name_ar": "دراحي بوصلاح",
+        "name_ascii": "Derrahi Bousselah"
+      },
+      {
+        "name_ar": "زغاية",
+        "name_ascii": "Zeghaia"
+      },
+      {
+        "name_ar": "وادي النجاء",
+        "name_ascii": "Oued Endja"
+      },
+      {
+        "name_ar": "أحمد راشدي",
+        "name_ascii": "Ahmed Rachedi"
+      },
+      {
+        "name_ar": "تاجنانت",
+        "name_ascii": "Tadjenanet"
+      },
+      {
+        "name_ar": "عين الملوك",
+        "name_ascii": "Ain Mellouk"
+      },
+      {
+        "name_ar": "أولاد اخلوف",
+        "name_ascii": "Ouled Khalouf"
+      },
+      {
+        "name_ar": "بن يحي عبد الرحمن",
+        "name_ascii": "Benyahia Abderrahmane"
+      },
+      {
+        "name_ar": "التلاغمة",
+        "name_ascii": "Teleghma"
+      },
+      {
+        "name_ar": "وادي سقان",
+        "name_ascii": "Oued Seguen"
+      },
+      {
+        "name_ar": "وادي العثمانية",
+        "name_ascii": "Oued Athmenia"
+      },
+      {
+        "name_ar": "عين التين",
+        "name_ascii": "Ain Tine"
+      },
+      {
+        "name_ar": "شلغوم العيد",
+        "name_ascii": "Chelghoum Laid"
+      },
+      {
+        "name_ar": "يحي بني قشة",
+        "name_ascii": "Yahia Beniguecha"
+      },
+      {
+        "name_ar": "فرجيوة",
+        "name_ascii": "Ferdjioua"
+      },
+      {
+        "name_ar": "سيدي خليفة",
+        "name_ascii": "Sidi Khelifa"
+      },
+      {
+        "name_ar": "ميلة",
+        "name_ascii": "Mila"
+      },
+      {
+        "name_ar": "بوحاتم",
+        "name_ascii": "Bouhatem"
+      }
+    ]
+  },
+  {
+    "code": 44,
+    "name_ar": "عين الدفلة",
+    "name_ascii": "Aïn Defla",
+    "communes": [
+      {
+        "name_ar": "خميس مليانة",
+        "name_ascii": "Khemis-Miliana"
+      },
+      {
+        "name_ar": "سيدي الأخضر",
+        "name_ascii": "Sidi-Lakhdar"
+      },
+      {
+        "name_ar": "عين البنيان",
+        "name_ascii": "Ain-Benian"
+      },
+      {
+        "name_ar": "عين التركي",
+        "name_ascii": "Ain-Torki"
+      },
+      {
+        "name_ar": "حمام ريغة",
+        "name_ascii": "Hammam-Righa"
+      },
+      {
+        "name_ar": "بوراشد",
+        "name_ascii": "Bourached"
+      },
+      {
+        "name_ar": "الحسينية",
+        "name_ascii": "Hoceinia"
+      },
+      {
+        "name_ar": "جليدة",
+        "name_ascii": "Djelida"
+      },
+      {
+        "name_ar": "عريب",
+        "name_ascii": "Arib"
+      },
+      {
+        "name_ar": "جمعة أولاد الشيخ",
+        "name_ascii": "Djemaa Ouled Cheikh"
+      },
+      {
+        "name_ar": "العامرة",
+        "name_ascii": "El-Amra"
+      },
+      {
+        "name_ar": "العطاف",
+        "name_ascii": "El-Attaf"
+      },
+      {
+        "name_ar": "تبركانين",
+        "name_ascii": "Tiberkanine"
+      },
+      {
+        "name_ar": "عين بويحيى",
+        "name_ascii": "Ain-Bouyahia"
+      },
+      {
+        "name_ar": "العبادية",
+        "name_ascii": "El-Abadia"
+      },
+      {
+        "name_ar": "تاشتة زقاغة",
+        "name_ascii": "Tacheta Zegagha"
+      },
+      {
+        "name_ar": "بربوش",
+        "name_ascii": "Birbouche"
+      },
+      {
+        "name_ar": "جندل",
+        "name_ascii": "Djendel"
+      },
+      {
+        "name_ar": "بن علال",
+        "name_ascii": "Ben Allal"
+      },
+      {
+        "name_ar": "وادي الشرفاء",
+        "name_ascii": "Oued Chorfa"
+      },
+      {
+        "name_ar": "بومدفع",
+        "name_ascii": "Boumedfaa"
+      },
+      {
+        "name_ar": "عين الاشياخ",
+        "name_ascii": "Ain-Lechiakh"
+      },
+      {
+        "name_ar": "عين السلطان",
+        "name_ascii": "Ain-Soltane"
+      },
+      {
+        "name_ar": "واد الجمعة",
+        "name_ascii": "Oued Djemaa"
+      },
+      {
+        "name_ar": "الماين",
+        "name_ascii": "El-Maine"
+      },
+      {
+        "name_ar": "الروينة",
+        "name_ascii": "Rouina"
+      },
+      {
+        "name_ar": "زدين",
+        "name_ascii": "Zeddine"
+      },
+      {
+        "name_ar": "بئر ولد خليفة",
+        "name_ascii": "Bir-Ould-Khelifa"
+      },
+      {
+        "name_ar": "برج الأمير خالد",
+        "name_ascii": "Bordj-Emir-Khaled"
+      },
+      {
+        "name_ar": "طارق بن زياد",
+        "name_ascii": "Tarik-Ibn-Ziad"
+      },
+      {
+        "name_ar": "بطحية",
+        "name_ascii": "Bathia"
+      },
+      {
+        "name_ar": "بلعاص",
+        "name_ascii": "Belaas"
+      },
+      {
+        "name_ar": "الحسانية",
+        "name_ascii": "Hassania"
+      },
+      {
+        "name_ar": "عين الدفلى",
+        "name_ascii": "Ain-Defla"
+      },
+      {
+        "name_ar": "مليانة",
+        "name_ascii": "Miliana"
+      },
+      {
+        "name_ar": "المخاطرية",
+        "name_ascii": "Mekhatria"
+      }
+    ]
+  },
+  {
+    "code": 45,
+    "name_ar": "النعامة",
+    "name_ascii": "Naâma",
+    "communes": [
+      {
+        "name_ar": "تيوت",
+        "name_ascii": "Tiout"
+      },
+      {
+        "name_ar": "مغرار",
+        "name_ascii": "Moghrar"
+      },
+      {
+        "name_ar": "عسلة",
+        "name_ascii": "Asla"
+      },
+      {
+        "name_ar": "القصدير",
+        "name_ascii": "Kasdir"
+      },
+      {
+        "name_ar": "مكمن بن عمار",
+        "name_ascii": "Makmen Ben Amar"
+      },
+      {
+        "name_ar": "عين الصفراء",
+        "name_ascii": "Ain Sefra"
+      },
+      {
+        "name_ar": "المشرية",
+        "name_ascii": "Mecheria"
+      },
+      {
+        "name_ar": "البيوض",
+        "name_ascii": "El Biodh"
+      },
+      {
+        "name_ar": "عين بن خليل",
+        "name_ascii": "Ain Ben Khelil"
+      },
+      {
+        "name_ar": "النعامة",
+        "name_ascii": "Naama"
+      },
+      {
+        "name_ar": "جنين بورزق",
+        "name_ascii": "Djenienne Bourezg"
+      },
+      {
+        "name_ar": "سفيسيفة",
+        "name_ascii": "Sfissifa"
+      }
+    ]
+  },
+  {
+    "code": 46,
+    "name_ar": "عين تيموشنت",
+    "name_ascii": "Aïn Témouchent",
+    "communes": [
+      {
+        "name_ar": "سيدي بومدين",
+        "name_ascii": "Sidi Boumediene"
+      },
+      {
+        "name_ar": "تامزورة",
+        "name_ascii": "Tamzoura"
+      },
+      {
+        "name_ar": "شعبة اللحم",
+        "name_ascii": "Chaabat El Ham"
+      },
+      {
+        "name_ar": "المالح",
+        "name_ascii": "El Maleh"
+      },
+      {
+        "name_ar": "أولاد الكيحل",
+        "name_ascii": "Ouled Kihal"
+      },
+      {
+        "name_ar": "شنتوف",
+        "name_ascii": "Chentouf"
+      },
+      {
+        "name_ar": "تارقة",
+        "name_ascii": "Terga"
+      },
+      {
+        "name_ar": "وادي الصباح",
+        "name_ascii": "Oued Sebbah"
+      },
+      {
+        "name_ar": "العامرية",
+        "name_ascii": "El Amria"
+      },
+      {
+        "name_ar": "حاسي الغلة",
+        "name_ascii": "Hassi El Ghella"
+      },
+      {
+        "name_ar": "أولاد بوجمعة",
+        "name_ascii": "Ouled Boudjemaa"
+      },
+      {
+        "name_ar": "أغلال",
+        "name_ascii": "Aghlal"
+      },
+      {
+        "name_ar": "عين الكيحل",
+        "name_ascii": "Ain Kihal"
+      },
+      {
+        "name_ar": "عين الطلبة",
+        "name_ascii": "Ain Tolba"
+      },
+      {
+        "name_ar": "عقب الليل",
+        "name_ascii": "Aoubellil"
+      },
+      {
+        "name_ar": "بني صاف",
+        "name_ascii": "Beni Saf"
+      },
+      {
+        "name_ar": "الحساسنة",
+        "name_ascii": "Hassasna"
+      },
+      {
+        "name_ar": "الأمير عبد القادر",
+        "name_ascii": "Emir Abdelkader"
+      },
+      {
+        "name_ar": "سيدي صافي",
+        "name_ascii": "Sidi Safi"
+      },
+      {
+        "name_ar": "ولهاصة الغرابة",
+        "name_ascii": "Oulhaca El Gheraba"
+      },
+      {
+        "name_ar": "سيدي ورياش",
+        "name_ascii": "Sidi Ouriache"
+      },
+      {
+        "name_ar": "عين الأربعاء",
+        "name_ascii": "Ain El Arbaa"
+      },
+      {
+        "name_ar": "المساعيد",
+        "name_ascii": "El Messaid"
+      },
+      {
+        "name_ar": "وادي برقش",
+        "name_ascii": "Oued Berkeche"
+      },
+      {
+        "name_ar": "سيدي بن عدة",
+        "name_ascii": "Sidi Ben Adda"
+      },
+      {
+        "name_ar": "عين تموشنت",
+        "name_ascii": "Ain Temouchent"
+      },
+      {
+        "name_ar": "بوزجار",
+        "name_ascii": "Bouzedjar"
+      },
+      {
+        "name_ar": "حمام بوحجر",
+        "name_ascii": "Hammam Bou Hadjar"
+      }
+    ]
+  },
+  {
+    "code": 47,
+    "name_ar": "غرداية",
+    "name_ascii": "Ghardaïa",
+    "communes": [
+      {
+        "name_ar": "ضاية بن ضحوة",
+        "name_ascii": "Dhayet Bendhahoua"
+      },
+      {
+        "name_ar": "المنصورة",
+        "name_ascii": "Mansoura"
+      },
+      {
+        "name_ar": "العطف",
+        "name_ascii": "El Atteuf"
+      },
+      {
+        "name_ar": "بونورة",
+        "name_ascii": "Bounoura"
+      },
+      {
+        "name_ar": "زلفانة",
+        "name_ascii": "Zelfana"
+      },
+      {
+        "name_ar": "القرارة",
+        "name_ascii": "El Guerrara"
+      },
+      {
+        "name_ar": "سبسب",
+        "name_ascii": "Sebseb"
+      },
+      {
+        "name_ar": "متليلي",
+        "name_ascii": "Metlili"
+      },
+      {
+        "name_ar": "بريان",
+        "name_ascii": "Berriane"
+      },
+      {
+        "name_ar": "غرداية",
+        "name_ascii": "Ghardaia"
+      }
+    ]
+  },
+  {
+    "code": 48,
+    "name_ar": "غليزان",
+    "name_ascii": "Relizane",
+    "communes": [
+      {
+        "name_ar": "القطار",
+        "name_ascii": "El-Guettar"
+      },
+      {
+        "name_ar": "أولاد يعيش",
+        "name_ascii": "Ouled Aiche"
+      },
+      {
+        "name_ar": "بني درقن",
+        "name_ascii": "Beni Dergoun"
+      },
+      {
+        "name_ar": "دار بن عبد الله",
+        "name_ascii": "Dar Ben Abdelah"
+      },
+      {
+        "name_ar": "زمورة",
+        "name_ascii": "Zemmoura"
+      },
+      {
+        "name_ar": "جديوية",
+        "name_ascii": "Djidiouia"
+      },
+      {
+        "name_ar": "حمري",
+        "name_ascii": "Hamri"
+      },
+      {
+        "name_ar": "بلعسل بوزقزة",
+        "name_ascii": "Belaassel Bouzagza"
+      },
+      {
+        "name_ar": "المطمر",
+        "name_ascii": "El-Matmar"
+      },
+      {
+        "name_ar": "سيدي  خطاب",
+        "name_ascii": "Sidi Khettab"
+      },
+      {
+        "name_ar": "سيدي امحمد بن عودة",
+        "name_ascii": "Sidi M'hamed Benaouda"
+      },
+      {
+        "name_ar": "عين طارق",
+        "name_ascii": "Ain-Tarek"
+      },
+      {
+        "name_ar": "حد الشكالة",
+        "name_ascii": "Had Echkalla"
+      },
+      {
+        "name_ar": "الولجة",
+        "name_ascii": "El Ouldja"
+      },
+      {
+        "name_ar": "مازونة",
+        "name_ascii": "Mazouna"
+      },
+      {
+        "name_ar": "عين الرحمة",
+        "name_ascii": "Ain Rahma"
+      },
+      {
+        "name_ar": "القلعة",
+        "name_ascii": "Kalaa"
+      },
+      {
+        "name_ar": "سيدي سعادة",
+        "name_ascii": "Sidi Saada"
+      },
+      {
+        "name_ar": "يلل",
+        "name_ascii": "Yellel"
+      },
+      {
+        "name_ar": "سوق الحد",
+        "name_ascii": "Souk El Had"
+      },
+      {
+        "name_ar": "منداس",
+        "name_ascii": "Mendes"
+      },
+      {
+        "name_ar": "وادي السلام",
+        "name_ascii": "Oued Essalem"
+      },
+      {
+        "name_ar": "سيدي لزرق",
+        "name_ascii": "Sidi Lazreg"
+      },
+      {
+        "name_ar": "عمي موسى",
+        "name_ascii": "Ammi Moussa"
+      },
+      {
+        "name_ar": "واريزان",
+        "name_ascii": "Ouarizane"
+      },
+      {
+        "name_ar": "مرجة سيدي عابد",
+        "name_ascii": "Merdja Sidi Abed"
+      },
+      {
+        "name_ar": "أولاد سيدي الميهوب",
+        "name_ascii": "Ouled Sidi Mihoub"
+      },
+      {
+        "name_ar": "بن داود",
+        "name_ascii": "Bendaoud"
+      },
+      {
+        "name_ar": "وادي رهيو",
+        "name_ascii": "Oued-Rhiou"
+      },
+      {
+        "name_ar": "الحاسي",
+        "name_ascii": "El Hassi"
+      },
+      {
+        "name_ar": "سيدي أمحمد بن علي",
+        "name_ascii": "Sidi M'hamed Benali"
+      },
+      {
+        "name_ar": "مديونة",
+        "name_ascii": "Mediouna"
+      },
+      {
+        "name_ar": "بني زنطيس",
+        "name_ascii": "Beni Zentis"
+      },
+      {
+        "name_ar": "وادي الجمعة",
+        "name_ascii": "Oued El Djemaa"
+      },
+      {
+        "name_ar": "لحلاف",
+        "name_ascii": "Lahlef"
+      },
+      {
+        "name_ar": "غليزان",
+        "name_ascii": "Relizane"
+      },
+      {
+        "name_ar": "الحمادنة",
+        "name_ascii": "El H'madna"
+      },
+      {
+        "name_ar": "الرمكة",
+        "name_ascii": "Ramka"
+      }
+    ]
+  },
+  {
+    "code": 49,
+    "name_ar": "تيميمون",
+    "name_ascii": "Timimoun",
+    "communes": [
+      {
+        "name_ar": "تنركوك",
+        "name_ascii": "Tinerkouk"
+      },
+      {
+        "name_ar": "تيميمون",
+        "name_ascii": "Timimoun"
+      },
+      {
+        "name_ar": "أولاد السعيد",
+        "name_ascii": "Ouled Said"
+      },
+      {
+        "name_ar": "المطارفة",
+        "name_ascii": "Metarfa"
+      },
+      {
+        "name_ar": "طالمين",
+        "name_ascii": "Talmine"
+      },
+      {
+        "name_ar": "أولاد عيسى",
+        "name_ascii": "Ouled Aissa"
+      },
+      {
+        "name_ar": "شروين",
+        "name_ascii": "Charouine"
+      },
+      {
+        "name_ar": "أوقروت",
+        "name_ascii": "Aougrout"
+      },
+      {
+        "name_ar": "دلدول",
+        "name_ascii": "Deldoul"
+      },
+      {
+        "name_ar": "قصر قدور",
+        "name_ascii": "Ksar Kaddour"
+      }
+    ]
+  },
+  {
+    "code": 50,
+    "name_ar": "برج باجي مختار",
+    "name_ascii": "Bordj Badji Mokhtar",
+    "communes": [
+      {
+        "name_ar": "تيمياوين",
+        "name_ascii": "Timiaouine"
+      },
+      {
+        "name_ar": "برج باجي مختار",
+        "name_ascii": "Bordj Badji Mokhtar"
+      }
+    ]
+  },
+  {
+    "code": 51,
+    "name_ar": "أولاد جلال",
+    "name_ascii": "Ouled Djellal",
+    "communes": [
+      {
+        "name_ar": "رأس الميعاد",
+        "name_ascii": "Ras El Miad"
+      },
+      {
+        "name_ar": "بسباس",
+        "name_ascii": "Besbes"
+      },
+      {
+        "name_ar": "سيدي  خالد",
+        "name_ascii": "Sidi Khaled"
+      },
+      {
+        "name_ar": "الدوسن",
+        "name_ascii": "Doucen"
+      },
+      {
+        "name_ar": "الشعيبة",
+        "name_ascii": "Chaiba"
+      },
+      {
+        "name_ar": "أولاد جلال",
+        "name_ascii": "Ouled Djellal"
+      }
+    ]
+  },
+  {
+    "code": 52,
+    "name_ar": "بني عباس",
+    "name_ascii": "Béni Abbès",
+    "communes": [
+      {
+        "name_ar": "بني عباس",
+        "name_ascii": "Beni-Abbes"
+      },
+      {
+        "name_ar": "تامترت",
+        "name_ascii": "Tamtert"
+      },
+      {
+        "name_ar": "إقلي",
+        "name_ascii": "Igli"
+      },
+      {
+        "name_ar": "الواتة",
+        "name_ascii": "El Ouata"
+      },
+      {
+        "name_ar": "أولاد خضير",
+        "name_ascii": "Ouled-Khodeir"
+      },
+      {
+        "name_ar": "كرزاز",
+        "name_ascii": "Kerzaz"
+      },
+      {
+        "name_ar": "تيمودي",
+        "name_ascii": "Timoudi"
+      },
+      {
+        "name_ar": "القصابي",
+        "name_ascii": "Ksabi"
+      },
+      {
+        "name_ar": "بن يخلف",
+        "name_ascii": "Beni-Ikhlef"
+      }
+    ]
+  },
+  {
+    "code": 53,
+    "name_ar": "عين صالح",
+    "name_ascii": "In Salah",
+    "communes": [
+      {
+        "name_ar": "إينغر",
+        "name_ascii": "Inghar"
+      },
+      {
+        "name_ar": "عين صالح",
+        "name_ascii": "Ain Salah"
+      },
+      {
+        "name_ar": "فقارة الزوى",
+        "name_ascii": "Foggaret Ezzoua"
+      }
+    ]
+  },
+  {
+    "code": 54,
+    "name_ar": "عين قزام",
+    "name_ascii": "In Guezzam",
+    "communes": [
+      {
+        "name_ar": "تين زواتين",
+        "name_ascii": "Tin Zouatine"
+      },
+      {
+        "name_ar": "عين قزام",
+        "name_ascii": "Ain Guezzam"
+      }
+    ]
+  },
+  {
+    "code": 55,
+    "name_ar": "تقرت",
+    "name_ascii": "Touggourt",
+    "communes": [
+      {
+        "name_ar": "تماسين",
+        "name_ascii": "Temacine"
+      },
+      {
+        "name_ar": "سيدي سليمان",
+        "name_ascii": "Sidi Slimane"
+      },
+      {
+        "name_ar": "المقارين",
+        "name_ascii": "Megarine"
+      },
+      {
+        "name_ar": "النزلة",
+        "name_ascii": "Nezla"
+      },
+      {
+        "name_ar": "بلدة اعمر",
+        "name_ascii": "Blidet Amor"
+      },
+      {
+        "name_ar": "تبسبست",
+        "name_ascii": "Tebesbest"
+      },
+      {
+        "name_ar": "تقرت",
+        "name_ascii": "Touggourt"
+      },
+      {
+        "name_ar": "الطيبات",
+        "name_ascii": "Taibet"
+      },
+      {
+        "name_ar": "العالية",
+        "name_ascii": "El Alia"
+      },
+      {
+        "name_ar": "الحجيرة",
+        "name_ascii": "El-Hadjira"
+      },
+      {
+        "name_ar": "بن ناصر",
+        "name_ascii": "Benaceur"
+      },
+      {
+        "name_ar": "المنقر",
+        "name_ascii": "M'naguer"
+      },
+      {
+        "name_ar": "الزاوية العابدية",
+        "name_ascii": "Zaouia El Abidia"
+      }
+    ]
+  },
+  {
+    "code": 56,
+    "name_ar": "جانت",
+    "name_ascii": "Djanet",
+    "communes": [
+      {
+        "name_ar": "جانت",
+        "name_ascii": "Djanet"
+      },
+      {
+        "name_ar": "برج الحواس",
+        "name_ascii": "Bordj El Haouass"
+      }
+    ]
+  },
+  {
+    "code": 57,
+    "name_ar": "المغير",
+    "name_ascii": "El Meghaier",
+    "communes": [
+      {
+        "name_ar": "أم الطيور",
+        "name_ascii": "Oum Touyour"
+      },
+      {
+        "name_ar": "سيدي عمران",
+        "name_ascii": "Sidi Amrane"
+      },
+      {
+        "name_ar": "المرارة",
+        "name_ascii": "M'rara"
+      },
+      {
+        "name_ar": "جامعة",
+        "name_ascii": "Djamaa"
+      },
+      {
+        "name_ar": "تندلة",
+        "name_ascii": "Tenedla"
+      },
+      {
+        "name_ar": "المغير",
+        "name_ascii": "El-M'ghaier"
+      },
+      {
+        "name_ar": "سطيل",
+        "name_ascii": "Still"
+      },
+      {
+        "name_ar": "سيدي خليل",
+        "name_ascii": "Sidi Khelil"
+      }
+    ]
+  },
+  {
+    "code": 58,
+    "name_ar": "المنيعة",
+    "name_ascii": "El Menia",
+    "communes": [
+      {
+        "name_ar": "المنيعة",
+        "name_ascii": "El Meniaa"
+      },
+      {
+        "name_ar": "حاسي القارة",
+        "name_ascii": "Hassi Gara"
+      },
+      {
+        "name_ar": "حاسي الفحل",
+        "name_ascii": "Hassi Fehal"
+      }
+    ]
+  },
+  {
+    "code": 1,
+    "name_ar": "أدرار",
+    "name_ascii": "Adrar",
+    "communes": [
+      {
+        "name_ar": "تيمقتن",
+        "name_ascii": "Timekten"
+      },
+      {
+        "name_ar": "بودة",
+        "name_ascii": "Bouda"
+      },
+      {
+        "name_ar": "أولاد أحمد تيمي",
+        "name_ascii": "Ouled Ahmed Timmi"
+      },
+      {
+        "name_ar": "أدرار",
+        "name_ascii": "Adrar"
+      },
+      {
+        "name_ar": "فنوغيل",
+        "name_ascii": "Fenoughil"
+      },
+      {
+        "name_ar": "إن زغمير",
+        "name_ascii": "In Zghmir"
+      },
+      {
+        "name_ar": "رقان",
+        "name_ascii": "Reggane"
+      },
+      {
+        "name_ar": "سالي",
+        "name_ascii": "Sali"
+      },
+      {
+        "name_ar": "السبع",
+        "name_ascii": "Sebaa"
+      },
+      {
+        "name_ar": "تسابيت",
+        "name_ascii": "Tsabit"
+      },
+      {
+        "name_ar": "تامست",
+        "name_ascii": "Tamest"
+      },
+      {
+        "name_ar": "تامنطيط",
+        "name_ascii": "Tamantit"
+      },
+      {
+        "name_ar": "تيت",
+        "name_ascii": "Tit"
+      },
+      {
+        "name_ar": "زاوية كنتة",
+        "name_ascii": "Zaouiet Kounta"
+      },
+      {
+        "name_ar": "اقبلي",
+        "name_ascii": "Akabli"
+      },
+      {
+        "name_ar": "أولف",
+        "name_ascii": "Aoulef"
+      }
+    ]
+  },
+  {
+    "code": 2,
+    "name_ar": "الشلف",
+    "name_ascii": "Chlef",
+    "communes": [
+      {
+        "name_ar": "تلعصة",
+        "name_ascii": "Talassa"
+      },
+      {
+        "name_ar": "الزبوجة",
+        "name_ascii": "Zeboudja"
+      },
+      {
+        "name_ar": "الحجاج",
+        "name_ascii": "El Hadjadj"
+      },
+      {
+        "name_ar": "أولاد بن عبد القادر",
+        "name_ascii": "Ouled Ben Abdelkader"
+      },
+      {
+        "name_ar": "عين مران",
+        "name_ascii": "Ain Merane"
+      },
+      {
+        "name_ar": "بريرة",
+        "name_ascii": "Breira"
+      },
+      {
+        "name_ar": "أولاد عباس",
+        "name_ascii": "Ouled Abbes"
+      },
+      {
+        "name_ar": "وادي الفضة",
+        "name_ascii": "Oued Fodda"
+      },
+      {
+        "name_ar": "بني راشد",
+        "name_ascii": "Beni Rached"
+      },
+      {
+        "name_ar": "الهرانفة",
+        "name_ascii": "Herenfa"
+      },
+      {
+        "name_ar": "تاجنة",
+        "name_ascii": "Tadjena"
+      },
+      {
+        "name_ar": "المرسى",
+        "name_ascii": "El Marsa"
+      },
+      {
+        "name_ar": "الشلف",
+        "name_ascii": "Chlef"
+      },
+      {
+        "name_ar": "أم الدروع",
+        "name_ascii": "Oum Drou"
+      },
+      {
+        "name_ar": "سنجاس",
+        "name_ascii": "Sendjas"
+      },
+      {
+        "name_ar": "سيدي عبد الرحمن",
+        "name_ascii": "Sidi Abderrahmane"
+      },
+      {
+        "name_ar": "سيدي عكاشة",
+        "name_ascii": "Sidi Akkacha"
+      },
+      {
+        "name_ar": "تنس",
+        "name_ascii": "Tenes"
+      },
+      {
+        "name_ar": "بني بوعتاب",
+        "name_ascii": "Beni  Bouattab"
+      },
+      {
+        "name_ar": "الكريمية",
+        "name_ascii": "El Karimia"
+      },
+      {
+        "name_ar": "حرشون",
+        "name_ascii": "Harchoun"
+      },
+      {
+        "name_ar": "بوزغاية",
+        "name_ascii": "Bouzeghaia"
+      },
+      {
+        "name_ar": "تاوقريت",
+        "name_ascii": "Taougrit"
+      },
+      {
+        "name_ar": "بني حواء",
+        "name_ascii": "Beni Haoua"
+      },
+      {
+        "name_ar": "أبو الحسن",
+        "name_ascii": "Abou El Hassane"
+      },
+      {
+        "name_ar": "وادي قوسين",
+        "name_ascii": "Oued Goussine"
+      },
+      {
+        "name_ar": "الشطية",
+        "name_ascii": "Chettia"
+      },
+      {
+        "name_ar": "مصدق",
+        "name_ascii": "Moussadek"
+      },
+      {
+        "name_ar": "أولاد فارس",
+        "name_ascii": "Ouled Fares"
+      },
+      {
+        "name_ar": "بوقادير",
+        "name_ascii": "Boukadir"
+      },
+      {
+        "name_ar": "وادي سلي",
+        "name_ascii": "Oued Sly"
+      },
+      {
+        "name_ar": "الصبحة",
+        "name_ascii": "Sobha"
+      },
+      {
+        "name_ar": "بنايرية",
+        "name_ascii": "Benairia"
+      },
+      {
+        "name_ar": "الأبيض مجاجة",
+        "name_ascii": "Labiod Medjadja"
+      },
+      {
+        "name_ar": "الظهرة",
+        "name_ascii": "Dahra"
+      }
+    ]
+  },
+  {
+    "code": 3,
+    "name_ar": "الأغواط",
+    "name_ascii": "Laghouat",
+    "communes": [
+      {
+        "name_ar": "البيضاء",
+        "name_ascii": "El Beidha"
+      },
+      {
+        "name_ar": "قلتة سيدي سعد",
+        "name_ascii": "Gueltat Sidi Saad"
+      },
+      {
+        "name_ar": "بريدة",
+        "name_ascii": "Brida"
+      },
+      {
+        "name_ar": "عين سيدي علي",
+        "name_ascii": "Ain Sidi Ali"
+      },
+      {
+        "name_ar": "تاجموت",
+        "name_ascii": "Tadjemout"
+      },
+      {
+        "name_ar": "الحاج مشري",
+        "name_ascii": "Hadj Mechri"
+      },
+      {
+        "name_ar": "تاويالة",
+        "name_ascii": "Taouiala"
+      },
+      {
+        "name_ar": "الغيشة",
+        "name_ascii": "El Ghicha"
+      },
+      {
+        "name_ar": "تاجرونة",
+        "name_ascii": "Tadjrouna"
+      },
+      {
+        "name_ar": "سبقاق",
+        "name_ascii": "Sebgag"
+      },
+      {
+        "name_ar": "سيدي بوزيد",
+        "name_ascii": "Sidi Bouzid"
+      },
+      {
+        "name_ar": "وادي مرة",
+        "name_ascii": "Oued Morra"
+      },
+      {
+        "name_ar": "الأغواط",
+        "name_ascii": "Laghouat"
+      },
+      {
+        "name_ar": "وادي مزي",
+        "name_ascii": "Oued M'zi"
+      },
+      {
+        "name_ar": "قصر الحيران",
+        "name_ascii": "Ksar El Hirane"
+      },
+      {
+        "name_ar": "العسافية",
+        "name_ascii": "El Assafia"
+      },
+      {
+        "name_ar": "سيدي مخلوف",
+        "name_ascii": "Sidi Makhlouf"
+      },
+      {
+        "name_ar": "حاسي الدلاعة",
+        "name_ascii": "Hassi Delaa"
+      },
+      {
+        "name_ar": "حاسي الرمل",
+        "name_ascii": "Hassi R'mel"
+      },
+      {
+        "name_ar": "عين ماضي",
+        "name_ascii": "Ain Madhi"
+      },
+      {
+        "name_ar": "الحويطة",
+        "name_ascii": "El Haouaita"
+      },
+      {
+        "name_ar": "الخنق",
+        "name_ascii": "Kheneg"
+      },
+      {
+        "name_ar": "بن ناصر بن شهرة",
+        "name_ascii": "Benacer Benchohra"
+      },
+      {
+        "name_ar": "أفلو",
+        "name_ascii": "Aflou"
+      }
+    ]
+  },
+  {
+    "code": 4,
+    "name_ar": "أم البواقي",
+    "name_ascii": "Oum El Bouaghi",
+    "communes": [
+      {
+        "name_ar": "فكيرينة",
+        "name_ascii": "Fkirina"
+      },
+      {
+        "name_ar": "الفجوج بوغرارة سعودي",
+        "name_ascii": "El Fedjoudj Boughrara Sa"
+      },
+      {
+        "name_ar": "عين فكرون",
+        "name_ascii": "Ain Fekroun"
+      },
+      {
+        "name_ar": "الرحية",
+        "name_ascii": "Rahia"
+      },
+      {
+        "name_ar": "مسكيانة",
+        "name_ascii": "Meskiana"
+      },
+      {
+        "name_ar": "البلالة",
+        "name_ascii": "El Belala"
+      },
+      {
+        "name_ar": "بحير الشرقي",
+        "name_ascii": "Behir Chergui"
+      },
+      {
+        "name_ar": "قصر الصباحي",
+        "name_ascii": "Ksar Sbahi"
+      },
+      {
+        "name_ar": "سوق نعمان",
+        "name_ascii": "Souk Naamane"
+      },
+      {
+        "name_ar": "أولاد زواي",
+        "name_ascii": "Ouled Zouai"
+      },
+      {
+        "name_ar": "أم البواقي",
+        "name_ascii": "Oum El Bouaghi"
+      },
+      {
+        "name_ar": "عين ببوش",
+        "name_ascii": "Ain Babouche"
+      },
+      {
+        "name_ar": "عين الزيتون",
+        "name_ascii": "Ain Zitoun"
+      },
+      {
+        "name_ar": "بئر الشهداء",
+        "name_ascii": "Bir Chouhada"
+      },
+      {
+        "name_ar": "عين البيضاء",
+        "name_ascii": "Ain Beida"
+      },
+      {
+        "name_ar": "بريش",
+        "name_ascii": "Berriche"
+      },
+      {
+        "name_ar": "الزرق",
+        "name_ascii": "Zorg"
+      },
+      {
+        "name_ar": "عين مليلة",
+        "name_ascii": "Ain M'lila"
+      },
+      {
+        "name_ar": "أولاد قاسم",
+        "name_ascii": "Ouled Gacem"
+      },
+      {
+        "name_ar": "أولاد حملة",
+        "name_ascii": "Ouled Hamla"
+      },
+      {
+        "name_ar": "العامرية",
+        "name_ascii": "El Amiria"
+      },
+      {
+        "name_ar": "سيقوس",
+        "name_ascii": "Sigus"
+      },
+      {
+        "name_ar": "وادي نيني",
+        "name_ascii": "Oued Nini"
+      },
+      {
+        "name_ar": "عين الديس",
+        "name_ascii": "Ain Diss"
+      },
+      {
+        "name_ar": "الضلعة",
+        "name_ascii": "Dhalaa"
+      },
+      {
+        "name_ar": "الجازية",
+        "name_ascii": "El Djazia"
+      },
+      {
+        "name_ar": "عين كرشة",
+        "name_ascii": "Ain Kercha"
+      },
+      {
+        "name_ar": "الحرملية",
+        "name_ascii": "El Harmilia"
+      },
+      {
+        "name_ar": "هنشير تومغني",
+        "name_ascii": "Hanchir Toumghani"
+      }
+    ]
+  },
+  {
+    "code": 5,
+    "name_ar": "باتنة",
+    "name_ascii": "Batna",
+    "communes": [
+      {
+        "name_ar": "معافة",
+        "name_ascii": "Maafa"
+      },
+      {
+        "name_ar": "القصبات",
+        "name_ascii": "Gosbat"
+      },
+      {
+        "name_ar": "تيمقاد",
+        "name_ascii": "Timgad"
+      },
+      {
+        "name_ar": "تاكسلانت",
+        "name_ascii": "Taxlent"
+      },
+      {
+        "name_ar": "أولاد سي سليمان",
+        "name_ascii": "Ouled Si Slimane"
+      },
+      {
+        "name_ar": "لمسان",
+        "name_ascii": "Lemcene"
+      },
+      {
+        "name_ar": "تالخمت",
+        "name_ascii": "Talkhamt"
+      },
+      {
+        "name_ar": "رأس العيون",
+        "name_ascii": "Ras El Aioun"
+      },
+      {
+        "name_ar": "الرحبات",
+        "name_ascii": "Rahbat"
+      },
+      {
+        "name_ar": "أولاد سلام",
+        "name_ascii": "Ouled Sellem"
+      },
+      {
+        "name_ar": "القيقبة",
+        "name_ascii": "Guigba"
+      },
+      {
+        "name_ar": "ثنية العابد",
+        "name_ascii": "Teniet El Abed"
+      },
+      {
+        "name_ar": "باتنة",
+        "name_ascii": "Batna"
+      },
+      {
+        "name_ar": "فسديس",
+        "name_ascii": "Fesdis"
+      },
+      {
+        "name_ar": "وادي الشعبة",
+        "name_ascii": "Oued Chaaba"
+      },
+      {
+        "name_ar": "حيدوسة",
+        "name_ascii": "Hidoussa"
+      },
+      {
+        "name_ar": "قصر بلزمة",
+        "name_ascii": "Ksar Bellezma"
+      },
+      {
+        "name_ar": "مروانة",
+        "name_ascii": "Merouana"
+      },
+      {
+        "name_ar": "وادي الماء",
+        "name_ascii": "Oued El Ma"
+      },
+      {
+        "name_ar": "لازرو",
+        "name_ascii": "Lazrou"
+      },
+      {
+        "name_ar": "سريانة",
+        "name_ascii": "Seriana"
+      },
+      {
+        "name_ar": "زانة البيضاء",
+        "name_ascii": "Zanet El Beida"
+      },
+      {
+        "name_ar": "منعة",
+        "name_ascii": "Menaa"
+      },
+      {
+        "name_ar": "تغرغار",
+        "name_ascii": "Tigharghar"
+      },
+      {
+        "name_ar": "عين ياقوت",
+        "name_ascii": "Ain Yagout"
+      },
+      {
+        "name_ar": "بومية",
+        "name_ascii": "Boumia"
+      },
+      {
+        "name_ar": "جرمة",
+        "name_ascii": "Djerma"
+      },
+      {
+        "name_ar": "المعذر",
+        "name_ascii": "El Madher"
+      },
+      {
+        "name_ar": "عيون العصافير",
+        "name_ascii": "Ouyoun El Assafir"
+      },
+      {
+        "name_ar": "تازولت",
+        "name_ascii": "Tazoult"
+      },
+      {
+        "name_ar": "بومقر",
+        "name_ascii": "Boumagueur"
+      },
+      {
+        "name_ar": "نقاوس",
+        "name_ascii": "N Gaous"
+      },
+      {
+        "name_ar": "سفيان",
+        "name_ascii": "Sefiane"
+      },
+      {
+        "name_ar": "أريس",
+        "name_ascii": "Arris"
+      },
+      {
+        "name_ar": "تيغانمين",
+        "name_ascii": "Tighanimine"
+      },
+      {
+        "name_ar": "عين جاسر",
+        "name_ascii": "Ain Djasser"
+      },
+      {
+        "name_ar": "الحاسي",
+        "name_ascii": "El Hassi"
+      },
+      {
+        "name_ar": "سقانة",
+        "name_ascii": "Seggana"
+      },
+      {
+        "name_ar": "تيلاطو",
+        "name_ascii": "Tilatou"
+      },
+      {
+        "name_ar": "فم الطوب",
+        "name_ascii": "Foum Toub"
+      },
+      {
+        "name_ar": "إشمول",
+        "name_ascii": "Ichemoul"
+      },
+      {
+        "name_ar": "إينوغيسن",
+        "name_ascii": "Inoughissen"
+      },
+      {
+        "name_ar": "بوزينة",
+        "name_ascii": "Bouzina"
+      },
+      {
+        "name_ar": "لارباع",
+        "name_ascii": "Larbaa"
+      },
+      {
+        "name_ar": "بولهيلات",
+        "name_ascii": "Boulhilat"
+      },
+      {
+        "name_ar": "الشمرة",
+        "name_ascii": "Chemora"
+      },
+      {
+        "name_ar": "بريكة",
+        "name_ascii": "Barika"
+      },
+      {
+        "name_ar": "بيطام",
+        "name_ascii": "Bitam"
+      },
+      {
+        "name_ar": "إمدوكل",
+        "name_ascii": "M Doukal"
+      },
+      {
+        "name_ar": "عزيل عبد القادر",
+        "name_ascii": "Azil Abedelkader"
+      },
+      {
+        "name_ar": "الجزار",
+        "name_ascii": "Djezzar"
+      },
+      {
+        "name_ar": "أولاد عمار",
+        "name_ascii": "Ouled Ammar"
+      },
+      {
+        "name_ar": "غسيرة",
+        "name_ascii": "Ghassira"
+      },
+      {
+        "name_ar": "كيمل",
+        "name_ascii": "Kimmel"
+      },
+      {
+        "name_ar": "تكوت",
+        "name_ascii": "T Kout"
+      },
+      {
+        "name_ar": "عين التوتة",
+        "name_ascii": "Ain Touta"
+      },
+      {
+        "name_ar": "بني فضالة الحقانية",
+        "name_ascii": "Beni Foudhala El Hakania"
+      },
+      {
+        "name_ar": "أولاد فاضل",
+        "name_ascii": "Ouled Fadel"
+      },
+      {
+        "name_ar": "أولاد عوف",
+        "name_ascii": "Ouled Aouf"
+      },
+      {
+        "name_ar": "شير",
+        "name_ascii": "Chir"
+      },
+      {
+        "name_ar": "وادي الطاقة",
+        "name_ascii": "Oued Taga"
+      }
+    ]
+  },
+  {
+    "code": 6,
+    "name_ar": "بجاية",
+    "name_ascii": "Béjaïa",
+    "communes": [
+      {
+        "name_ar": "سيدي عياد",
+        "name_ascii": "Sidi Ayad"
+      },
+      {
+        "name_ar": "برباشة",
+        "name_ascii": "Barbacha"
+      },
+      {
+        "name_ar": "الفلاي",
+        "name_ascii": "Leflaye"
+      },
+      {
+        "name_ar": "كنديرة",
+        "name_ascii": "Kendira"
+      },
+      {
+        "name_ar": "سيدي عيش",
+        "name_ascii": "Sidi-Aich"
+      },
+      {
+        "name_ar": "تيفرة",
+        "name_ascii": "Tifra"
+      },
+      {
+        "name_ar": "تينبدار",
+        "name_ascii": "Tinebdar"
+      },
+      {
+        "name_ar": "القصر",
+        "name_ascii": "El Kseur"
+      },
+      {
+        "name_ar": "فناية الماثن",
+        "name_ascii": "Fenaia Il Maten"
+      },
+      {
+        "name_ar": "توجة",
+        "name_ascii": "Toudja"
+      },
+      {
+        "name_ar": "ذراع القايد",
+        "name_ascii": "Dra El Caid"
+      },
+      {
+        "name_ar": "خراطة",
+        "name_ascii": "Kherrata"
+      },
+      {
+        "name_ar": "بجاية",
+        "name_ascii": "Bejaia"
+      },
+      {
+        "name_ar": "وادي غير",
+        "name_ascii": "Oued Ghir"
+      },
+      {
+        "name_ar": "بني معوش",
+        "name_ascii": "Benimaouche"
+      },
+      {
+        "name_ar": "بني جليل",
+        "name_ascii": "Beni Djellil"
+      },
+      {
+        "name_ar": "فرعون",
+        "name_ascii": "Feraoun"
+      },
+      {
+        "name_ar": "سمعون",
+        "name_ascii": "Smaoun"
+      },
+      {
+        "name_ar": "تيمزريت",
+        "name_ascii": "Timezrit"
+      },
+      {
+        "name_ar": "مالبو",
+        "name_ascii": "Melbou"
+      },
+      {
+        "name_ar": "سوق لإثنين",
+        "name_ascii": "Souk El Tenine"
+      },
+      {
+        "name_ar": "تامريجت",
+        "name_ascii": "Tamridjet"
+      },
+      {
+        "name_ar": "بوخليفة",
+        "name_ascii": "Boukhelifa"
+      },
+      {
+        "name_ar": "تالة حمزة",
+        "name_ascii": "Tala Hamza"
+      },
+      {
+        "name_ar": "تيشي",
+        "name_ascii": "Tichy"
+      },
+      {
+        "name_ar": "أيت رزين",
+        "name_ascii": "Ait R'zine"
+      },
+      {
+        "name_ar": "إغيل علي",
+        "name_ascii": "Ighil-Ali"
+      },
+      {
+        "name_ar": "أيت إسماعيل",
+        "name_ascii": "Ait-Smail"
+      },
+      {
+        "name_ar": "درقينة",
+        "name_ascii": "Darguina"
+      },
+      {
+        "name_ar": "تاسكريوت",
+        "name_ascii": "Taskriout"
+      },
+      {
+        "name_ar": "أوقاس",
+        "name_ascii": "Aokas"
+      },
+      {
+        "name_ar": "تيزي نبربر",
+        "name_ascii": "Tizi-N'berber"
+      },
+      {
+        "name_ar": "أدكار",
+        "name_ascii": "Adekar"
+      },
+      {
+        "name_ar": "بني كسيلة",
+        "name_ascii": "Beni K'sila"
+      },
+      {
+        "name_ar": "تاوريرت إغيل",
+        "name_ascii": "Taourit Ighil"
+      },
+      {
+        "name_ar": "أقبو",
+        "name_ascii": "Akbou"
+      },
+      {
+        "name_ar": "شلاطة",
+        "name_ascii": "Chellata"
+      },
+      {
+        "name_ar": "اغرم",
+        "name_ascii": "Ighram"
+      },
+      {
+        "name_ar": "تامقرة",
+        "name_ascii": "Tamokra"
+      },
+      {
+        "name_ar": "أمالو",
+        "name_ascii": "Amalou"
+      },
+      {
+        "name_ar": "بوحمزة",
+        "name_ascii": "Bouhamza"
+      },
+      {
+        "name_ar": "مسيسنة",
+        "name_ascii": "M'cisna"
+      },
+      {
+        "name_ar": "صدوق",
+        "name_ascii": "Seddouk"
+      },
+      {
+        "name_ar": "بني مليكش",
+        "name_ascii": "Beni-Mallikeche"
+      },
+      {
+        "name_ar": "بو جليل",
+        "name_ascii": "Boudjellil"
+      },
+      {
+        "name_ar": "تازمالت",
+        "name_ascii": "Tazmalt"
+      },
+      {
+        "name_ar": "أكفادو",
+        "name_ascii": "Akfadou"
+      },
+      {
+        "name_ar": "شميني",
+        "name_ascii": "Chemini"
+      },
+      {
+        "name_ar": "سوق اوفلا",
+        "name_ascii": "Souk Oufella"
+      },
+      {
+        "name_ar": "طيبان",
+        "name_ascii": "Tibane"
+      },
+      {
+        "name_ar": "أوزلاقن",
+        "name_ascii": "Ouzellaguen"
+      },
+      {
+        "name_ar": "أميزور",
+        "name_ascii": "Amizour"
+      }
+    ]
+  },
+  {
+    "code": 7,
+    "name_ar": "بسكرة",
+    "name_ascii": "Biskra",
+    "communes": [
+      {
+        "name_ar": "الفيض",
+        "name_ascii": "El Feidh"
+      },
+      {
+        "name_ar": "ليشانة",
+        "name_ascii": "Lichana"
+      },
+      {
+        "name_ar": "بوشقرون",
+        "name_ascii": "Bouchakroun"
+      },
+      {
+        "name_ar": "مخادمة",
+        "name_ascii": "Mekhadma"
+      },
+      {
+        "name_ar": "جمورة",
+        "name_ascii": "Djemorah"
+      },
+      {
+        "name_ar": "برانيس",
+        "name_ascii": "Branis"
+      },
+      {
+        "name_ar": "الوطاية",
+        "name_ascii": "El Outaya"
+      },
+      {
+        "name_ar": "القنطرة",
+        "name_ascii": "El Kantara"
+      },
+      {
+        "name_ar": "خنقة سيدي ناجي",
+        "name_ascii": "Khenguet Sidi Nadji"
+      },
+      {
+        "name_ar": "عين زعطوط",
+        "name_ascii": "Ain Zaatout"
+      },
+      {
+        "name_ar": "زريبة الوادي",
+        "name_ascii": "Zeribet El Oued"
+      },
+      {
+        "name_ar": "المزيرعة",
+        "name_ascii": "Meziraa"
+      },
+      {
+        "name_ar": "بسكرة",
+        "name_ascii": "Biskra"
+      },
+      {
+        "name_ar": "الحاجب",
+        "name_ascii": "El Hadjab"
+      },
+      {
+        "name_ar": "مليلي",
+        "name_ascii": "M'lili"
+      },
+      {
+        "name_ar": "فوغالة",
+        "name_ascii": "Foughala"
+      },
+      {
+        "name_ar": "الغروس",
+        "name_ascii": "El Ghrous"
+      },
+      {
+        "name_ar": "برج بن عزوز",
+        "name_ascii": "Bordj Ben Azzouz"
+      },
+      {
+        "name_ar": "أورلال",
+        "name_ascii": "Ourlal"
+      },
+      {
+        "name_ar": "أوماش",
+        "name_ascii": "Oumache"
+      },
+      {
+        "name_ar": "عين الناقة",
+        "name_ascii": "Ain Naga"
+      },
+      {
+        "name_ar": "شتمة",
+        "name_ascii": "Chetma"
+      },
+      {
+        "name_ar": "الحوش",
+        "name_ascii": "El Haouch"
+      },
+      {
+        "name_ar": "سيدي عقبة",
+        "name_ascii": "Sidi Okba"
+      },
+      {
+        "name_ar": "مشونش",
+        "name_ascii": "M'chouneche"
+      },
+      {
+        "name_ar": "ليوة",
+        "name_ascii": "Lioua"
+      },
+      {
+        "name_ar": "طولقة",
+        "name_ascii": "Tolga"
+      }
+    ]
+  },
+  {
+    "code": 8,
+    "name_ar": "بشار",
+    "name_ascii": "Béchar",
+    "communes": [
+      {
+        "name_ar": "بشار",
+        "name_ascii": "Bechar"
+      },
+      {
+        "name_ar": "بوكايس",
+        "name_ascii": "Boukais"
+      },
+      {
+        "name_ar": "لحمر",
+        "name_ascii": "Lahmar"
+      },
+      {
+        "name_ar": "موغل",
+        "name_ascii": "Mogheul"
+      },
+      {
+        "name_ar": "المريجة",
+        "name_ascii": "Meridja"
+      },
+      {
+        "name_ar": "تاغيت",
+        "name_ascii": "Taghit"
+      },
+      {
+        "name_ar": "العبادلة",
+        "name_ascii": "Abadla"
+      },
+      {
+        "name_ar": "عرق فراج",
+        "name_ascii": "Erg-Ferradj"
+      },
+      {
+        "name_ar": "مشرع هواري بومدين",
+        "name_ascii": "Machraa-Houari-Boumediene"
+      },
+      {
+        "name_ar": "بني ونيف",
+        "name_ascii": "Beni-Ounif"
+      },
+      {
+        "name_ar": "تبلبالة",
+        "name_ascii": "Tabelbala"
+      },
+      {
+        "name_ar": "القنادسة",
+        "name_ascii": "Kenadsa"
+      }
+    ]
+  },
+  {
+    "code": 9,
+    "name_ar": "البليدة",
+    "name_ascii": "Blida",
+    "communes": [
+      {
+        "name_ar": "بني مراد",
+        "name_ascii": "Beni Mered"
+      },
+      {
+        "name_ar": "اولاد سلامة",
+        "name_ascii": "Ouled Slama"
+      },
+      {
+        "name_ar": "موزاية",
+        "name_ascii": "Mouzaia"
+      },
+      {
+        "name_ar": "حمام ملوان",
+        "name_ascii": "Hammam Elouane"
+      },
+      {
+        "name_ar": "بوقرة",
+        "name_ascii": "Bougara"
+      },
+      {
+        "name_ar": "صوحان",
+        "name_ascii": "Souhane"
+      },
+      {
+        "name_ar": "الأربعاء",
+        "name_ascii": "Larbaa"
+      },
+      {
+        "name_ar": "الصومعة",
+        "name_ascii": "Soumaa"
+      },
+      {
+        "name_ar": "قرواو",
+        "name_ascii": "Guerrouaou"
+      },
+      {
+        "name_ar": "بوفاريك",
+        "name_ascii": "Boufarik"
+      },
+      {
+        "name_ar": "مفتاح",
+        "name_ascii": "Meftah"
+      },
+      {
+        "name_ar": "الشفة",
+        "name_ascii": "Chiffa"
+      },
+      {
+        "name_ar": "عين الرمانة",
+        "name_ascii": "Ain Romana"
+      },
+      {
+        "name_ar": "وادي جر",
+        "name_ascii": "Oued  Djer"
+      },
+      {
+        "name_ar": "العفرون",
+        "name_ascii": "El-Affroun"
+      },
+      {
+        "name_ar": "أولاد يعيش",
+        "name_ascii": "Ouled Yaich"
+      },
+      {
+        "name_ar": "الشريعة",
+        "name_ascii": "Chrea"
+      },
+      {
+        "name_ar": "جبابرة",
+        "name_ascii": "Djebabra"
+      },
+      {
+        "name_ar": "وادي العلايق",
+        "name_ascii": "Oued El Alleug"
+      },
+      {
+        "name_ar": "بن خليل",
+        "name_ascii": "Benkhelil"
+      },
+      {
+        "name_ar": "بني تامو",
+        "name_ascii": "Beni-Tamou"
+      },
+      {
+        "name_ar": "الشبلي",
+        "name_ascii": "Chebli"
+      },
+      {
+        "name_ar": "بوعينان",
+        "name_ascii": "Bouinan"
+      },
+      {
+        "name_ar": "بوعرفة",
+        "name_ascii": "Bouarfa"
+      },
+      {
+        "name_ar": "البليدة",
+        "name_ascii": "Blida"
+      }
+    ]
+  }
+]

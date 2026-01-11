@@ -19,7 +19,9 @@ import { OrderStatusUpdater } from "@/components/admin/OrderStatusUpdater"
 import { OrderFilters } from "@/components/admin/OrderFilters"
 import { DuplicateOrderAlert } from "@/components/admin/DuplicateOrderAlert"
 import { ArchiveOrderButton } from "@/components/admin/ArchiveOrderButton"
+import { ShipToEcoTrackButton } from "@/components/admin/ShipToEcoTrackButton"
 import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Switch } from "@/components/ui/switch"
@@ -49,6 +51,7 @@ export default function AdminOrdersPage() {
     const [dialogOpen, setDialogOpen] = useState(false)
     const [filters, setFilters] = useState({})
     const [showArchived, setShowArchived] = useState(false)
+    const [selectedOrderIds, setSelectedOrderIds] = useState<number[]>([])
 
     const { orders, loading, updateOrderStatus, updateOrderNotes, archiveOrder, unarchiveOrder } = useOrders({
         status: statusFilter,
@@ -79,6 +82,31 @@ export default function AdminOrdersPage() {
 
     const handleCall = (phone: string) => {
         window.location.href = `tel:${phone}`
+    }
+
+    const handleSelectAll = (checked: boolean) => {
+        if (checked) {
+            // Select only confirmed orders that haven't been shipped
+            const eligibleOrderIds = orders
+                .filter(order => order.status === 'confirmed' && !order.tracking_number)
+                .map(order => order.id)
+            setSelectedOrderIds(eligibleOrderIds)
+        } else {
+            setSelectedOrderIds([])
+        }
+    }
+
+    const handleSelectOrder = (orderId: number, checked: boolean) => {
+        if (checked) {
+            setSelectedOrderIds(prev => [...prev, orderId])
+        } else {
+            setSelectedOrderIds(prev => prev.filter(id => id !== orderId))
+        }
+    }
+
+    const handleShipmentComplete = () => {
+        // Clear selection and refresh will happen automatically via real-time subscription
+        setSelectedOrderIds([])
     }
 
     const handleExport = () => {
@@ -129,6 +157,10 @@ export default function AdminOrdersPage() {
                             onCheckedChange={setShowArchived}
                         />
                     </div>
+                    <ShipToEcoTrackButton
+                        selectedOrderIds={selectedOrderIds}
+                        onShipmentComplete={handleShipmentComplete}
+                    />
                     <Button variant="outline" className="gap-2" onClick={handleExport}>
                         <Download className="h-4 w-4" />
                         تصدير
@@ -191,6 +223,13 @@ export default function AdminOrdersPage() {
                         <Table>
                             <TableHeader>
                                 <TableRow className="bg-gradient-to-r from-gray-50 to-white hover:from-gray-50 hover:to-white">
+                                    <TableHead className="w-[50px]">
+                                        <Checkbox
+                                            checked={selectedOrderIds.length > 0 && selectedOrderIds.length === orders.filter(o => o.status === 'confirmed' && !o.tracking_number).length}
+                                            onCheckedChange={handleSelectAll}
+                                            aria-label="تحديد الكل"
+                                        />
+                                    </TableHead>
                                     <TableHead className="text-right">رقم الطلب</TableHead>
                                     <TableHead className="text-right">العميل</TableHead>
                                     <TableHead className="text-right">الهاتف</TableHead>
@@ -205,7 +244,7 @@ export default function AdminOrdersPage() {
                             <TableBody>
                                 {orders.length === 0 && (
                                     <TableRow>
-                                        <TableCell colSpan={9} className="text-center py-12">
+                                        <TableCell colSpan={10} className="text-center py-12">
                                             <div className="flex flex-col items-center justify-center">
                                                 <div className="h-16 w-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
                                                     <Package className="h-8 w-8 text-gray-400" />
@@ -220,81 +259,94 @@ export default function AdminOrdersPage() {
                                         </TableCell>
                                     </TableRow>
                                 )}
-                                {orders.map((order) => (
-                                    <TableRow key={order.id} className="hover:bg-gray-50/50 transition-colors group">
-                                        <TableCell className="font-mono font-medium">
-                                            <div className="flex flex-col gap-1">
-                                                <div className="flex items-center gap-2">
-                                                    <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                                                        <Package className="h-4 w-4 text-primary" />
-                                                    </div>
-                                                    #{String(order.id).substring(0, 8)}
-                                                </div>
-                                                {/* Duplicate Alert */}
-                                                <DuplicateOrderAlert order={order} />
-                                            </div>
-                                        </TableCell>
-                                        <TableCell className="font-medium">
-                                            {order.customer_info?.name || '-'}
-                                        </TableCell>
-                                        <TableCell dir="ltr" className="text-right font-mono text-sm">
-                                            {order.customer_info?.phone || '-'}
-                                        </TableCell>
-                                        <TableCell>
-                                            <Badge variant="outline" className="bg-gray-50">
-                                                {order.customer_info?.wilaya || '-'}
-                                            </Badge>
-                                        </TableCell>
-                                        <TableCell className="font-bold text-gray-900">
-                                            {order.total_amount?.toLocaleString()} د.ج
-                                        </TableCell>
-                                        <TableCell>
-                                            <StatusBadge status={order.status} type="order" />
-                                        </TableCell>
-                                        <TableCell>
-                                            <OrderStatusUpdater
-                                                currentStatus={order.status}
-                                                orderId={order.id}
-                                                onStatusUpdate={updateOrderStatus}
-                                            />
-                                        </TableCell>
-                                        <TableCell className="text-sm text-muted-foreground">
-                                            {new Date(order.created_at).toLocaleDateString('ar-DZ', {
-                                                year: 'numeric',
-                                                month: 'short',
-                                                day: 'numeric'
-                                            })}
-                                        </TableCell>
-                                        <TableCell>
-                                            <div className="flex items-center gap-1">
-                                                <Button
-                                                    variant="ghost"
-                                                    size="sm"
-                                                    onClick={() => handleViewDetails(order)}
-                                                    className="h-8 gap-1"
-                                                >
-                                                    <Eye className="h-4 w-4" />
-                                                    عرض
-                                                </Button>
-                                                <Button
-                                                    variant="ghost"
-                                                    size="sm"
-                                                    onClick={() => handleCall(order.customer_info?.phone || '')}
-                                                    className="h-8 gap-1 text-green-600 hover:text-green-700 hover:bg-green-50"
-                                                >
-                                                    <Phone className="h-4 w-4" />
-                                                </Button>
-                                                <ArchiveOrderButton
-                                                    orderId={order.id}
-                                                    isArchived={order.is_archived}
-                                                    onArchive={archiveOrder}
-                                                    onUnarchive={unarchiveOrder}
-                                                    showLabel={false}
+                                {orders.map((order) => {
+                                    const isEligibleForShipping = order.status === 'confirmed' && !order.tracking_number
+                                    const isSelected = selectedOrderIds.includes(order.id)
+
+                                    return (
+                                        <TableRow key={order.id} className="hover:bg-gray-50/50 transition-colors group">
+                                            <TableCell>
+                                                <Checkbox
+                                                    checked={isSelected}
+                                                    disabled={!isEligibleForShipping}
+                                                    onCheckedChange={(checked) => handleSelectOrder(order.id, checked as boolean)}
+                                                    aria-label={`تحديد الطلب ${order.id}`}
                                                 />
-                                            </div>
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
+                                            </TableCell>
+                                            <TableCell className="font-mono font-medium">
+                                                <div className="flex flex-col gap-1">
+                                                    <div className="flex items-center gap-2">
+                                                        <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                                                            <Package className="h-4 w-4 text-primary" />
+                                                        </div>
+                                                        #{String(order.id).substring(0, 8)}
+                                                    </div>
+                                                    {/* Duplicate Alert */}
+                                                    <DuplicateOrderAlert order={order} />
+                                                </div>
+                                            </TableCell>
+                                            <TableCell className="font-medium">
+                                                {order.customer_info?.name || '-'}
+                                            </TableCell>
+                                            <TableCell dir="ltr" className="text-right font-mono text-sm">
+                                                {order.customer_info?.phone || '-'}
+                                            </TableCell>
+                                            <TableCell>
+                                                <Badge variant="outline" className="bg-gray-50">
+                                                    {order.customer_info?.wilaya || '-'}
+                                                </Badge>
+                                            </TableCell>
+                                            <TableCell className="font-bold text-gray-900">
+                                                {order.total_amount?.toLocaleString()} د.ج
+                                            </TableCell>
+                                            <TableCell>
+                                                <StatusBadge status={order.status} type="order" />
+                                            </TableCell>
+                                            <TableCell>
+                                                <OrderStatusUpdater
+                                                    currentStatus={order.status}
+                                                    orderId={order.id}
+                                                    onStatusUpdate={updateOrderStatus}
+                                                />
+                                            </TableCell>
+                                            <TableCell className="text-sm text-muted-foreground">
+                                                {new Date(order.created_at).toLocaleDateString('ar-DZ', {
+                                                    year: 'numeric',
+                                                    month: 'short',
+                                                    day: 'numeric'
+                                                })}
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className="flex items-center gap-1">
+                                                    <Button
+                                                        variant="ghost"
+                                                        size="sm"
+                                                        onClick={() => handleViewDetails(order)}
+                                                        className="h-8 gap-1"
+                                                    >
+                                                        <Eye className="h-4 w-4" />
+                                                        عرض
+                                                    </Button>
+                                                    <Button
+                                                        variant="ghost"
+                                                        size="sm"
+                                                        onClick={() => handleCall(order.customer_info?.phone || '')}
+                                                        className="h-8 gap-1 text-green-600 hover:text-green-700 hover:bg-green-50"
+                                                    >
+                                                        <Phone className="h-4 w-4" />
+                                                    </Button>
+                                                    <ArchiveOrderButton
+                                                        orderId={order.id}
+                                                        isArchived={order.is_archived}
+                                                        onArchive={archiveOrder}
+                                                        onUnarchive={unarchiveOrder}
+                                                        showLabel={false}
+                                                    />
+                                                </div>
+                                            </TableCell>
+                                        </TableRow>
+                                    )
+                                })}
                             </TableBody>
                         </Table>
                     </div>

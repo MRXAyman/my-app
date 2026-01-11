@@ -1,60 +1,91 @@
-export const wilayas = [
-    { code: "01", name: "Adrar" },
-    { code: "02", name: "Chlef" },
-    { code: "03", name: "Laghouat" },
-    { code: "04", name: "Oum El Bouaghi" },
-    { code: "05", name: "Batna" },
-    { code: "06", name: "Béjaïa" },
-    { code: "07", name: "Biskra" },
-    { code: "08", name: "Béchar" },
-    { code: "09", name: "Blida" },
-    { code: "10", name: "Bouira" },
-    { code: "11", name: "Tamanrasset" },
-    { code: "12", name: "Tébessa" },
-    { code: "13", name: "Tlemcen" },
-    { code: "14", name: "Tiaret" },
-    { code: "15", name: "Tizi Ouzou" },
-    { code: "16", name: "Alger" },
-    { code: "17", name: "Djelfa" },
-    { code: "18", name: "Jijel" },
-    { code: "19", name: "Sétif" },
-    { code: "20", name: "Saïda" },
-    { code: "21", name: "Skikda" },
-    { code: "22", name: "Sidi Bel Abbès" },
-    { code: "23", name: "Annaba" },
-    { code: "24", name: "Guelma" },
-    { code: "25", name: "Constantine" },
-    { code: "26", name: "Médéa" },
-    { code: "27", name: "Mostaganem" },
-    { code: "28", name: "M'Sila" },
-    { code: "29", name: "Mascara" },
-    { code: "30", name: "Ouargla" },
-    { code: "31", name: "Oran" },
-    { code: "32", name: "El Bayadh" },
-    { code: "33", name: "Illizi" },
-    { code: "34", name: "Bordj Bou Arreridj" },
-    { code: "35", name: "Boumerdès" },
-    { code: "36", name: "El Tarf" },
-    { code: "37", name: "Tindouf" },
-    { code: "38", name: "Tissemsilt" },
-    { code: "39", name: "El Oued" },
-    { code: "40", name: "Khenchela" },
-    { code: "41", name: "Souk Ahras" },
-    { code: "42", name: "Tipaza" },
-    { code: "43", name: "Mila" },
-    { code: "44", name: "Aïn Defla" },
-    { code: "45", name: "Naâma" },
-    { code: "46", name: "Aïn Témouchent" },
-    { code: "47", name: "Ghardaïa" },
-    { code: "48", name: "Relizane" },
-    { code: "49", name: "Timimoun" },
-    { code: "50", name: "Bordj Badji Mokhtar" },
-    { code: "51", name: "Ouled Djellal" },
-    { code: "52", name: "Béni Abbès" },
-    { code: "53", name: "In Salah" },
-    { code: "54", name: "In Guezzam" },
-    { code: "55", name: "Touggourt" },
-    { code: "56", name: "Djanet" },
-    { code: "57", name: "El M'Ghair" },
-    { code: "58", name: "El Meniaa" },
-];
+/**
+ * Algeria Wilayas and Communes Data
+ * Generated from algeria_cities_commune_with_latlng.json
+ * For use with EcoTrack API integration
+ */
+
+import algeriaData from '../../algeria_cities_commune_with_latlng.json'
+
+export interface Commune {
+    name_ar: string
+    name_ascii: string
+}
+
+export interface Wilaya {
+    code: number
+    name_ar: string
+    name_ascii: string
+    communes: Commune[]
+}
+
+/**
+ * Process and group data by wilaya
+ */
+function processAlgeriaData(): Wilaya[] {
+    const wilayasMap = new Map<string, Wilaya>()
+
+    algeriaData.forEach((item: any) => {
+        const wilayaCode = item.wilaya_code
+
+        if (!wilayasMap.has(wilayaCode)) {
+            wilayasMap.set(wilayaCode, {
+                code: parseInt(wilayaCode),
+                name_ar: item.wilaya_name.trim(),
+                name_ascii: item.wilaya_name_ascii,
+                communes: []
+            })
+        }
+
+        const wilaya = wilayasMap.get(wilayaCode)!
+        wilaya.communes.push({
+            name_ar: item.commune_name,
+            name_ascii: item.commune_name_ascii
+        })
+    })
+
+    return Array.from(wilayasMap.values()).sort((a, b) => a.code - b.code)
+}
+
+export const ALGERIA_WILAYAS = processAlgeriaData()
+
+// Export as 'wilayas' for backward compatibility
+export const wilayas = ALGERIA_WILAYAS
+
+/**
+ * Get wilaya by code
+ */
+export function getWilayaByCode(code: number): Wilaya | undefined {
+    return ALGERIA_WILAYAS.find(w => w.code === code)
+}
+
+/**
+ * Get wilaya by Arabic name
+ */
+export function getWilayaByName(name: string): Wilaya | undefined {
+    return ALGERIA_WILAYAS.find(w => w.name_ar === name || w.name_ascii === name)
+}
+
+/**
+ * Get wilaya code from Arabic name
+ */
+export function getWilayaCode(wilayaName: string): number {
+    const wilaya = getWilayaByName(wilayaName)
+    return wilaya?.code || 16 // Default to Algiers
+}
+
+/**
+ * Get communes for a wilaya
+ */
+export function getCommunesForWilaya(wilayaCode: number): Commune[] {
+    const wilaya = getWilayaByCode(wilayaCode)
+    return wilaya?.communes || []
+}
+
+/**
+ * Find commune ASCII name from Arabic name within a wilaya
+ */
+export function getCommuneAsciiName(wilayaCode: number, communeNameAr: string): string {
+    const communes = getCommunesForWilaya(wilayaCode)
+    const commune = communes.find(c => c.name_ar === communeNameAr)
+    return commune?.name_ascii || communeNameAr
+}

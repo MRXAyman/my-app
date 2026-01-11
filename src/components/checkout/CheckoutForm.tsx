@@ -20,7 +20,7 @@ import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
-import { wilayas } from '@/lib/algeria-data'
+import { wilayas, getCommunesForWilaya } from '@/lib/algeria-data'
 import { useShipping } from '@/hooks/use-shipping'
 import { createClient } from '@/utils/supabase/client'
 import { BundleOffer, BundleItem } from '@/types/bundle'
@@ -31,7 +31,7 @@ const formSchema = z.object({
     fullName: z.string().min(2, { message: 'الاسم يجب أن يحتوي على حرفين على الأقل' }),
     phone: z.string().regex(phoneRegex, { message: 'رقم الهاتف غير صالح (يجب أن يبدأ ب 05، 06 أو 07)' }),
     wilaya: z.string().min(1, { message: 'يرجى اختيار الولاية' }),
-    commune: z.string().min(1, { message: 'يرجى كتابة البلدية' }),
+    commune: z.string().min(1, { message: 'يرجى اختيار البلدية' }),
     deliveryType: z.enum(['home', 'desk']),
 })
 
@@ -56,6 +56,7 @@ interface CheckoutFormProps {
 export function CheckoutForm({ productId, productPrice, productTitle, selectedVariant, selectedBundle, bundleItems = [] }: CheckoutFormProps) {
     const router = useRouter()
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const [availableCommunes, setAvailableCommunes] = useState<Array<{ name_ar: string, name_ascii: string }>>([])
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -71,6 +72,19 @@ export function CheckoutForm({ productId, productPrice, productTitle, selectedVa
     // Watch for changes
     const selectedWilaya = form.watch('wilaya')
     const selectedDeliveryType = form.watch('deliveryType')
+
+    // Update available communes when wilaya changes
+    useEffect(() => {
+        if (selectedWilaya) {
+            const wilayaCode = parseInt(selectedWilaya)
+            const communes = getCommunesForWilaya(wilayaCode)
+            setAvailableCommunes(communes)
+            // Reset commune selection when wilaya changes
+            form.setValue('commune', '')
+        } else {
+            setAvailableCommunes([])
+        }
+    }, [selectedWilaya, form])
 
     // Custom hook to fetch shipping rates. 
     // Make sure useShipping handles "undefined" or empty string gracefully.
@@ -153,12 +167,15 @@ export function CheckoutForm({ productId, productPrice, productTitle, selectedVa
             ]
         }
 
+        // Get wilaya Arabic name from code
+        const selectedWilayaData = wilayas.find(w => w.code.toString() === values.wilaya)
+
         const orderData = {
             customer_info: {
                 name: values.fullName,
                 phone: values.phone,
-                wilaya: wilayas.find(w => w.code === values.wilaya)?.name || values.wilaya,
-                commune: values.commune,
+                wilaya: selectedWilayaData?.name_ar || values.wilaya,  // Save Arabic name
+                commune: values.commune,  // Already Arabic name from select
             },
             items: orderItems,
             shipping_cost: shippingPrice,
@@ -231,8 +248,8 @@ export function CheckoutForm({ productId, productPrice, productTitle, selectedVa
                                         </FormControl>
                                         <SelectContent>
                                             {wilayas.map((wilaya) => (
-                                                <SelectItem key={wilaya.code} value={wilaya.code} className="justify-end">
-                                                    {wilaya.code} - {wilaya.name}
+                                                <SelectItem key={wilaya.code} value={wilaya.code.toString()} className="justify-end">
+                                                    {wilaya.code} - {wilaya.name_ar}
                                                 </SelectItem>
                                             ))}
                                         </SelectContent>
@@ -248,9 +265,24 @@ export function CheckoutForm({ productId, productPrice, productTitle, selectedVa
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>البلدية</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="البلدية" className="text-right" {...field} />
-                                    </FormControl>
+                                    <Select
+                                        onValueChange={field.onChange}
+                                        defaultValue={field.value}
+                                        disabled={!selectedWilaya || availableCommunes.length === 0}
+                                    >
+                                        <FormControl>
+                                            <SelectTrigger className="flex-row-reverse">
+                                                <SelectValue placeholder={selectedWilaya ? "اختر البلدية" : "اختر الولاية أولاً"} />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            {availableCommunes.map((commune, index) => (
+                                                <SelectItem key={index} value={commune.name_ar} className="justify-end">
+                                                    {commune.name_ar}
+                                                </SelectItem>
+                                            ))}
+                                        </SelectContent>
+                                    </Select>
                                     <FormMessage />
                                 </FormItem>
                             )}

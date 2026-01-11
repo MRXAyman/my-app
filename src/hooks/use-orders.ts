@@ -34,6 +34,12 @@ export interface Order {
     is_archived?: boolean
     archived_at?: string
     archived_by?: string
+    // EcoTrack Shipping Integration Fields
+    tracking_number?: string
+    courier?: string
+    shipment_status?: string
+    shipped_at?: string
+    ecotrack_order_id?: string
 }
 
 interface UseOrdersOptions {
