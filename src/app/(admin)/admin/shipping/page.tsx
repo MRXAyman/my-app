@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Loader2, MapPin, Home, Building2, Search, Clock } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Checkbox } from '@/components/ui/checkbox'
+import { ShippingCarriersList } from '@/components/admin/ShippingCarriersList'
 
 export default function ShippingPage() {
     const [zones, setZones] = useState<any[]>([])
@@ -110,6 +111,9 @@ export default function ShippingPage() {
                     </Button>
                 </div>
             </div>
+
+            {/* Carrier Management */}
+            <ShippingCarriersList />
 
             {/* Quick Stats */}
             <div className="grid gap-4 md:grid-cols-3">

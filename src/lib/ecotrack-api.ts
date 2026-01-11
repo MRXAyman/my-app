@@ -1,5 +1,6 @@
 import { Order } from '@/hooks/use-orders'
 import { getWilayaCode, getCommuneAsciiName } from './algeria-data'
+import { createClient } from '@/utils/supabase/server'
 
 // EcoTrack API Configuration
 const ECOTRACK_API_URL = process.env.ECOTRACK_API_URL || 'https://anderson-ecommerce.ecotrack.dz/'
@@ -124,6 +125,27 @@ export function mapOrderToEcoTrack(order: Order): any {
  */
 export async function shipOrderToEcoTrack(order: Order): Promise<ShipOrderResult> {
     try {
+        // Fetch active carrier credentials
+        let apiKey = ECOTRACK_API_KEY
+        let apiUrl = ECOTRACK_API_URL
+
+        try {
+            const supabase = await createClient()
+            const { data: carrier } = await supabase
+                .from('shipping_carriers')
+                .select('*')
+                .eq('is_active', true)
+                .single()
+
+            if (carrier) {
+                apiKey = carrier.api_key
+                apiUrl = carrier.api_url
+                console.log(`Using active carrier: ${carrier.name}`)
+            }
+        } catch (dbError) {
+            console.warn('Failed to fetch carrier settings, using env vars', dbError)
+        }
+
         // Validate order
         const validation = validateOrderForShipping(order)
         if (!validation.valid) {
@@ -138,7 +160,6 @@ export async function shipOrderToEcoTrack(order: Order): Promise<ShipOrderResult
         const ecotrackOrder = mapOrderToEcoTrack(order)
 
         // Robust URL construction
-        let apiUrl = ECOTRACK_API_URL
         if (apiUrl.endsWith('/')) {
             apiUrl = apiUrl.slice(0, -1)
         }
@@ -151,7 +172,7 @@ export async function shipOrderToEcoTrack(order: Order): Promise<ShipOrderResult
         console.log('Sending order to EcoTrack:', {
             url: apiUrl,
             reference: ecotrackOrder.reference,
-            apiKeyStart: ECOTRACK_API_KEY ? `${ECOTRACK_API_KEY.substring(0, 5)}...` : 'missing'
+            apiKeyStart: apiKey ? `${apiKey.substring(0, 5)}...` : 'missing'
         })
 
         // Call EcoTrack API
@@ -159,7 +180,7 @@ export async function shipOrderToEcoTrack(order: Order): Promise<ShipOrderResult
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${ECOTRACK_API_KEY}`,
+                'Authorization': `Bearer ${apiKey}`,
                 'User-Agent': 'Anderson/1.0'
             },
             body: JSON.stringify(ecotrackOrder)
