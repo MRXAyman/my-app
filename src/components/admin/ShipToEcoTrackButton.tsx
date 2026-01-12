@@ -124,24 +124,25 @@ export function ShipToEcoTrackButton({ selectedOrderIds, onShipmentComplete }: S
                             )}
                         </DialogTitle>
                         <DialogDescription>
-                            {summary && (
-                                <span className="flex gap-4 mt-2">
-                                    <Badge variant="outline" className="bg-gray-50">
-                                        الإجمالي: {summary.total}
-                                    </Badge>
-                                    {summary.successful > 0 && (
-                                        <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                                            نجح: {summary.successful}
-                                        </Badge>
-                                    )}
-                                    {summary.failed > 0 && (
-                                        <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
-                                            فشل: {summary.failed}
-                                        </Badge>
-                                    )}
-                                </span>
-                            )}
+                            نتائج عملية الشحن
                         </DialogDescription>
+                        {summary && (
+                            <div className="flex gap-4 mt-2">
+                                <Badge variant="outline" className="bg-gray-50">
+                                    الإجمالي: {summary.total}
+                                </Badge>
+                                {summary.successful > 0 && (
+                                    <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                                        نجح: {summary.successful}
+                                    </Badge>
+                                )}
+                                {summary.failed > 0 && (
+                                    <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
+                                        فشل: {summary.failed}
+                                    </Badge>
+                                )}
+                            </div>
+                        )}
                     </DialogHeader>
 
                     <div className="max-h-[400px] overflow-y-auto mt-4">

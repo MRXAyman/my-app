@@ -14,8 +14,8 @@ export async function POST(request: Request) {
         }
 
         const shippingData = wilayas.map((wilaya) => ({
-            wilaya_code: parseInt(wilaya.code),
-            wilaya_name: wilaya.name,
+            wilaya_code: wilaya.code,
+            wilaya_name: wilaya.name_ascii,
             home_delivery_price: 800, // Default price
             desk_delivery_price: 500, // Default price
             is_active: true

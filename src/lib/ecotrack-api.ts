@@ -124,10 +124,11 @@ export function mapOrderToEcoTrack(order: Order): any {
  * Submit an order to EcoTrack API
  */
 export async function shipOrderToEcoTrack(order: Order): Promise<ShipOrderResult> {
+    let apiKey = ECOTRACK_API_KEY
+    let apiUrl = ECOTRACK_API_URL
+
     try {
         // Fetch active carrier credentials
-        let apiKey = ECOTRACK_API_KEY
-        let apiUrl = ECOTRACK_API_URL
 
         try {
             const supabase = await createClient()
@@ -249,7 +250,7 @@ export async function shipOrderToEcoTrack(order: Order): Promise<ShipOrderResult
         return {
             order_id: order.id,
             status: 'failed',
-            error: error instanceof Error ? error.message : 'خطأ غير متوقع في النظام'
+            error: error instanceof Error ? `fetch failed to ${apiUrl}: ${error.message}` : 'خطأ غير متوقع في النظام'
         }
     }
 }
