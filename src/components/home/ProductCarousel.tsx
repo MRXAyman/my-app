@@ -123,18 +123,17 @@ export function ProductCarousel({
             onTouchEnd={handleTouchEnd}
         >
             {/* Carousel Container */}
-            <div className="overflow-hidden">
+            <div className="overflow-hidden -mx-2 md:-mx-3">
                 <div
-                    className="flex transition-transform duration-500 ease-out gap-4 md:gap-6"
+                    className="flex transition-transform duration-500 ease-out"
                     style={{
-                        transform: `translateX(${currentIndex * (100 / itemsPerView)}%)`
+                        transform: `translateX(${currentIndex * 100}%)`
                     }}
                 >
                     {products.map((product) => (
                         <div
                             key={product.id}
-                            className="flex-shrink-0"
-                            style={{ width: `calc(${100 / itemsPerView}% - ${(itemsPerView - 1) * (itemsPerView === 1 ? 0 : 16) / itemsPerView}px)` }}
+                            className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 md:px-3"
                         >
                             <ProductCard {...product} />
                         </div>
@@ -147,7 +146,7 @@ export function ProductCarousel({
                 <>
                     <button
                         onClick={goToPrevious}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 bg-white hover:bg-stone-900 text-stone-900 hover:text-white rounded-full p-2 md:p-3 shadow-luxury transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 md:translate-x-1/2 z-10 bg-white hover:bg-stone-900 text-stone-900 hover:text-white rounded-full p-2 md:p-3 shadow-luxury transition-all duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-hover:translate-x-0 disabled:opacity-50 disabled:cursor-not-allowed"
                         disabled={currentIndex === 0}
                         aria-label="Previous"
                     >
@@ -155,7 +154,7 @@ export function ProductCarousel({
                     </button>
                     <button
                         onClick={goToNext}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 bg-white hover:bg-stone-900 text-stone-900 hover:text-white rounded-full p-2 md:p-3 shadow-luxury transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-x-0 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/2 z-10 bg-white hover:bg-stone-900 text-stone-900 hover:text-white rounded-full p-2 md:p-3 shadow-luxury transition-all duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-hover:-translate-x-0 disabled:opacity-50 disabled:cursor-not-allowed"
                         disabled={currentIndex >= maxIndex}
                         aria-label="Next"
                     >
@@ -172,8 +171,8 @@ export function ProductCarousel({
                             key={index}
                             onClick={() => goToSlide(index)}
                             className={`transition-all duration-300 rounded-full ${index === currentIndex
-                                    ? 'bg-stone-900 w-8 h-2'
-                                    : 'bg-stone-300 hover:bg-stone-400 w-2 h-2'
+                                ? 'bg-stone-900 w-8 h-2'
+                                : 'bg-stone-300 hover:bg-stone-400 w-2 h-2'
                                 }`}
                             aria-label={`Go to slide ${index + 1}`}
                         />

@@ -14,11 +14,22 @@ export async function getBrandSettings(): Promise<BrandSettings | null> {
     const { data, error } = await supabase
         .from('brand_settings')
         .select('*')
-        .single()
+        .maybeSingle()
 
     if (error) {
         console.error('Error fetching brand settings:', error)
         return null
+    }
+
+    // Return default settings if no data exists
+    if (!data) {
+        return {
+            id: 'default',
+            site_name: 'My Store',
+            logo_url: null,
+            favicon_url: null,
+            updated_at: new Date().toISOString()
+        }
     }
 
     return data
