@@ -287,7 +287,11 @@ export function ProductForm({ initialData }: ProductFormProps) {
                                             <FormItem>
                                                 <FormLabel>السعر (د.ج) *</FormLabel>
                                                 <FormControl>
-                                                    <Input type="number" {...field} />
+                                                    <Input
+                                                        type="number"
+                                                        {...field}
+                                                        onChange={(e) => field.onChange(parseFloat(e.target.value) || 0)}
+                                                    />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
@@ -301,7 +305,11 @@ export function ProductForm({ initialData }: ProductFormProps) {
                                             <FormItem>
                                                 <FormLabel>سعر التخفيض (اختياري)</FormLabel>
                                                 <FormControl>
-                                                    <Input type="number" {...field} value={field.value || ''} />
+                                                    <Input
+                                                        type="number"
+                                                        value={field.value || ''}
+                                                        onChange={(e) => field.onChange(parseFloat(e.target.value) || 0)}
+                                                    />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
@@ -315,7 +323,11 @@ export function ProductForm({ initialData }: ProductFormProps) {
                                             <FormItem>
                                                 <FormLabel>الكمية *</FormLabel>
                                                 <FormControl>
-                                                    <Input type="number" {...field} />
+                                                    <Input
+                                                        type="number"
+                                                        {...field}
+                                                        onChange={(e) => field.onChange(parseInt(e.target.value) || 0)}
+                                                    />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
