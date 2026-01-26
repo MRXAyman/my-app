@@ -5,22 +5,27 @@ import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { CheckCircle, Package, Truck } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { trackPurchase } from '@/components/FacebookPixel'
 
 export default function OrderSuccessPage() {
     const searchParams = useSearchParams()
     const orderId = searchParams.get('orderId')
     const total = searchParams.get('total')
+    const productId = searchParams.get('productId')
+    const productName = searchParams.get('productName')
+    const quantity = searchParams.get('quantity')
 
     useEffect(() => {
-        // Fire Facebook Pixel Purchase event
-        if (typeof window !== 'undefined' && (window as any).fbq) {
-            (window as any).fbq('track', 'Purchase', {
-                value: total ? parseFloat(total) : 0,
-                currency: 'DZD',
-                content_type: 'product'
-            })
+        // Fire Facebook Pixel Purchase event with product details
+        if (productId && productName && total) {
+            trackPurchase(
+                productId,
+                productName,
+                parseFloat(total),
+                quantity ? parseInt(quantity) : 1
+            )
         }
-    }, [total])
+    }, [productId, productName, total, quantity])
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 py-12 px-4 sm:px-6 lg:px-8" dir="rtl">

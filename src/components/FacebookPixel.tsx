@@ -72,3 +72,16 @@ export const trackAddToCart = (productId: string, productName: string, value: nu
         })
     }
 }
+
+export const trackPurchase = (productId: string, productName: string, value: number, quantity: number = 1) => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+        ; (window as any).fbq('track', 'Purchase', {
+            content_ids: [productId],
+            content_name: productName,
+            content_type: 'product',
+            value: value,
+            currency: 'DZD',
+            num_items: quantity
+        })
+    }
+}

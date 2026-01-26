@@ -194,8 +194,18 @@ export function CheckoutForm({ productId, productPrice, productTitle, selectedVa
             console.error('Error placing order:', error)
             alert('حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.')
         } else if (insertedOrder) {
-            // Redirect to success page with order details
-            router.push(`/order-success?orderId=${insertedOrder.id}&total=${totalPrice}`)
+            // Calculate quantity (bundle or single)
+            const quantity = selectedBundle ? selectedBundle.quantity : 1
+
+            // Redirect to success page with order details and product info for pixel tracking
+            const params = new URLSearchParams({
+                orderId: insertedOrder.id.toString(),
+                total: totalPrice.toString(),
+                productId: productId.toString(),
+                productName: productTitle,
+                quantity: quantity.toString()
+            })
+            router.push(`/order-success?${params.toString()}`)
         }
         setIsSubmitting(false)
     }

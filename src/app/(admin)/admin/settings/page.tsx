@@ -17,22 +17,27 @@ export default function AdminSettingsPage() {
     const [pixelId, setPixelId] = useState('')
     const [loading, setLoading] = useState(true)
     const [saving, setSaving] = useState(false)
+    const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
         async function fetchSettings() {
             try {
                 const supabase = createClient()
-                const { data } = await supabase
+                const { data, error } = await supabase
                     .from('settings')
                     .select('value')
                     .eq('key', 'facebook_pixel_id')
-                    .single()
+                    .maybeSingle()
 
-                if (data) {
+                if (error) {
+                    console.error("Error fetching settings:", error)
+                    setError(`خطأ في جلب الإعدادات: ${error.message}`)
+                } else if (data) {
                     setPixelId(data.value || '')
                 }
-            } catch (error) {
+            } catch (error: any) {
                 console.error("Error fetching settings:", error)
+                setError(`خطأ غير متوقع: ${error?.message || 'حدث خطأ أثناء جلب الإعدادات'}`)
             } finally {
                 setLoading(false)
             }
@@ -42,6 +47,7 @@ export default function AdminSettingsPage() {
 
     const handleSavePixel = async () => {
         setSaving(true)
+        setError(null)
         const supabase = createClient()
 
         const { error } = await supabase
@@ -50,7 +56,7 @@ export default function AdminSettingsPage() {
 
         if (error) {
             console.error('Error saving settings:', error)
-            alert('حدث خطأ أثناء حفظ الإعدادات')
+            setError(`خطأ في حفظ الإعدادات: ${error.message}`)
         } else {
             alert('تم حفظ الإعدادات بنجاح')
         }

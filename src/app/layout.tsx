@@ -25,7 +25,7 @@ export async function generateMetadata() {
     const { data: brandSettings } = await supabase
         .from('brand_settings')
         .select('site_name, favicon_url')
-        .single()
+        .maybeSingle()
 
     return {
         title: brandSettings?.site_name || "DzShop - متجر إلكتروني جزائري",
@@ -49,8 +49,8 @@ export default async function RootLayout({
 
     // Fetch settings and brand data in parallel
     const [settingsResponse, brandResponse] = await Promise.all([
-        supabase.from('settings').select('value').eq('key', 'facebook_pixel_id').single(),
-        supabase.from('brand_settings').select('*').single()
+        supabase.from('settings').select('value').eq('key', 'facebook_pixel_id').maybeSingle(),
+        supabase.from('brand_settings').select('*').maybeSingle()
     ])
 
     const pixelId = settingsResponse.data?.value || null
