@@ -16,14 +16,18 @@ export default function OrderSuccessPage() {
     const quantity = searchParams.get('quantity')
 
     useEffect(() => {
+        console.log('OrderSuccess: useEffect triggered', { productId, productName, total, quantity })
         // Fire Facebook Pixel Purchase event with product details
         if (productId && productName && total) {
+            console.log('OrderSuccess: calling trackPurchase')
             trackPurchase(
                 productId,
                 productName,
                 parseFloat(total),
                 quantity ? parseInt(quantity) : 1
             )
+        } else {
+            console.warn('OrderSuccess: Missing required params for pixel', { productId, productName, total })
         }
     }, [productId, productName, total, quantity])
 

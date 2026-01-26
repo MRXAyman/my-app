@@ -7,10 +7,15 @@ export function FacebookPixel({ pixelId }: { pixelId?: string }) {
     const pathname = usePathname()
 
     useEffect(() => {
-        if (!pixelId) return
+        console.log('Facebook Pixel: Component mounted. Pixel ID:', pixelId)
+        if (!pixelId) {
+            console.warn('Facebook Pixel: No Pixel ID provided')
+            return
+        }
 
         // Initialize Facebook Pixel
         if (typeof window !== 'undefined') {
+            console.log('Facebook Pixel: Initializing script...');
             (function (f: any, b: any, e: any, v: any, n?: any, t?: any, s?: any) {
                 if (f.fbq) return
                 n = f.fbq = function () {
@@ -51,18 +56,21 @@ export function FacebookPixel({ pixelId }: { pixelId?: string }) {
 // Helper to wait for fbq to be ready
 const waitForFbq = (callback: () => void) => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
+        console.log('Facebook Pixel: fbq found, executing callback')
         callback()
     } else {
+        console.log('Facebook Pixel: fbq not found, starting polling...')
         let attempts = 0
         const interval = setInterval(() => {
             if (typeof window !== 'undefined' && (window as any).fbq) {
+                console.log('Facebook Pixel: fbq found after polling', attempts, 'attempts')
                 callback()
                 clearInterval(interval)
             }
             attempts++
             if (attempts > 50) { // Stop after ~5s
                 clearInterval(interval)
-                console.warn('Facebook Pixel not loaded after 5s')
+                console.warn('Facebook Pixel: fbq not loaded after 5s')
             }
         }, 100)
     }
@@ -70,38 +78,42 @@ const waitForFbq = (callback: () => void) => {
 
 // Helper functions for tracking events
 export const trackViewContent = (productId: string, productName: string, value: number) => {
+    console.log('Facebook Pixel: trackViewContent called', { productId, productName, value })
     waitForFbq(() => {
         ; (window as any).fbq('track', 'ViewContent', {
             content_ids: [productId],
             content_name: productName,
             content_type: 'product',
             value: value,
-            currency: 'DZD'
+            currency: 'USD'
         })
     })
 }
 
 export const trackAddToCart = (productId: string, productName: string, value: number) => {
+    console.log('Facebook Pixel: trackAddToCart called', { productId, productName, value })
     waitForFbq(() => {
         ; (window as any).fbq('track', 'AddToCart', {
             content_ids: [productId],
             content_name: productName,
             content_type: 'product',
             value: value,
-            currency: 'DZD'
+            currency: 'USD'
         })
     })
 }
 
 export const trackPurchase = (productId: string, productName: string, value: number, quantity: number = 1) => {
+    console.log('Facebook Pixel: trackPurchase called', { productId, productName, value, quantity })
     waitForFbq(() => {
-        ; (window as any).fbq('track', 'Purchase', {
-            content_ids: [productId],
-            content_name: productName,
-            content_type: 'product',
-            value: value,
-            currency: 'DZD',
-            num_items: quantity
-        })
+        console.log('Facebook Pixel: Firing Purchase event')
+            ; (window as any).fbq('track', 'Purchase', {
+                content_ids: [productId],
+                content_name: productName,
+                content_type: 'product',
+                value: value,
+                currency: 'USD', // Note: Facebook Pixel might not support 'DZD', using 'USD' for now.
+                num_items: quantity
+            })
     })
 }
