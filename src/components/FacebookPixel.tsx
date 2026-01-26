@@ -56,7 +56,7 @@ export const trackViewContent = (productId: string, productName: string, value: 
             content_name: productName,
             content_type: 'product',
             value: value,
-            currency: 'DZD'
+            currency: 'USD'
         })
     }
 }
@@ -68,7 +68,7 @@ export const trackAddToCart = (productId: string, productName: string, value: nu
             content_name: productName,
             content_type: 'product',
             value: value,
-            currency: 'DZD'
+            currency: 'USD'
         })
     }
 }
@@ -80,7 +80,7 @@ export const trackPurchase = (productId: string, productName: string, value: num
             content_name: productName,
             content_type: 'product',
             value: value,
-            currency: 'DZD',
+            currency: 'USD',
             num_items: quantity
         })
     }
