@@ -48,9 +48,29 @@ export function FacebookPixel({ pixelId }: { pixelId?: string }) {
     return null
 }
 
+// Helper to wait for fbq to be ready
+const waitForFbq = (callback: () => void) => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+        callback()
+    } else {
+        let attempts = 0
+        const interval = setInterval(() => {
+            if (typeof window !== 'undefined' && (window as any).fbq) {
+                callback()
+                clearInterval(interval)
+            }
+            attempts++
+            if (attempts > 50) { // Stop after ~5s
+                clearInterval(interval)
+                console.warn('Facebook Pixel not loaded after 5s')
+            }
+        }, 100)
+    }
+}
+
 // Helper functions for tracking events
 export const trackViewContent = (productId: string, productName: string, value: number) => {
-    if (typeof window !== 'undefined' && (window as any).fbq) {
+    waitForFbq(() => {
         ; (window as any).fbq('track', 'ViewContent', {
             content_ids: [productId],
             content_name: productName,
@@ -58,11 +78,11 @@ export const trackViewContent = (productId: string, productName: string, value: 
             value: value,
             currency: 'DZD'
         })
-    }
+    })
 }
 
 export const trackAddToCart = (productId: string, productName: string, value: number) => {
-    if (typeof window !== 'undefined' && (window as any).fbq) {
+    waitForFbq(() => {
         ; (window as any).fbq('track', 'AddToCart', {
             content_ids: [productId],
             content_name: productName,
@@ -70,11 +90,11 @@ export const trackAddToCart = (productId: string, productName: string, value: nu
             value: value,
             currency: 'DZD'
         })
-    }
+    })
 }
 
 export const trackPurchase = (productId: string, productName: string, value: number, quantity: number = 1) => {
-    if (typeof window !== 'undefined' && (window as any).fbq) {
+    waitForFbq(() => {
         ; (window as any).fbq('track', 'Purchase', {
             content_ids: [productId],
             content_name: productName,
@@ -83,5 +103,5 @@ export const trackPurchase = (productId: string, productName: string, value: num
             currency: 'DZD',
             num_items: quantity
         })
-    }
+    })
 }
