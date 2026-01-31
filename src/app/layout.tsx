@@ -33,6 +33,11 @@ export async function generateMetadata() {
         icons: {
             icon: brandSettings?.favicon_url || '/favicon.ico',
         },
+        verification: {
+            other: {
+                'facebook-domain-verification': 'kqltj2b52h2w90o22pqu6vt7gwdjhq',
+            },
+        },
     }
 }
 
